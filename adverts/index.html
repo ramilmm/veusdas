@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html lang="ru">
+	<head>
+		<title>Доска объявлений VEUSDAS</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="landing">
+
+<!--
+ Header 
+			<header id="header">
+				<a href="index.html" class="logo"><img class="veusdas-icon" src="../images//synthetica-logo@2x.png" alt="veusdas"></a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+-->
+		<!-- Header -->
+			<header id="header" class="alt">
+				<h1><strong><a href="index.html">VEUSDAS</a></strong></h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="generic.html">Generic</a></li>
+						<li><a href="elements.html">Elements</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+		<!-- Banner -->
+			<section id="banner">
+				<h2>Доска объявлений <strong>VEUSDAS</strong></h2>
+				<p>Мы поможем продать ваше сообщество.</p>
+				<ul class="actions" id="menu">
+                    <li><a href="#" class="button special big">Подать объявление</a></li>
+                    <li><a href="#adverts" class="button big">Посмотреть объявления</a></li>
+				</ul>
+			</section>
+
+			
+			<!-- Three -->
+				<section id="adverts" class="wrapper style1">
+					<div class="container">
+						
+						<div class="feature-grid">
+							<div class="feature">
+								<div class="image rounded"><a href="https://vk.com/kalembaa" target="_blank"><img src="images/pic04.jpg" alt="" /></a></div>
+								<div class="content">
+									<header>
+										<h4>Kalemba</h4>
+										<p>Продажа</p>
+									</header>
+									<p>Хороший паблик с активными подписчиками</p>
+								</div>
+							</div>
+							<div class="feature">
+								<div class="image rounded"><a href="https://vk.com/kalembaa" target="_blank"><img src="images/pic06.jpg" alt="" /></a></div>
+								<div class="content">
+									<header>
+										<h4>Sabr</h4>
+										<p>Аренда</p>
+									</header>
+									<p>Хороший паблик с активными подписчиками</p>
+								</div>
+							</div>
+							<div class="feature">
+								<div class="image rounded"><a href="https://vk.com/kalembaa" target="_blank"><img src="images/pic05.jpg" alt="" /></a></div>
+								<div class="content">
+									<header>
+										<h4>Kalemba</h4>
+										<p>Продажа</p>
+									</header>
+									<p>Хороший паблик с активными подписчиками</p>
+								</div>
+							</div>
+							<div class="feature">
+								<div class="image rounded"><a href="https://vk.com/kalembaa" target="_blank"><img src="images/pic07.jpg" alt="" /></a></div>
+								<div class="content">
+									<header>
+										<h4>Morena</h4>
+										<p>Аренда</p>
+									</header>
+									<p>Хороший паблик с активными подписчиками</p>
+								</div>
+							</div>
+							<div class="feature">
+								<div class="image rounded"><a href="https://vk.com/kalembaa" target="_blank"><img src="images/pic07.jpg" alt="" /></a></div>
+								<div class="content">
+									<header>
+										<h4>S.</h4>
+										<p>Продажа</p>
+									</header>
+									<p>Хороший паблик с активными подписчиками</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Four -->
+				<section id="four" class="wrapper style3 special">
+					<div class="container">
+						<header class="major">
+							<h2>Продайте ваше сообщество безопасно</h2>
+							<p>Воспользуйтесь услугами нашего гаранта</p>
+						</header>
+						<ul class="actions">
+							<li><a href="#" class="button special big">Написать гаранту</a></li>
+						</ul>
+					</div>
+				</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-facebook"></a></li>
+						<li><a href="#" class="icon fa-twitter"></a></li>
+						<li><a href="#" class="icon fa-instagram"></a></li>
+					</ul>
+					<ul class="copyright">
+						<li>&copy; Untitled</li>
+						<li>Design: <a href="http://templated.co">TEMPLATED</a></li>
+						<li>Images: <a href="http://unsplash.com">Unsplash</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+<script>
+    $(document).ready(function(){
+    $("#menu").on("click","a", function (event) {
+        //отменяем стандартную обработку нажатия по ссылке
+        event.preventDefault();
+        //забираем идентификатор бока с атрибута href
+        var id  = $(this).attr('href'),
+        //узнаем высоту от начала страницы до блока на который ссылается якорь
+            top = $(id).offset().top;
+        //анимируем переход на расстояние - top за 1500 мс
+        $('body,html').animate({scrollTop: top}, 800);
+    });
+});
+
+</script>
+	</body>
+</html>
