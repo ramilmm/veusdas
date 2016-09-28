@@ -3307,11 +3307,13 @@
 
 	#banner {
 /*		background-color: #3498db;*/
-        background-image: url(../../../images/bg1inst.jpg);
-        -moz-background-size: 100%; /* Firefox 3.6+ */
-        -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-        -o-background-size: 100%; /* Opera 9.6+ */
-        background-size: 100%; /* Современные браузеры */
+        background-image: url(../../images/overlay.png),url(../../../images/bg3inst.jpg);
+        background-repeat: no-repeat;
+        height: 100%;
+        -moz-background-size: cover; /* Firefox 3.6+ */
+        -webkit-background-size: cover; /* Safari 3.1+ и Chrome 4.0+ */
+        -o-background-size: cover; /* Opera 9.6+ */
+        background-size: cover; /* Современные браузеры */
 		color: rgba(255, 255, 255, 0.75);
 		text-align: center;
 		cursor: default;
@@ -4587,3 +4589,35 @@ section#main {
 p.description {
     font-size: 
 }
+
+section#callback {
+    margin-left: 10%;
+}
+ul.labeled-icons {
+			list-style: none;
+			padding: 0;
+		}
+
+			ul.labeled-icons li {
+				line-height: 1.75em;
+				margin: 1.5em 0 0 0;
+				padding-left: 2.25em;
+				position: relative;
+			}
+
+				ul.labeled-icons li:first-child {
+					margin-top: 0;
+				}
+
+				ul.labeled-icons li a {
+					color: inherit;
+				}
+
+				ul.labeled-icons li h3 {
+					color: #b2b2b2;
+					left: 0;
+					position: absolute;
+					text-align: center;
+					top: 0;
+					width: 1em;
+				}
