@@ -3,13 +3,16 @@ package mvc.common;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "public")
-public class Public {
+@Table(name = "publicList")
+public class PublicList {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @Column(name = "name",nullable = false)
+    private String name;
 
     @Column(name = "link",nullable = false)
     private String link;
@@ -32,9 +35,10 @@ public class Public {
     @Column(name = "active")
     private boolean active;
 
-    public Public() {}
+    public PublicList() {}
 
-    public Public(String link, String avatar_link, String stat_link, String admin_link, Long cost, int public_category, boolean active){
+    public PublicList(String name, String link, String avatar_link, String stat_link, String admin_link, Long cost, int public_category, boolean active){
+        this.name = name;
         this.link = link;
         this.avatar_link = avatar_link;
         this.stat_link = stat_link;
@@ -50,6 +54,14 @@ public class Public {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLink() {
@@ -112,6 +124,7 @@ public class Public {
     public String toString() {
         return "Public{" +
                 "id=" + id +
+                ", name='" + name + '\'' +
                 ", link='" + link + '\'' +
                 ", avatar_link='" + avatar_link + '\'' +
                 ", stat_link='" + stat_link + '\'' +

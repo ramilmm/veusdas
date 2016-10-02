@@ -1,18 +1,18 @@
 package mvc.repositories;
 
 
-import mvc.common.Public;
+import mvc.common.PublicList;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public interface PublicRepository extends JpaRepository<Public,Long> {
+public interface PublicRepository extends JpaRepository<PublicList,Long> {
 
-    ArrayList<Public> findByActive(boolean active);
+    List<PublicList> findByActive(boolean active);
 
-    ArrayList<Public> findByPublic_category(int public_category);
+    List<PublicList> findByPublic_category(int public_category);
 
-    Public findById(long id);
+    PublicList findById(long id);
 
 
 }

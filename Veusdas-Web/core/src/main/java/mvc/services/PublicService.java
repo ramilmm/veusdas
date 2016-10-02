@@ -1,12 +1,12 @@
 package mvc.services;
 
-import mvc.common.Public;
+import mvc.common.PublicList;
 import mvc.repositories.PublicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class PublicService {
@@ -15,12 +15,12 @@ public class PublicService {
     private PublicRepository publicRepository;
 
     @Transactional
-    public void addPublic(Public pub){
+    public void addPublic(PublicList pub){
         publicRepository.saveAndFlush(pub);
     }
 
     @Transactional
-    public void deletePublic(Public pub){
+    public void deletePublic(PublicList pub){
         publicRepository.delete(pub);
     }
 
@@ -30,31 +30,31 @@ public class PublicService {
     }
 
     @Transactional
-    public void update(Public pub){
+    public void update(PublicList pub){
         publicRepository.saveAndFlush(pub);
     }
 
-    public ArrayList<Public> getActivePublic(){
+    public List<PublicList> getActivePublic(){
         return publicRepository.findByActive(true);
     }
 
-    public ArrayList<Public> getNonActivePublic(){
+    public List<PublicList> getNonActivePublic(){
         return publicRepository.findByActive(false);
     }
 
-    public ArrayList<Public> getPublic20(){
+    public List<PublicList> getPublic20(){
         return publicRepository.findByPublic_category(20);
     }
 
-    public ArrayList<Public> getPublic50(){
+    public List<PublicList> getPublic50(){
         return publicRepository.findByPublic_category(50);
     }
 
-    public ArrayList<Public> getPublic100(){
+    public List<PublicList> getPublic100(){
         return publicRepository.findByPublic_category(100);
     }
 
-    public Public getById(Long id){
+    public PublicList getById(Long id){
         return publicRepository.findById(id);
     }
 }
