@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="users" type="java.util.List<mvc.common.Users>" -->
+<#-- @ftlvariable name="users" type="java.util.List<common.Users>" -->
 <#-- @ftlvariable name="errorMsg" type="java.lang.String" -->
 <#assign sec=JspTaglibs["http://www.springframework.org/security/tags"]>
 <!DOCTYPE html>

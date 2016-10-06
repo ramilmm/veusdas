@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="publicList" type="java.util.List<mvc.common.PublicList>"-->
+<#-- @ftlvariable name="publicList" type="java.util.List<common.PublicList>"-->
 <#assign sec=JspTaglibs["http://www.springframework.org/security/tags"]>
 <#include "../template/template.ftl">
 <@mainTemplate title="Veusdas список сообществ"

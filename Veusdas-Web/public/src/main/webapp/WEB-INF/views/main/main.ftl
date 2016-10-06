@@ -5,7 +5,7 @@
 <#-- @ftlvariable name="newArrival" type="java.util.List<mvc.common.GoodInfo>" -->
 <#-- @ftlvariable name="usedBook" type="java.util.List<mvc.common.GoodInfo>" -->
 <#-- @ftlvariable name="exclusive" type="java.util.List<mvc.common.GoodInfo>" -->
-<#-- @ftlvariable name="user" type="mvc.common.Users"-->
+<#-- @ftlvariable name="user" type="common.Users"-->
 
 <#assign sec=JspTaglibs["http://www.springframework.org/security/tags"]>
 <#include "../template/template.ftl">

@@ -7,7 +7,7 @@
     <import resource="classpath*:spring-core.xml" />
 
     <!-- Подключаем файл конфигураций для Spring Security -->
-    <import resource="spring-security.xml" />
+    <!--<import resource="spring-security.xml" />-->
 
 
 </beans>

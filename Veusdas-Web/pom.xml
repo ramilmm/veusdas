@@ -14,15 +14,6 @@
 
     <profiles>
         <profile>
-            <id>env-ramil-dev</id>
-            <properties>
-                <tomcatHost>localhost</tomcatHost>
-                <tomcatPort>8081</tomcatPort>
-                <tomcatManagerUser>tomcat</tomcatManagerUser>
-                <tomcatManagerPassword>1</tomcatManagerPassword>
-            </properties>
-        </profile>
-        <profile>
             <id>build-war1</id>
             <modules>
                 <module>public</module>

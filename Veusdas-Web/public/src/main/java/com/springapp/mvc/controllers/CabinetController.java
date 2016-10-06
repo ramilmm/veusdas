@@ -1,6 +1,6 @@
 //package com.springapp.mvc.controllers;
 //
-//import mvc.common.Users;
+//import common.Users;
 //import mvc.services.UserService;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Controller;

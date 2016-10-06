@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="user" type="mvc.common.Users" -->
+<#-- @ftlvariable name="user" type="common.Users" -->
 <#macro user user>
     <tr class="user${user.id}">
         <td>${user.login}</td>

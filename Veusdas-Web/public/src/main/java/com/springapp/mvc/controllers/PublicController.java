@@ -1,14 +1,15 @@
 package com.springapp.mvc.controllers;
 
-import mvc.services.PublicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import services.PublicService;
 
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
+@RequestMapping(value = "/publiclist")
 public class PublicController {
 
     @Autowired
