@@ -19,6 +19,9 @@ public class Spisok {
     @Column(name = "link",nullable = false)
     private String link;
 
+    @Column(name = "subscribes",nullable = false)
+    private String subscribes;
+
     @Column(name = "avatar_link")
     private String avatar_link;
 
@@ -39,15 +42,24 @@ public class Spisok {
 
     public Spisok() {}
 
-    public Spisok(String name, String link, String avatar_link, String stat_link, String admin_link, Long cost, int public_category, boolean active){
+    public Spisok(String name, String link, String subscribes, String avatar_link, String stat_link, String admin_link, Long cost, int public_category, boolean active) {
         this.name = name;
         this.link = link;
+        this.subscribes = subscribes;
         this.avatar_link = avatar_link;
         this.stat_link = stat_link;
         this.admin_link = admin_link;
         this.cost = cost;
         this.public_category = public_category;
         this.active = active;
+    }
+
+    public String getSubscribes() {
+        return subscribes;
+    }
+
+    public void setSubscribes(String subscribes) {
+        this.subscribes = subscribes;
     }
 
     public Long getId() {

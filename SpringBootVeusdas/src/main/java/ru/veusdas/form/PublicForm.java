@@ -12,6 +12,9 @@ public class PublicForm {
     private String link;
 
     @NotNull
+    private String subscribes;
+
+    @NotNull
     private String pub;
 
     @NotNull
@@ -87,14 +90,23 @@ public class PublicForm {
         this.pub = pub;
     }
 
+    public String getSubscribes() {
+        return subscribes;
+    }
+
+    public void setSubscribes(String subscribes) {
+        this.subscribes = subscribes;
+    }
+
     @Override
     public String toString() {
         return "PublicForm{" +
                 "name='" + name + '\'' +
                 ", link='" + link + '\'' +
+                ", subscribes='" + subscribes + '\'' +
                 ", pub='" + pub + '\'' +
                 ", ava='" + ava + '\'' +
-                ", cost='" + cost + '\'' +
+                ", cost=" + cost +
                 ", category=" + category +
                 ", stat='" + stat + '\'' +
                 '}';

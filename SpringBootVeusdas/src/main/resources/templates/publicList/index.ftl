@@ -67,7 +67,7 @@
                                 </td>
 
                                 <td><span class="statistic"><a href="${public.stat_link}" target="_blank"><img id="statistic" src="images/profits.png" alt="statistic"></a></span></td>
-                                <td>185 000</td>
+                                <td>${public.subscribes}</td>
                                 <td style="text-transform: lowercase">
                                 ${public.cost}
                                 </td>
@@ -127,7 +127,7 @@
                             <input type="text" name="cost" th:field="*{cost}" id="cost" placeholder="Цена" maxlength="10">
                             <#--<div th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}">Cost Error</div>-->
                         </div>
-                        <div class="5u 12u$(xsmall)">
+                        <div class="6u 12u$(xsmall)">
                             <select name="category" th:field="*{category}" id="category">
                                 <option value>- Охват пабликa -</option>
                                 <option value="20">>20.000</option>
@@ -135,6 +135,10 @@
                                 <option value="100">>100.000</option>
                             </select>
                             <#--<div th:if="${#fields.hasErrors('category')}" th:errors="*{category}">Category Error</div>-->
+                        </div>
+                        <div class="6u$ 12u$(xsmall)">
+                            <input type="text" name="subscribes" th:field="*{subscribes}" id="sub" placeholder="Количество подписчиков" maxlength="10">
+                        <#--<div th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}">Cost Error</div>-->
                         </div>
                         <div class="12u$ 12u$(xsmall)">
                             <input type="text" name="stat" th:field="*{stat}" id="dop-link" placeholder="Ссылка на статистику паблика">

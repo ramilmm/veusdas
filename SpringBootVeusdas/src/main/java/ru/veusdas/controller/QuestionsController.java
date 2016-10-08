@@ -34,6 +34,7 @@ public class QuestionsController {
         question.setName(qf.getName());
         question.setEmail(qf.getEmail());
         question.setQuestion(qf.getMessage());
+        question.setActive(true);
 
         questionService.addQuestion(question);
 

@@ -54,6 +54,7 @@ public class SpisokController {
         pub.setCost(pf.getCost());
         pub.setPublic_category(pf.getCategory());
         pub.setStat_link(pf.getStat());
+        pub.setSubscribes(pf.getSubscribes());
 
         publicService.addSpisok(pub);
         return "redirect:/publiclist/20";
