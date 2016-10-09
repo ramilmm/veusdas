@@ -5,7 +5,7 @@
 
     <title>Admin page</title>
     <script src="../../static/admin/js/bootstrap.min.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" href="../../static/admin/css/style.css"/>
     <link rel="stylesheet" href="../../static/admin/css/bootstrap.min.css"/>
 </head>
@@ -43,21 +43,31 @@
                                                 <th>Действие</th>
                                               </tr>
                                               <#if publicApplications??>
-                                                  <#list publicApplications as app>
-                                                      <tr>
-                                                          <td>${app.name}</td>
-                                                          <td>${app.stat_link}</td>
-                                                          <td>${app.subscribes}</td>
-                                                          <td>${app.cost}</td>
-                                                          <td>${app.admin_link}</td>
-                                                          <td>
-                                                            <div class="buttons">
-                                                               <span class="accept acceptSpisok" data-id="${app.id}">Принять</span>
-                                                               <span class="delete deleteSpissok" data-id="${app.id}">Отклонить</span>
-                                                            </div>
-                                                          </td>
-                                                      </tr>
+
+                                                  <#include "spisokApp.ftl">
+
+                                                  <#list publicApplications as q>
+                                                      <@public app=q />
                                                   </#list>
+
+                                                  <#--<#list publicApplications as app>-->
+        <#---->
+                                                      <#--<tr class="row${app.id}">-->
+                                                          <#--<td>${app.name}</td>-->
+                                                          <#--<td>${app.stat_link}</td>-->
+                                                          <#--<td>${app.subscribes}</td>-->
+                                                          <#--<td>${app.cost}</td>-->
+                                                          <#--<td>${app.admin_link}</td>-->
+                                                          <#--<td>-->
+                                                            <#--<div class="buttons">-->
+                                                               <#--<span class="accept acceptSpisok" data-id="${app.id}">Принять</span>-->
+                                                               <#--<span class="delete deleteSpisok" data-id="${app.id}">Отклонить</span>-->
+                                                            <#--</div>-->
+                                                          <#--</td>-->
+                                                      <#--</tr>-->
+                                                  <#--</#list>-->
+                                              <#else >
+                                                <span style="text-align: center">Новых заявок нет</span>
                                               </#if>
                                            </table>
                                          </div>
@@ -74,23 +84,41 @@
                                                 <th>Название</th>
                                                 <th width="150">Статистика</th>
                                                 <th width="150">Подписчиков</th>
+                                                <th width="150">Категория охвата</th>
                                                 <th width="180">Цена (руб.)</th>
                                                 <th width="180">Администратор</th>
                                                 <th>Действие</th>
                                               </tr>
                                               <#if spisok??>
+
+                                                  <#--<#include "public.ftl">-->
+
                                                   <#list spisok as public>
-                                                      <tr>
-                                                          <td><input type="text" value="${public.name}" maxlength="60"></td>
-                                                          <td><input type="text" value="${public.stat_link}" maxlength="70"></td>
-                                                          <td><input type="text" value="${public.subscribes}" maxlength="20"></td>
-                                                          <td><input type="text" value="${public.cost}" maxlength="10"></td>
-                                                          <td><input type="text" value="${public.admin_link}" maxlength="100"></td>
+                                                      <#--<@spisok public=q />-->
+
+
+                                                      <tr class="row${public.id}">
+                                                          <td><input type="text" id="nameSpisok${public.id}"  value="${public.name}" maxlength="60"></td>
+                                                          <td><input type="text" id="stat_linkSpisok${public.id}"  value="${public.stat_link}" maxlength="70"></td>
+                                                          <td><input type="text" id="subscribesSpisok${public.id}"  value="${public.subscribes}" maxlength="20"></td>
+                                                          <td><select id="okhvatSpisok${public.id}" class="okhvat${public.id}" >
+                                                              <option value>- Охват пабликa -</option>
+                                                              <option value="20">>20.000</option>
+                                                              <option value="50">>50.000</option>
+                                                              <option value="100">>100.000</option>
+                                                          </select></td>
+                                                          <script>
+                                                              $(document).ready(function () {
+                                                                  $('.okhvat${public.id}').val('${public.public_category}');
+                                                              });
+                                                          </script>
+                                                          <td><input type="text" id="costSpisok${public.id}" value="${public.cost}" maxlength="10"></td>
+                                                          <td><input type="text" id="admin_linkSpisok${public.id}"  value="${public.admin_link}" maxlength="100"></td>
                                                           <td>
-                                                            <div class="buttons">
-                                                               <span class="accept acceptEditing" data-id="${public.id}">Сохранить</span>
-                                                               <span class="delete deletePublic" data-id="${public.id}">Удалить</span>
-                                                            </div>
+                                                              <div class="buttons">
+                                                                  <span class="accept acceptEditing" data-id="${public.id}">Сохранить</span>
+                                                                  <span class="delete deletePublic" data-id="${public.id}">Удалить</span>
+                                                              </div>
                                                           </td>
                                                       </tr>
                                                   </#list>
@@ -122,21 +150,31 @@
                                                 <th>Действие</th>
                                               </tr>
                                               <#if advertsApplications??>
-                                                  <#list advertsApplications as adv>
-                                                      <tr>
-                                                          <td>${adv.advert_name}</td>
-                                                          <td><a href="${adv.profile_link}">Профиль вк</a></td>
-                                                          <td>${adv.cost}</td>
-                                                          <td>${adv.advert_type}</td>
-                                                          <td>${adv.comment}</td>
-                                                          <td>
-                                                            <div class="buttons">
-                                                               <span class="accept acceptApplAdv" data-id="${adv.id}">Принять</span>
-                                                               <span class="delete deleteAppAdv" data-id="${adv.id}">Отклонить</span>
-                                                            </div>
-                                                          </td>
-                                                      </tr>
+
+                                                  <#include "advert.ftl">
+
+                                                  <#list advertsApplications as q>
+                                                      <@advert adv=q />
                                                   </#list>
+
+                                                  <#--<#list advertsApplications as adv>-->
+
+                                                      <#--<tr>-->
+                                                          <#--<td>${adv.advert_name}</td>-->
+                                                          <#--<td><a href="${adv.profile_link}">Профиль вк</a></td>-->
+                                                          <#--<td>${adv.cost}</td>-->
+                                                          <#--<td>${adv.advert_type}</td>-->
+                                                          <#--<td>${adv.comment}</td>-->
+                                                          <#--<td>-->
+                                                            <#--<div class="buttons">-->
+                                                               <#--<span class="accept acceptAppAdv" data-id="${adv.id}">Принять</span>-->
+                                                               <#--<span class="delete deleteAppAdv" data-id="${adv.id}">Отклонить</span>-->
+                                                            <#--</div>-->
+                                                          <#--</td>-->
+                                                      <#--</tr>-->
+                                                  <#--</#list>-->
+                                              <#else >
+                                                  <span style="text-align: center">Новых заявок нет</span>
                                               </#if>
                                            </table>
                                          </div>
@@ -158,21 +196,28 @@
                                                 <th>Действие</th>
                                               </tr>
                                               <#if adverts??>
-                                                  <#list adverts as ad>
-                                                      <tr>
-                                                          <td><input type="text" value="${ad.advert_name}" maxlength="60"></td>
-                                                          <td><input type="text" value="${ad.profile_link}" maxlength="220"></td>
-                                                          <td><input type="text" value="${ad.cost}" maxlength="12"></td>
-                                                          <td><input type="text" value="${ad.advert_type}" maxlength="60"></td>
-                                                          <td><input type="text" value="${ad.comment}"  maxlength="200"></td>
-                                                          <td>
-                                                            <div class="buttons">
-                                                               <span class="accept acceptEditingAdv" data-id="${ad.id}">Сохранить</span>
-                                                               <span class="delete deleteAdv" data-id="${ad.id}">Удалить</span>
-                                                            </div>
-                                                          </td>
-                                                      </tr>
+
+                                                  <#include "advertList.ftl">
+
+                                                  <#list adverts as q>
+                                                      <@advertList ad=q />
                                                   </#list>
+
+                                                  <#--<#list adverts as ad>-->
+                                                      <#--<tr>-->
+                                                          <#--<td><input type="text" value="${ad.advert_name}" maxlength="60"></td>-->
+                                                          <#--<td><input type="text" value="${ad.profile_link}" maxlength="220"></td>-->
+                                                          <#--<td><input type="text" value="${ad.cost}" maxlength="12"></td>-->
+                                                          <#--<td><input type="text" value="${ad.advert_type}" maxlength="60"></td>-->
+                                                          <#--<td><input type="text" value="${ad.comment}"  maxlength="200"></td>-->
+                                                          <#--<td>-->
+                                                            <#--<div class="buttons">-->
+                                                               <#--<span class="accept acceptEditingAdv" data-id="${ad.id}">Сохранить</span>-->
+                                                               <#--<span class="delete deleteAdv" data-id="${ad.id}">Удалить</span>-->
+                                                            <#--</div>-->
+                                                          <#--</td>-->
+                                                      <#--</tr>-->
+                                                  <#--</#list>-->
                                               </#if>
                                            </table>
                                          </div>
@@ -200,23 +245,23 @@
                                                 <th width="200">Ваш ответ</th>
                                                 <th width="100">Действие</th>
                                               </tr>
-                                              <#--<#include "question.ftl">-->
+                                              <#include "question.ftl">
 
-                                              <#--<#list questions as q>-->
-                                                  <#--<@question question=q />-->
-                                              <#--</#list>-->
-
-                                              <#list questions as question>
-                                                  <tr class="row${question.id}">
-                                                      <td>${question.question}</td>
-                                                      <td>${question.name}</td>
-                                                      <td>${question.email}</td>
-                                                      <td>
-                                                          <textarea name="reply" id="reply${question.id}" cols="30" rows="1"></textarea>
-                                                      </td>
-                                                      <td><a href="#" class="sendReply" data-id="${question.id}">Ответить</a></td>
-                                                  </tr>
+                                              <#list questions as q>
+                                                  <@question question=q />
                                               </#list>
+
+                                              <#--<#list questions as question>-->
+                                                  <#--<tr class="row${question.id}">-->
+                                                      <#--<td>${question.question}</td>-->
+                                                      <#--<td>${question.name}</td>-->
+                                                      <#--<td>${question.email}</td>-->
+                                                      <#--<td>-->
+                                                          <#--<textarea name="reply" id="reply${question.id}" cols="30" rows="1"></textarea>-->
+                                                      <#--</td>-->
+                                                      <#--<td><a href="#" class="sendReply" data-id="${question.id}">Ответить</a></td>-->
+                                                  <#--</tr>-->
+                                              <#--</#list>-->
                                            </table>
                                          </div>
                                    </div>
@@ -232,7 +277,6 @@
             </div>
     </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
    
@@ -273,6 +317,217 @@
                 }
             });
         });
+
+        $(document).on('click', '.acceptSpisok', function () {
+            event.preventDefault();
+            var $this = $(this);
+            var publicID = $this.data('id');
+            var row = '.row' + publicID;
+            $.ajax({
+                type: 'POST',
+                url: '/admin/setActive',
+                data: {
+                    id:publicID
+                },
+                success: function (data, status) {  // успешное завершение работы
+                    $this.hide();
+                    $(row).css('display','none');
+                    $('.alert').css('display','block');
+                },
+                error: function () {    // На сервере произошла ошибка
+                    // console.log(data);
+                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
+                }
+            });
+        });
+
+        $(document).on('click', '.deleteSpisok', function () {
+            event.preventDefault();
+            var $this = $(this);
+            var publicID = $this.data('id');
+            var row = '.row' + publicID;
+            $.ajax({
+                type: 'POST',
+                url: '/admin/cancel',
+                data: {
+                    id:publicID
+                },
+                success: function (data, status) {  // успешное завершение работы
+                    $this.hide();
+                    $(row).css('display','none');
+                    $('.alert').css('display','block');
+                },
+                error: function () {    // На сервере произошла ошибка
+                    // console.log(data);
+                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
+                }
+            });
+        });
+        $(document).on('click', '.acceptEditing', function () {
+            event.preventDefault();
+            var $this = $(this);
+            var publicID = $this.data('id');
+            var h_name = '#nameSpisok'+publicID;
+            var h_stat = '#stat_linkSpisok'+publicID;
+            var h_sub = '#subscribesSpisok'+publicID;
+            var h_okhvat = '#okhvatSpisok'+publicID;
+            var h_cost = '#costSpisok'+publicID;
+            var h_admin = '#admin_linkSpisok'+publicID;
+            var name = $(h_name).val();
+            var stat = $(h_stat).val();
+            var subscribes = $(h_sub).val();
+            var okhvat = $(h_okhvat).val();
+            var cost = $(h_cost).val();
+            var admin = $(h_admin).val();
+            var row = '.row' + publicID;
+            $.ajax({
+                type: 'POST',
+                url: '/admin/editPublic',
+                data: {
+                    id:publicID,
+                    name:name,
+                    stat:stat,
+                    subscribes:subscribes,
+                    oxvat:okhvat,
+                    cost:cost,
+                    admin:admin
+                },
+                success: function (data, status) {  // успешное завершение работы
+                    $('.alert').css('display','block');
+                },
+                error: function () {    // На сервере произошла ошибка
+                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
+                }
+            });
+        });
+
+        $(document).on('click', '.deletePublic', function () {
+            event.preventDefault();
+            var $this = $(this);
+            var publicID = $this.data('id');
+            var row = '.row' + publicID;
+            $.ajax({
+                type: 'POST',
+                url: '/admin/deletePublic',
+                data: {
+                    id:publicID
+                },
+                success: function (data, status) {  // успешное завершение работы
+                    $this.hide();
+                    $(row).css('display','none');
+                    $('.alert').css('display','block');
+                },
+                error: function () {    // На сервере произошла ошибка
+                    // console.log(data);
+                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
+                }
+            });
+        });
+
+        $(document).on('click', '.acceptAppAdv', function () {
+            event.preventDefault();
+            var $this = $(this);
+            var advertID = $this.data('id');
+            var row = '.row' + advertID;
+            $.ajax({
+                type: 'POST',
+                url: '/admin/acceptAdvert',
+                data: {
+                    id:advertID
+                },
+                success: function (data, status) {  // успешное завершение работы
+                    $this.hide();
+                    $(row).css('display','none');
+                    $('.alert').css('display','block');
+                },
+                error: function () {    // На сервере произошла ошибка
+                    // console.log(data);
+                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
+                }
+            });
+        });
+
+        $(document).on('click', '.deleteAppAdv', function () {
+            event.preventDefault();
+            var $this = $(this);
+            var advertID = $this.data('id');
+            var row = '.row' + advertID;
+            $.ajax({
+                type: 'POST',
+                url: '/admin/cancelAdvert',
+                data: {
+                    id:advertID
+                },
+                success: function (data, status) {  // успешное завершение работы
+                    $this.hide();
+                    $(row).css('display','none');
+                    $('.alert').css('display','block');
+                },
+                error: function () {    // На сервере произошла ошибка
+                    // console.log(data);
+                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
+                }
+            });
+        });
+
+        $(document).on('click', '.acceptEditingAdv', function () {
+            event.preventDefault();
+            var $this = $(this);
+            var advertID = $this.data('id');
+            var h_name = '#nameAdvert'+advertID;
+            var h_profile = '#profileAdvert'+advertID;
+            var h_cost = '#costAdvert'+advertID;
+            var h_type = '#typeAdvert'+advertID;
+            var h_comment = '#commentAdvert'+advertID;
+            var name = $(h_name).val();
+            var profile = $(h_profile).val();
+            var cost = $(h_cost).val();
+            var type = $(h_type).val();
+            var comment = $(h_comment).val();
+            var row = '.row' + advertID;
+            $.ajax({
+                type: 'POST',
+                url: '/admin/editAdvert',
+                data: {
+                    id:advertID,
+                    name:name,
+                    profile:profile,
+                    cost:cost,
+                    type:type,
+                    comment:comment
+                },
+                success: function (data, status) {  // успешное завершение работы
+                    $('.alert').css('display','block');
+                },
+                error: function () {    // На сервере произошла ошибка
+                    // console.log(data);
+                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
+                }
+            });
+        });
+
+        $(document).on('click', '.deleteAdv', function () {
+            event.preventDefault();
+            var $this = $(this);
+            var advertID = $this.data('id');
+            var row = '.row' + advertID;
+            $.ajax({
+                type: 'POST',
+                url: '/admin/deleteAdvert',
+                data: {
+                    id:advertID
+                },
+                success: function (data, status) {  // успешное завершение работы
+                    $('.alert').css('display','block');
+                },
+                error: function () {    // На сервере произошла ошибка
+                    // console.log(data);
+                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
+                }
+            });
+        });
+
+
 
 });
 </script>

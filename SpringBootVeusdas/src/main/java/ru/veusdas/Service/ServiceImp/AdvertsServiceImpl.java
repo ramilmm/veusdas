@@ -82,4 +82,5 @@ public class AdvertsServiceImpl implements AdvertsService {
         return advertsRepositoryCustom.findById(id);
     }
 
+
 }
