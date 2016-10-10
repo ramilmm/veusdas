@@ -22,6 +22,8 @@ public class AdminController {
     QuestionServiceImpl questionService;
     @Autowired
     SpisokServiceImpl spisokService;
+//    @Autowired
+//    YouTubeServiceImpl youTubeService;
 
     @GetMapping("/admin")
     public String render(Model model){

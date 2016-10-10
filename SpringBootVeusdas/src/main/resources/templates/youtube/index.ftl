@@ -80,6 +80,32 @@
 					</div>
 				</div>
 			</article>
+		<#--<#list channels as channel>-->
+			<#--<article id="one" class="post style1">-->
+				<#--<div class="image">-->
+					<#--<img src="" alt="yuliya pushman" data-position="50% center" />-->
+				<#--</div>-->
+				<#--<div class="content">-->
+					<#--<div class="inner">-->
+						<#--<header>-->
+							<#--<h2><a href="https://www.youtube.com/user/JuliaGogitidze" target="_blank">Юлия Пушман</a></h2>-->
+						<#--</header>-->
+						<#--<ul class="price">-->
+							<#--<li>Пост в Instagram - <strong>100.000 руб.</strong></li>-->
+							<#--<li>Пост во ВКонтакте - <strong>30.000 руб.</strong></li>-->
+							<#--<li>Интеграция на YouTube - <strong>200.000 руб.</strong></li>-->
+						<#--</ul>-->
+						<#--<ul class="actions">-->
+							<#--<li><a href="https://vk.com/m.nash" class="button alt" target="_blank">Заказать</a></li>-->
+						<#--</ul>-->
+					<#--</div>-->
+					<#--<div class="postnav">-->
+						<#--<a href="#" class="prev disabled"><span class="icon fa-chevron-up"></span></a>-->
+						<#--<a href="#two" class="scrolly next"><span class="icon fa-chevron-down"></span></a>-->
+					<#--</div>-->
+				<#--</div>-->
+			<#--</article>-->
+		</#list>
 
 		<!-- Two -->
 			<article id="two" class="post invert style1 alt">
