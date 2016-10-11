@@ -7,18 +7,12 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <!--[if lte IE 8]><script src="../../static/garant/css/ie/html5shiv.js"></script><![endif]-->
-    <script src="../../static/garant/js/jquery.min.js"></script>
-    <script src="../../static/garant/js/skel.min.js"></script>
-    <script src="../../static/garant/js/skel-layers.min.js"></script>
-    <script src="../../static/garant/js/init.js"></script>
-    <noscript>
-        <link rel="stylesheet" href="../../static/garant/css/skel.css" />
-        <link rel="stylesheet" href="../../static/garant/css/style.css" />
-        <link rel="stylesheet" href="../../static/garant/css/style-xlarge.css" />
-    </noscript>
+
+    <link rel="stylesheet" href="css/garant/skel.css" />
+    <link rel="stylesheet" href="css/garant/style.css" />
+    <link rel="stylesheet" href="css/garant/style-xlarge.css" />
     <!--[if lte IE 8]>
-	<link rel="stylesheet" href="../../static/garant/css/ie/v8.css" /><![endif]-->
+    <link rel="stylesheet" href="css/garant/ie/v8.css"/><![endif]-->
 </head>
 <body class="landing">
 
@@ -138,7 +132,11 @@
     </div>
 </footer>
 
-
+<script src="css/garant/ie/html5shiv.js"></script><![endif]-->
+<script src="js/jquery.min.js"></script>
+<script src="js/skel.min.js"></script>
+<script src="js/garant/skel-layers.min.js"></script>
+<script src="js/garant/init.js"></script>
 <script>
     $(document).ready(function(){
 

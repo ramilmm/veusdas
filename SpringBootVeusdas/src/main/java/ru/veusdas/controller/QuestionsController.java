@@ -29,6 +29,10 @@ public class QuestionsController {
             return "youtube/index";
         }
 
+        if (qf.getName() == null || qf.getEmail() == null || qf.getMessage() == null) {
+            return "redirect:/youtube";
+        }
+
         Questions question = new Questions();
 
         question.setName(qf.getName());

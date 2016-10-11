@@ -9,11 +9,9 @@
 		<title>VEUSDAS</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="../../static/main/assets/css/main.css" />
-		<link rel="stylesheet" href="../../static/main/assets/css/owl.carousel.css">
-		<script src="../../static/main/assets/js/jquery.min.js"></script>
-		<script src="../../static/main/assets/js/owl.carousel.min.js"></script>
-		
+		<link rel="stylesheet" href="css/main/main.css" />
+		<link rel="stylesheet" href="css/main/owl.carousel.css">
+
 	</head>
 	<body class="landing">
 
@@ -109,28 +107,28 @@
 					<div class="flex flex-4">
 						<div class="profile-box person">
 							<div class="image round">
-								<a href="https://vk.com/id365105597" target="_blank"><img src="../../static/main/images/crew-blaz-robar.jpg" alt="Person 1" /></a>
+								<a href="https://vk.com/id365105597" target="_blank"><img src="images/main/crew-blaz-robar.jpg" alt="Person 1" /></a>
 							</div>
 							<h3>Владислав Леус</h3>
 							<p>Директор агенства. SEO-продвижение.</p>
 						</div>
 						<div class="profile-box person">
 							<div class="image round">
-								<a href="https://vk.com/id328142043" target="_blank"><img src="../../static/main/images/crew-dude.jpg" alt="Person 2" /></a>
+								<a href="https://vk.com/id328142043" target="_blank"><img src="images/main/crew-dude.jpg" alt="Person 2" /></a>
 							</div>
 							<h3>АРТУР КНЯЗЕВ</h3>
 							<p>Дизайнер.</p>
 						</div>
 						<div class="profile-box person">
 							<div class="image round">
-								<a href="https://vk.com/yanegrubiyan" target="_blank"><img src="../../static/main/images/crew-mary-lou.jpg" alt="Person 3" /></a>
+								<a href="https://vk.com/yanegrubiyan" target="_blank"><img src="images/main/crew-mary-lou.jpg" alt="Person 3" /></a>
 							</div>
 							<h3>АРИСТАРХ ЦЕРКОВНЫЙ</h3>
 							<p>Веб-разработчик.</p>
 						</div>
 						<div class="profile-box person">
 							<div class="image round">
-								<a href="https://vk.com/id258993255" target="_blank"><img src="../../static/main/images/crew-peter-finlan.jpg" alt="Person 4" /></a>
+								<a href="https://vk.com/id258993255" target="_blank"><img src="images/main/crew-peter-finlan.jpg" alt="Person 4" /></a>
 							</div>
 							<h3>РУСЛАН КОДЕНЕЦ</h3>
 							<p>Гарант агенства Veusdas.</p>
@@ -215,7 +213,7 @@
                                             <span class="txt">Логотип для паблика "Veusdas"</span>
                                         </div>
 -->
-								        <img src="../../static/main/images/owl/freebie-03.jpg" alt="">
+								        <img src="images/main/owl/freebie-03.jpg" alt="">
 								    </div>
 								    <div class="item">
 <!--
@@ -224,7 +222,7 @@
                                             <span class="txt">ОБРАБОТКА ФОТО В СТИЛЕ POP ART"</span>
                                         </div>
 -->
-								        <img src="../../static/main/images/owl/freebie-04.jpg" alt="">
+								        <img src="images/main/owl/freebie-04.jpg" alt="">
 								    </div>
 								    <div class="item">
 <!--
@@ -233,7 +231,7 @@
                                             <span class="txt">ЛОГОТИП ДЛЯ ПАБЛИКА "MY COFFEE"</span>
                                         </div>
 -->
-								        <img src="../../static/main/images/owl/img5.jpg" alt="">
+								        <img src="images/main/owl/img5.jpg" alt="">
 								    </div>
 								    <div class="item">    
 <!--
@@ -242,7 +240,7 @@
                                             <span class="txt">РЕКЛАМНЫЙ ПОСТ ДЛЯ ПАБЛИКА "POKEMON GO"</span>
                                         </div>
 -->
-								        <img src="../../static/main/images/owl/img6.jpg" alt="">
+								        <img src="images/main/owl/img6.jpg" alt="">
 								    </div>    
 								    <div class="item">
 <!--
@@ -251,7 +249,7 @@
                                             <span class="txt">АППГРЕЙД ПРАЙСА ДЛЯ СЕТКИ СООБЩЕСТВ</span>
                                         </div>
 -->
-								        <img src="../../static/main/images/owl/img7.jpg" alt="">
+								        <img src="images/main/owl/img7.jpg" alt="">
 								    </div>
 								    <div class="item">
 <!--
@@ -260,7 +258,7 @@
                                             <span class="txt">АВAТАР ДЛЯ ПАБЛИКА В ПРИКОЛЕ</span>
                                         </div>
 -->
-								        <img src="../../static/main/images/owl/img8.jpg" alt="">
+								        <img src="images/main/owl/img8.jpg" alt="">
 								    </div>
 								    <div class="item">    
 <!--
@@ -269,7 +267,7 @@
                                             <span class="txt">ШАПКА ДЛЯ РЕКЛАМНОГО ПОСТА БЫЛА ВЫПОЛНЕНА ДЛЯ ПАБЛИКА "INSTASHIT"</span>
                                         </div>
 -->
-								        <img src="../../static/main/images/owl/landio-freebie.jpg" alt="">
+								        <img src="images/main/owl/landio-freebie.jpg" alt="">
 								    </div>
 								    <div class="item">
 <!--
@@ -278,7 +276,7 @@
                                             <span class="txt">РЕКЛАМНЫЕ ПОСТЫ ДЛЯ ПАБЛИКА "МОЙ КОФЕ"</span>
                                         </div>
 -->
-								        <img src="../../static/main/images/owl/sedna-freebie.jpg" alt="">
+								        <img src="images/main/owl/sedna-freebie.jpg" alt="">
 								    </div>
 								</div>
 							</div>
@@ -312,10 +310,12 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="../../static/main/assets/js/skel.min.js"></script>
-			<script src="../../static/main/assets/js/util.js"></script>
-			<script src="../../static/main/assets/js/main.js"></script>
-            <script src="../../static/main/assets/js/jquery.countTo.js"></script>
+			<script src="js/jquery.min.js"></script>
+			<script src="js/main/owl.carousel.min.js"></script>
+			<script src="js/skel.min.js"></script>
+			<script src="js/main/util.js"></script>
+			<script src="js/main/main.js"></script>
+            <script src="js/main/jquery.countTo.js"></script>
             <script type="text/javascript">
                 $(document).ready(function() {
                     $('.owl-carousel').owlCarousel({

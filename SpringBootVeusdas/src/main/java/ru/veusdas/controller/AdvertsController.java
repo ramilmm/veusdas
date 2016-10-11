@@ -32,6 +32,11 @@ public class AdvertsController {
             return "adverts/index";
         }
 
+        if (af.getName().equals("") || af.getLink().equals("") || af.getLink().equals("")
+                || af.getCategory() == null || af.getCost().equals("")){
+            return "redirect:/ads";
+        }
+
         Adverts ad = new Adverts();
 
         ad.setAdvert_name(af.getName());
@@ -40,7 +45,7 @@ public class AdvertsController {
         ad.setCost(new Long(af.getCost()));
         if(af.getAva() != null){
             ad.setAvatar_link(af.getAva());
-        }
+        }else ad.setAvatar_link("http://weezywap.xtgem.com/images/ad_icon.png");
         if(af.getDopLink() != null){
             ad.setPublic_link(af.getDopLink());
         }

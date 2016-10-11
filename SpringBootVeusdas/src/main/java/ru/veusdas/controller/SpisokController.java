@@ -23,26 +23,31 @@ public class SpisokController {
     @GetMapping("/20")
     public String renderPublic20(Model model){
         model.addAttribute("publicList",publicService.getSpisok20());
-        return "publicList/index";
+        return "ListOfPublic/index";
     }
 
     @RequestMapping(value = "/50",method = RequestMethod.GET)
     public String renderPublic50(Model model){
         model.addAttribute("publicList",publicService.getSpisok50());
-        return "publiclist/index";
+        return "ListOfPublic/index";
     }
 
     @RequestMapping(value = "/100",method = RequestMethod.GET)
     public String renderPublic100(Model model){
         model.addAttribute("publicList",publicService.getSpisok100());
-        return "publiclist/index";
+        return "ListOfPublic/index";
     }
 
     @RequestMapping(value = "/add",method = RequestMethod.POST)
     public String addPublic(@Valid PublicForm pf, BindingResult bindingResult){
 
         if (bindingResult.hasErrors()) {
-            return "publiclist/index";
+            return "ListOfPublic/index";
+        }
+
+        if (pf.getName().equals("") || pf.getCost().equals("") || pf.getLink().equals("") || pf.getAva().equals("")
+                || pf.getPub().equals("") || pf.getStat().equals("") || pf.getSubscribes().equals("")) {
+            return "redirect:/";
         }
 
         Spisok pub = new Spisok();

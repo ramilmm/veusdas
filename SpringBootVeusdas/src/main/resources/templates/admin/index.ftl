@@ -4,10 +4,9 @@
     <meta charset="utf-8"/>
 
     <title>Admin page</title>
-    <script src="../../static/admin/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/admin/style.css"/>
+    <link rel="stylesheet" href="css/admin/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="../../static/admin/css/style.css"/>
-    <link rel="stylesheet" href="../../static/admin/css/bootstrap.min.css"/>
 </head>
 <body class="admin">
 
@@ -19,7 +18,7 @@
                     <ul class="head-list">
                         <li><a class="menu active" href="#" data-id="publicList">Список пабликов</a></li>
                         <li><a class="menu" href="#" data-id="ads">Объявления</a></li>
-                        <li><a class="menu" href="#" data-id="youtube">Youtube каналы</a></li>
+                        <#--<li><a class="menu" href="#" data-id="youtube">Youtube каналы</a></li>-->
                         <li><a class="menu" href="#" data-id="questions">Вопросы</a></li>
                     </ul>
                 </div>
@@ -227,9 +226,9 @@
                         </div>
                     </div>
                 </div>
-                <div id="youtube" class="youtube" style="display:none">
-                    aaaaaaaaaaaaaaaaa
-                </div>
+                <#--<div id="youtube" class="youtube" style="display:none">-->
+                    <#--aaaaaaaaaaaaaaaaa-->
+                <#--</div>-->
                 <div id="questions" class="questions" style="display:none">
                     <div class="container">
                         <div class="row">
@@ -272,11 +271,13 @@
                 </div>
                 <div class="alert alert-success alert-dismissable" style="display:none">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <strong>Отлично!</strong> Сообщение отправлено.
+                    <strong>Отлично!</strong> Обработано.
                 </div>
             </div>
     </div>
 </div>
+
+<script src="js/admin/bootstrap.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
    

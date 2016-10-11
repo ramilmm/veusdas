@@ -6,9 +6,8 @@
 		<title>Доска объявлений VEUSDAS</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="../../static/adverts/assets/css/main.css" />
-		<link rel="stylesheet" href="../../static/adverts/assets/css/animate.css" />
-		<script src="../../static/adverts/assets/js/wow.min.js"></script>
+		<link rel="stylesheet" href="css/adverts/main.css" />
+		<link rel="stylesheet" href="css/adverts/animate.css" />
 		
 	</head>
 	<body class="landing">
@@ -46,12 +45,16 @@
 					    <div class="row">
 							<#list adverts as ad>
 								<div class="4u 6u(small) 12u$(xsmall) wow fadeInLeft">
-									<div class="image rounded"><a href="${ad.public_link}" target="_blank"><img src="${ad.avatar_link}" alt="${ad.advert_name}" /></a></div>
+									<div class="image rounded">
+										<a href="${ad.public_link}" target="_blank">
+											<img src="${ad.avatar_link}" alt="${ad.advert_name}" width="160px"/>
+										</a>
+									</div>
 									<div class="content">
 										<header>
 											<h4>${ad.advert_name}</h4>
 											<p>${ad.advert_type}</p>
-											<span class="cost">300 рублей</span>
+											<span class="cost">${ad.cost} рублей</span>
 										</header>
                                             <a href="${ad.profile_link}" class="button special small">Написать</a>
 										<p>${ad.comment}</p>
@@ -127,10 +130,13 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="../../static/adverts/assets/js/jquery.min.js"></script>
-			<script src="../../static/adverts/assets/js/skel.min.js"></script>
-			<script src="../../static/adverts/assets/js/util.js"></script>
-			<script src="../../static/adverts/assets/js/main.js"></script>
+			<script src="js/jquery.min.js"></script>
+			<script src="js/skel.min.js"></script>
+			<script src="js/adverts/util.js"></script>
+			<script src="js/adverts/main.js"></script>
+			<script src="js/adverts/wow.min.js"></script>
+			<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+			<script src="js/adverts/common.js"></script>
 <script>
     $(document).ready(function(){      
    
@@ -151,9 +157,7 @@
        
     });
 </script>
-<script src="../../static/adverts/assets/js/wow.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="../../static/adverts/assets/js/common.js"></script>
+
 <script>new WOW().init();</script>
 	</body>
 </html>

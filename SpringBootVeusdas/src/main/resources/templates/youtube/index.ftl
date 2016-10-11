@@ -5,13 +5,13 @@
 		<title>VEUSDAS in YOUTUBE</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="../../static/youtube/assets/css/main.css" />
+		<link rel="stylesheet" href="css/youtube/main.css" />
 	</head>
 	<body>
 
 		<!-- Header -->
 			<header id="header">
-				<a href="index.ftl" class="logo"><img class="veusdas-icon" src="../../static/images/synthetica-logo@2x.png" alt="veusdas"></a>
+				<a href="/" class="logo"><img class="veusdas-icon" src="images/synthetica-logo@2x.png" alt="veusdas"></a>
 				<nav>
 					<a href="#menu">Menu</a>
 				</nav>
@@ -41,7 +41,7 @@
 			<section id="main">
 				<div class="inner">
 					<div class="image">
-						<a href="https://vk.com/m.nash" target="_blank"><img class="youtube-manager" src="../../static/images/youtube/nash.jpg" alt="manager" /></a>
+						<a href="https://vk.com/m.nash" target="_blank"><img class="youtube-manager" src="images/youtube/nash.jpg" alt="manager" /></a>
 					</div>
 					<header>
 						<h1><a href="https://vk.com/m.nash" target="_blank">Milen Nash</a></h1>
@@ -58,7 +58,7 @@
 		<!-- One -->
 			<article id="one" class="post style1">
 				<div class="image">
-					<img src="../../static/images/youtube/Pushman.jpg" alt="yuliya pushman" data-position="50% center" />
+					<img src="images/youtube/Pushman.jpg" alt="yuliya pushman" data-position="50% center" />
 				</div>
 				<div class="content">
 					<div class="inner">
@@ -105,12 +105,12 @@
 					<#--</div>-->
 				<#--</div>-->
 			<#--</article>-->
-		</#list>
+		<#--</#list>-->
 
 		<!-- Two -->
 			<article id="two" class="post invert style1 alt">
 				<div class="image">
-					<img src="../../static/images/youtube/Suvorov.jpg" alt="lesha suvorov" data-position="50% center" />
+					<img src="images/youtube/Suvorov.jpg" alt="lesha suvorov" data-position="50% center" />
 				</div>
 				<div class="content">
 					<div class="inner">
@@ -139,7 +139,7 @@
 		<!-- Three -->
 			<article id="three" class="post style2">
 				<div class="image">
-					<img src="../../static/images/youtube/Kosyhin.jpg" alt="yaroslav kosyhin" data-position="80% center" />
+					<img src="images/youtube/Kosyhin.jpg" alt="yaroslav kosyhin" data-position="80% center" />
 				</div>
 				<div class="content">
 					<div class="inner">
@@ -164,7 +164,7 @@
 		<!-- Four -->
 			<article id="four" class="post invert style2 alt">
 				<div class="image">
-					<img src="../../static/images/youtube/Loginova.jpg" alt="loginova veronika" data-position="50% center" />
+					<img src="images/youtube/Loginova.jpg" alt="loginova veronika" data-position="50% center" />
 				</div>
 				<div class="content">
 					<div class="inner">
@@ -192,7 +192,7 @@
 		<!-- Five -->
 			<article id="five" class="post style3">
 				<div class="image">
-					<img src="../../static/images/youtube/Markaryan.jpg" alt="" data-position="5% center" />
+					<img src="images/youtube/Markaryan.jpg" alt="" data-position="5% center" />
 				</div>
 				<div class="content">
 					<div class="inner">
@@ -218,7 +218,7 @@
 		<!-- Six -->
 			<article id="six" class="post invert style3 alt">
 				<div class="image">
-					<img src="../../static/images/youtube/Milash.jpg" alt="" data-position="80% center" />
+					<img src="images/youtube/Milash.jpg" alt="" data-position="80% center" />
 				</div>
 				<div class="content">
 					<div class="inner">
@@ -245,7 +245,7 @@
 			<!-- Seven -->
 			<article id="seven" class="post style1">
 				<div class="image">
-					<img src="../../static/images/youtube/Chizhova.jpg" alt="" data-position="50% center" />
+					<img src="images/youtube/Chizhova.jpg" alt="" data-position="50% center" />
 				</div>
 				<div class="content">
 					<div class="inner">
@@ -272,7 +272,7 @@
 			<!-- Eight -->
 			<article id="eight" class="post invert style1 alt">
 				<div class="image">
-					<img src="../../static/images/youtube/Karina.jpg" alt="" data-position="80% center" />
+					<img src="images/youtube/Karina.jpg" alt="" data-position="80% center" />
 				</div>
 				<div class="content">
 					<div class="inner">
@@ -298,7 +298,7 @@
 			<!-- Nine -->
 			<article id="nine" class="post style2">
 				<div class="image">
-					<img src="../../static/images/youtube/Kopalina.jpg" alt="" data-position="40% center" />
+					<img src="images/youtube/Kopalina.jpg" alt="" data-position="40% center" />
 				</div>
 				<div class="content">
 					<div class="inner">
@@ -369,11 +369,11 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="../../static/youtube/assets/js/jquery.min.js"></script>
-			<script src="../../static/youtube/assets/js/jquery.scrolly.min.js"></script>
-			<script src="../../static/youtube/assets/js/skel.min.js"></script>
-			<script src="../../static/youtube/assets/js/util.js"></script>
-			<script src="../../static/youtube/assets/js/main.js"></script>
+			<script src="js/jquery.min.js"></script>
+			<script src="js/youtube/jquery.scrolly.min.js"></script>
+			<script src="js/skel.min.js"></script>
+			<script src="js/youtube/util.js"></script>
+			<script src="js/youtube/main.js"></script>
 
 	</body>
 </html>
