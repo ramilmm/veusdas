@@ -20,6 +20,7 @@
                         <li><a class="menu" href="#" data-id="ads">Объявления</a></li>
                         <#--<li><a class="menu" href="#" data-id="youtube">Youtube каналы</a></li>-->
                         <li><a class="menu" href="#" data-id="questions">Вопросы</a></li>
+                        <li><a href="/">Главная страница</a></li>
                     </ul>
                 </div>
             </div>

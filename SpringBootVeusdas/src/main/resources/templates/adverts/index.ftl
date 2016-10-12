@@ -6,8 +6,8 @@
 		<title>Доска объявлений VEUSDAS</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="css/adverts/main.css" />
-		<link rel="stylesheet" href="css/adverts/animate.css" />
+		<link rel="stylesheet" href="css/objavleniya/main.css" />
+		<link rel="stylesheet" href="css/objavleniya/animate.css" />
 		
 	</head>
 	<body class="landing">
@@ -132,11 +132,11 @@
 		<!-- Scripts -->
 			<script src="js/jquery.min.js"></script>
 			<script src="js/skel.min.js"></script>
-			<script src="js/adverts/util.js"></script>
-			<script src="js/adverts/main.js"></script>
-			<script src="js/adverts/wow.min.js"></script>
+			<script src="js/objavleniya/util.js"></script>
+			<script src="js/objavleniya/main.js"></script>
+			<script src="js/objavleniya/wow.min.js"></script>
 			<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-			<script src="js/adverts/common.js"></script>
+			<script src="js/objavleniya/common.js"></script>
 <script>
     $(document).ready(function(){      
    

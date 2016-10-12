@@ -15,7 +15,6 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication().withUser("user").password("user").roles("USER");
         auth.inMemoryAuthentication().withUser("veusadmindas").password("123456o").roles("ADMIN");
-        auth.inMemoryAuthentication().withUser("veusdasadminlog").password("123456p").roles("SUPERADMIN");
     }
 
     @Override
@@ -31,7 +30,6 @@ public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
                     .permitAll();
         http.authorizeRequests()
                 .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')")
-                .antMatchers("/admin/**").access("hasRole('ROLE_SUPERADMIN')")
                 .and().formLogin().defaultSuccessUrl("/", false);
 
 

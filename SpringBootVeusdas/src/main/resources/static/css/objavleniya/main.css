@@ -3091,7 +3091,7 @@
 	#banner {
 		padding: 16em 0 13em 0;
 		background-attachment: fixed;
-		background-image: url("../../images/overlay.png"), url("../../images/adverts/ob.jpg");
+		background-image: url("../../images/overlay.png"), url("../../images/objavleniya/ob.jpg");
 		background-position: center top;
 		background-size: cover;
 		line-height: 1.75;

@@ -19,7 +19,4 @@ public class MainController {
     @GetMapping("/login")
     public String renderLoginPage() { return "login"; }
 
-    @GetMapping("/error")
-    public String renderErrorPage() { return "error"; }
-
 }
