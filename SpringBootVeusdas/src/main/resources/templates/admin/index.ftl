@@ -13,16 +13,14 @@
 <div class="container">
     <div class="row">
             <div class="col-md-12">
-                <div class="head">
-                    <span class="tittle">Управление сайтом Veusdas</span>
-                    <ul class="head-list">
-                        <li><a class="menu active" href="#" data-id="publicList">Список пабликов</a></li>
-                        <li><a class="menu" href="#" data-id="ads">Объявления</a></li>
-                        <#--<li><a class="menu" href="#" data-id="youtube">Youtube каналы</a></li>-->
-                        <li><a class="menu" href="#" data-id="questions">Вопросы</a></li>
-                        <li><a href="/">Главная страница</a></li>
-                    </ul>
-                </div>
+                <span class="tittle">Управление сайтом Veusdas</span>
+                <ul class="nav nav-tabs">
+                    <li><a class="menu active" href="#" data-id="publicList">Список пабликов</a></li>
+                    <li><a class="menu" href="#" data-id="ads">Объявления</a></li>
+                <#--<li><a class="menu" href="#" data-id="youtube">Youtube каналы</a></li>-->
+                    <li><a class="menu" href="#" data-id="questions">Вопросы</a></li>
+                    <li><a href="/">Главная страница</a></li>
+                </ul>
             </div>
             <div class="col-md-12">
                 <div id="publicList" class="publicList">
