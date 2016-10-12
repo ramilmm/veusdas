@@ -19,6 +19,8 @@ public class AdvertsController {
     @Autowired
     AdvertsServiceImpl advertsService;
 
+    private Long countID = 5L;
+
     @GetMapping("/ads")
     public String render(Model model){
         ArrayList<Adverts> ads = advertsService.getActiveAdverts();
@@ -39,6 +41,7 @@ public class AdvertsController {
 
         Adverts ad = new Adverts();
 
+        ad.setId(countID);
         ad.setAdvert_name(af.getName());
         ad.setAdvert_type(af.getCategory());
         ad.setProfile_link(af.getLink());
@@ -52,6 +55,7 @@ public class AdvertsController {
         ad.setComment(af.getMessage());
 
         advertsService.addAdvert(ad);
+        countID++;
 
         return "redirect:/ads";
 

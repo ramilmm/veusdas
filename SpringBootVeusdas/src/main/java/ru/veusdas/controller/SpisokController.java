@@ -20,6 +20,8 @@ public class SpisokController {
     @Autowired
     SpisokServiceImpl publicService;
 
+    private Long countID = 5L;
+
     @GetMapping("/20")
     public String renderPublic20(Model model){
         model.addAttribute("publicList",publicService.getSpisok20());
@@ -52,6 +54,7 @@ public class SpisokController {
 
         Spisok pub = new Spisok();
 
+        pub.setId(countID);
         pub.setName(pf.getName());
         pub.setAdmin_link(pf.getLink());
         pub.setLink(pf.getPub());
@@ -62,6 +65,8 @@ public class SpisokController {
         pub.setSubscribes(pf.getSubscribes());
 
         publicService.addSpisok(pub);
+        countID++;
+
         return "redirect:/publiclist/20";
     }
 }

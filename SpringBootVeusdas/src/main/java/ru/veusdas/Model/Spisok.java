@@ -8,8 +8,6 @@ public class Spisok {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "publiclist_id_seq")
-    @SequenceGenerator(name = "publiclist_id_seq", sequenceName = "publiclist_id_seq", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 

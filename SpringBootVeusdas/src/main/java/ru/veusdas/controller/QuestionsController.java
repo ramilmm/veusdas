@@ -18,6 +18,8 @@ public class QuestionsController {
     @Autowired
     QuestionServiceImpl questionService;
 
+    private Long countID = 5L;
+
     @GetMapping("/youtube")
     public String render(Model model){
         return "youtube/index";
@@ -35,12 +37,14 @@ public class QuestionsController {
 
         Questions question = new Questions();
 
+        question.setId(countID);
         question.setName(qf.getName());
         question.setEmail(qf.getEmail());
         question.setQuestion(qf.getMessage());
         question.setActive(true);
 
         questionService.addQuestion(question);
+        countID++;
 
         return "redirect:/youtube";
 
