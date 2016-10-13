@@ -245,18 +245,19 @@
 			<!-- Seven -->
 			<article id="seven" class="post style1">
 				<div class="image">
-					<img src="images/youtube/Chizhova.jpg" alt="" data-position="50% center" />
+					<img src="https://pp.vk.me/c638927/v638927974/240b/jq1AGCHsSMw.jpg" alt="" data-position="50% center" />
 				</div>
 				<div class="content">
 					<div class="inner">
 						<header>
-							<h2><a href="https://www.youtube.com/user/Milenamurmur" target="_blank">Милена Чижова</a></h2>
+							<h2><a href="https://www.youtube.com/c/BorisGrankinChannel" target="_blank">Boris Grankin</a></h2>
 						</header>
 						<ul class="price">
-						    <li>Отдельный ролик на YouTube - <strong>55.000 руб.</strong></li>
-						    <li>Интеграция на YouTube - <strong>30.000 руб.</strong></li>
-						    <li>Пост в Instagram - <strong>15.000 руб.</strong></li>
-						    <li>Пост во ВКонтакте -<strong> 5.000 руб.</strong></li>
+                            <li>Конец ролика на YouTube -<strong> 5.000 руб.</strong></li>
+                            <li>Пре-ролл на YouTube -<strong>7.500 руб.</strong></li>
+						    <li>Интеграция на YouTube - <strong>10.000 руб.</strong></li>
+						    <li>Пост в Instagram - <strong>3.000 руб.</strong></li>
+						    <li>Пост во ВКонтакте -<strong> 3.000 руб.</strong></li>
 						</ul>
 						<ul class="actions">
 							<li><a href="https://vk.com/m.nash" class="button alt" target="_blank">Заказать</a></li>
@@ -317,10 +318,195 @@
 					</div>
 					<div class="postnav">
 						<a href="#eight" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
-						<a href="" class="scrolly next disabled"><span class="icon fa-chevron-down"></span></a>
+						<a href="#ten" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
 					</div>
 				</div>
 			</article>
+            
+            <article id="ten" class="post style2">
+				<div class="image">
+					<img src="https://pp.vk.me/c837623/v837623892/4f7f/WvHhAcNulqM.jpg" alt="" data-position="40% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="https://www.youtube.com/channel/UCvS9qNH0A5JuDCEcSqTsyvw" target="_blank">Артур Гаврилюк</a></h2>
+						</header>
+						<ul class="price">
+						    <li>Интеграция на YouTube -<strong> 70.000 руб.</strong></li>
+						    <li>Пре-ролл на YouTube -<strong> 30.000 руб.</strong></li>
+						    <li>Пост в Instagram - <strong>10.000 руб.</strong></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="https://vk.com/m.nash" class="button alt" target="_blank">Заказать</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#nine" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#11" class="scrolly next disabled"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+            
+            <article id="11" class="post style2">
+				<div class="image">
+					<img src="https://pp.vk.me/c604530/v604530799/1a44a/60XsWlexPmU.jpg" alt="" data-position="40% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="https://www.youtube.com/MARTYNENKOtv3" target="_blank">ANDREY MARTYNENKO</a></h2>
+						</header>
+						<ul class="price">
+						    <li>В конце видео ПРЕРОЛЛ + аннотация + ссылка в описании - <strong>9 000 грн / 27 000 руб</strong></li>
+						    <li> В середине видео ПРЕРОЛЛ + аннотация + ссылка в описании -<strong> 9 000 грн / 27 000 руб</strong></li>
+						    <li>В начале видео ПРЕРОЛЛ + аннотация + ссылка в описании - <strong>10 000грн / 30 000руб</strong></strong></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="https://vk.com/m.nash" class="button alt" target="_blank">Заказать</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#ten" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#12" class="scrolly next disabled"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+            
+            <article id="12" class="post style2">
+				<div class="image">
+					<img src="https://pp.vk.me/c837123/v837123624/608c/x3Vg77m_KMM.jpg" alt="" data-position="40% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="https://www.youtube.com/channel/UCI2j5YYVLhW_zqDB9FJx59Q" target="_blank">Олимпия Ивлева</a></h2>
+						</header>
+						<ul class="price">
+						    <li>Отдельный ролик на YouTube - <strong> 150.000 руб.</strong></li>
+						    <li>Интеграция на YouTube -<strong> 50.000 руб.</strong></li>
+						    <li>Пре-ролл на YouTube -<strong> 40.000 руб.</strong></li>
+						    <li>Пост в Instagram - <strong> 50.000 руб.</strong></li>
+						    <li>Пост во ВКонтакте -<strong> 30.000 руб.</strong></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="https://vk.com/m.nash" class="button alt" target="_blank">Заказать</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#11" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#13" class="scrolly next disabled"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+            
+            <article id="13" class="post style2">
+				<div class="image">
+					<img src="https://pp.vk.me/c636530/v636530133/1eee3/_QNiTa1zYzk.jpg" alt="" data-position="40% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="https://www.youtube.com/channel/UC2Ru64PHqW4FxoP0xhQRvJg" target="_blank">ТОПЛЕС</a></h2>
+						</header>
+						<ul class="price">
+						    <li>YouTube -<strong> от 250.000 руб.</strong></li>
+						    <li>Пост в Instagram - <strong> 30.000 руб.</strong></li>
+						    <li>Пост во ВКонтакте -<strong> 30.000 руб.</strong></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="https://vk.com/m.nash" class="button alt" target="_blank">Заказать</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#12" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#14" class="scrolly next disabled"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+            
+            <article id="14" class="post style2">
+				<div class="image">
+					<img src="https://pp.vk.me/c627323/v627323583/41dd8/ZtuBs2TkUMk.jpg" alt="" data-position="40% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="https://www.youtube.com/user/ThePo1ya" target="_blank">Артем Полищук</a></h2>
+						</header>
+						<ul class="price">
+						    <li>YouTube в начале -<strong> 6.000 руб.</strong></li>
+						    <li>YouTube внутри -<strong> 5.000 руб.</strong></li>
+						    <li>YouTube в конце -<strong> 4.000 руб.</strong></li>
+						    <li>Пост в Instagram - <strong> 2.000 руб.</strong></li>
+						    <li>Пост во ВКонтакте -<strong> 1.000 руб.</strong></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="https://vk.com/m.nash" class="button alt" target="_blank">Заказать</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#13" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#15" class="scrolly next disabled"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+            
+            <article id="15" class="post style2">
+				<div class="image">
+					<img src="https://pp.vk.me/c636823/v636823629/2be88/W7sf9IN3Vvc.jpg" alt="" data-position="40% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="https://www.youtube.com/user/DexterProduction16" target="_blank">Декстер</a></h2>
+						</header>
+						<ul class="price">
+						    <<li>Отдельный ролик на YouTube - <strong> 50.000 руб.</strong></li>
+						    <li>Интеграция на YouTube -<strong> 30.000 руб.</strong></li>
+						    <li>Пре-ролл на YouTube -<strong> 16.000 руб.</strong></li>
+						    <li>Пост-ролл на YouTube -<strong> 8.000 руб.</strong></li>
+						    <li>Пост в Instagram - <strong> 2.500 руб.</strong></li>
+						    <li>Пост во ВКонтакте -<strong> 9.000 руб.</strong></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="https://vk.com/m.nash" class="button alt" target="_blank">Заказать</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#14" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#16" class="scrolly next disabled"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+            
+            <article id="15" class="post style2">
+				<div class="image">
+					<img src="https://pp.vk.me/c618720/v618720594/15b5/tckjANbdohQ.jpg" alt="" data-position="40% center" />
+				</div>
+				<div class="content">
+					<div class="inner">
+						<header>
+							<h2><a href="https://www.youtube.com/channel/UCI2j5YYVLhW_zqDB9FJx59Q" target="_blank">Фарух Раджабов</a></h2>
+						</header>
+						<ul class="price">
+						    <li>YouTube - <strong> 30.000 руб.</strong></li>
+						    <li>Пост в Instagram - <strong> 10.000 руб.</strong></li>
+						    <li>Пост во ВКонтакте -<strong> 5.000 руб.</strong></li>
+						</ul>
+						<ul class="actions">
+							<li><a href="https://vk.com/m.nash" class="button alt" target="_blank">Заказать</a></li>
+						</ul>
+					</div>
+					<div class="postnav">
+						<a href="#11" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#13" class="scrolly next disabled"><span class="icon fa-chevron-down"></span></a>
+					</div>
+				</div>
+			</article>
+            
+            
+            
 			
 			<section id="callback">
 						<h2>Остались вопросы?</h2>
