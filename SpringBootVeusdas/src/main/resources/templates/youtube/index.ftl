@@ -395,7 +395,7 @@
 					</div>
 					<div class="postnav">
 						<a href="#11" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
-						<a href="#13" class="scrolly next disabled"><span class="icon fa-chevron-down"></span></a>
+						<a href="#13" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
 					</div>
 				</div>
 			</article>
