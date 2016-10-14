@@ -7,8 +7,8 @@
         <td>${app.admin_link}</td>
         <td>
             <div class="buttons">
-                <a href="#" class="accept acceptSpisok" data-id="${app.id}">Принять</a>
-                <a href="#" class="delete deleteSpisok" data-id="${app.id}">Отклонить</a>
+                <a href="#"  class="accept acceptSpisok" data-id="${app.id}">Принять</a>
+                <a href="#"  class="delete deleteSpisok" data-id="${app.id}">Отклонить</a>
             </div>
         </td>
     </tr>
