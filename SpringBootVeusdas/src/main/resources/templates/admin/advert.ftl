@@ -8,7 +8,7 @@
     <td>
         <div class="buttons">
             <a href="#" class="accept acceptAppAdv" data-id="${adv.id}">Принять</a>
-            <a href="#" class="delete deleteAppAdv" data-id="${adv.id}">Отклонить</span>
+            <a href="#" class="delete deleteAppAdv" data-id="${adv.id}">Отклонить</a>
         </div>
     </td>
 </tr>
