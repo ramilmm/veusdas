@@ -18,8 +18,8 @@
     <td><input type="text" id="admin_linkSpisok"  value="${public.admin_link}" maxlength="100"></td>
     <td>
         <div class="buttons">
-            <span class="accept acceptEditing" data-id="${public.id}">Сохранить</span>
-            <span class="delete deletePublic" data-id="${public.id}">Удалить</span>
+            <a href="#"  class="accept acceptEditing" data-id="${public.id}">Сохранить</a>
+            <a href="#"  class="delete deletePublic" data-id="${public.id}">Удалить</a>
         </div>
     </td>
 </tr>

@@ -13,16 +13,14 @@
 <div class="container">
     <div class="row">
             <div class="col-md-12">
-                <div class="head">
-                    <span class="tittle">Управление сайтом Veusdas</span>
-                    <ul class="head-list">
-                        <li><a class="menu active" href="#" data-id="publicList">Список пабликов</a></li>
-                        <li><a class="menu" href="#" data-id="ads">Объявления</a></li>
-                        <#--<li><a class="menu" href="#" data-id="youtube">Youtube каналы</a></li>-->
-                        <li><a class="menu" href="#" data-id="questions">Вопросы</a></li>
-                        <li><a href="/">Главная страница</a></li>
-                    </ul>
-                </div>
+                <span class="tittle">Управление сайтом Veusdas</span>
+                <ul class="nav nav-tabs">
+                    <li><a class="menu active" href="#" data-id="publicList">Список пабликов</a></li>
+                    <li><a class="menu" href="#" data-id="ads">Объявления</a></li>
+                <#--<li><a class="menu" href="#" data-id="youtube">Youtube каналы</a></li>-->
+                    <li><a class="menu" href="#" data-id="questions">Вопросы</a></li>
+                    <li><a href="/">Главная страница</a></li>
+                </ul>
             </div>
             <div class="col-md-12">
                 <div id="publicList" class="publicList">
@@ -60,8 +58,8 @@
                                                           <#--<td>${app.admin_link}</td>-->
                                                           <#--<td>-->
                                                             <#--<div class="buttons">-->
-                                                               <#--<span class="accept acceptSpisok" data-id="${app.id}">Принять</span>-->
-                                                               <#--<span class="delete deleteSpisok" data-id="${app.id}">Отклонить</span>-->
+                                                               <#--<a href="#" class="accept acceptSpisok" data-id="${app.id}">Принять</a>-->
+                                                               <#--<a href="#"  class="delete deleteSpisok" data-id="${app.id}">Отклонить</a>-->
                                                             <#--</div>-->
                                                           <#--</td>-->
                                                       <#--</tr>-->
@@ -116,8 +114,8 @@
                                                           <td><input type="text" id="admin_linkSpisok${public.id}"  value="${public.admin_link}" maxlength="100"></td>
                                                           <td>
                                                               <div class="buttons">
-                                                                  <span class="accept acceptEditing" data-id="${public.id}">Сохранить</span>
-                                                                  <span class="delete deletePublic" data-id="${public.id}">Удалить</span>
+                                                                  <a href="#"  class="accept acceptEditing" data-id="${public.id}">Сохранить</a>
+                                                                  <a href="#"  class="delete deletePublic" data-id="${public.id}">Удалить</a>
                                                               </div>
                                                           </td>
                                                       </tr>
