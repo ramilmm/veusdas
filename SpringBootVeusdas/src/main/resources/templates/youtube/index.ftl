@@ -323,7 +323,7 @@
 				</div>
 			</article>
             
-            <article id="ten" class="post invert style2">
+            <article id="ten" class="post invert style2 alt">
 				<div class="image">
 					<img src="https://pp.vk.me/c837623/v837623892/4f7f/WvHhAcNulqM.jpg" alt="" data-position="40% center" />
 				</div>
@@ -373,7 +373,7 @@
 				</div>
 			</article>
             
-            <article id="12" class="post invert style3">
+            <article id="12" class="post invert style3 alt">
 				<div class="image">
 					<img src="https://pp.vk.me/c837123/v837123624/608c/x3Vg77m_KMM.jpg" alt="" data-position="40% center" />
 				</div>
@@ -425,7 +425,7 @@
 				</div>
 			</article>
             
-            <article id="14" class="post invert style1">
+            <article id="14" class="post invert style1 alt">
 				<div class="image">
 					<img src="https://pp.vk.me/c627323/v627323583/41dd8/ZtuBs2TkUMk.jpg" alt="" data-position="40% center" />
 				</div>
@@ -480,7 +480,7 @@
 				</div>
 			</article>
             
-            <article id="15" class="post invert style2">
+            <article id="15" class="post invert style2 alt">
 				<div class="image">
 					<img src="https://pp.vk.me/c618720/v618720594/15b5/tckjANbdohQ.jpg" alt="" data-position="40% center" />
 				</div>
