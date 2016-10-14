@@ -114,7 +114,7 @@
 						</div>
 						<div class="profile-box person">
 							<div class="image round">
-								<a href="https://vk.com/id328142043" target="_blank"><img src="images/main/crew-dude.jpg" alt="Person 2" /></a>
+								<a href="https://vk.com/id385022409" target="_blank"><img src="images/main/crew-dude.jpg" alt="Person 2" /></a>
 							</div>
 							<h3>АРТУР КНЯЗЕВ</h3>
 							<p>Дизайнер.</p>
