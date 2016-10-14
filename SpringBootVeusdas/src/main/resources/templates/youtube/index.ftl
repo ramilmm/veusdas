@@ -487,7 +487,7 @@
 				<div class="content">
 					<div class="inner">
 						<header>
-							<h2><a href="https://www.youtube.com/channel/UCI2j5YYVLhW_zqDB9FJx59Q" target="_blank">Фарух Раджабов</a></h2>
+							<h2><a href="https://www.youtube.com/channel/UCI2j5YYVLhW_zqDB9FJx59Q" target="_blank">Фaрух Раджабов</a></h2>
 						</header>
 						<ul class="price">
 						    <li>YouTube - <strong> 30.000 руб.</strong></li>
