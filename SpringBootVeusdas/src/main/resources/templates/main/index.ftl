@@ -121,9 +121,9 @@
 						</div>
 						<div class="profile-box person">
 							<div class="image round">
-								<a href="https://vk.com/yanegrubiyan" target="_blank"><img src="images/main/crew-mary-lou.jpg" alt="Person 3" /></a>
+								<a href="https://vk.com/kalemb" target="_blank"><img src="images/main/crew-mary-lou.jpg" alt="Person 3" /></a>
 							</div>
-							<h3>АРИСТАРХ ЦЕРКОВНЫЙ</h3>
+							<h3>Антон Веб</h3>
 							<p>Веб-разработчик.</p>
 						</div>
 						<div class="profile-box person">
