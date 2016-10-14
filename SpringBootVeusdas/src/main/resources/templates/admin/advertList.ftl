@@ -23,8 +23,8 @@
     <td><input type="text" id="commentAdvert${ad.id}" value="${ad.comment}"  maxlength="200"></td>
     <td>
         <div class="buttons">
-            <span class="accept acceptEditingAdv" data-id="${ad.id}">Сохранить</span>
-            <span class="delete deleteAdv" data-id="${ad.id}">Удалить</span>
+            <a href="#"  class="accept acceptEditingAdv" data-id="${ad.id}">Сохранить</a>
+            <a href="#"  class="delete deleteAdv" data-id="${ad.id}">Удалить</a>
         </div>
     </td>
 </tr>
