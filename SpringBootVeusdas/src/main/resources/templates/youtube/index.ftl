@@ -480,7 +480,7 @@
 				</div>
 			</article>
             
-            <article id="15" class="post invert style2 alt">
+            <article id="16" class="post invert style2 alt">
 				<div class="image">
 					<img src="https://pp.vk.me/c618720/v618720594/15b5/tckjANbdohQ.jpg" alt="" data-position="40% center" />
 				</div>
@@ -499,11 +499,37 @@
 						</ul>
 					</div>
 					<div class="postnav">
-						<a href="#11" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
-						<a href="#13" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+						<a href="#15" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+						<a href="#17" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
 					</div>
 				</div>
 			</article>
+
+        <article id="17" class="post invert style2 alt">
+            <div class="image">
+                <img src="https://pp.vk.me/c837331/v837331439/380f/wal3Gm77gV4.jpg" alt="" data-position="40% center" />
+            </div>
+            <div class="content">
+                <div class="inner">
+                    <header>
+                        <h2><a href="http://www.youtube.com/RomaAcorn" target="_blank">Рома Жёлудь</a></h2>
+                    </header>
+                    <ul class="price">
+                        <li>YouTube 10 секунд интеграции - <strong> 30.000 руб.</strong></li>
+                        <li>Отдельный ролик на YouTube - <strong> 150.000 руб.</strong></li>
+                        <li>Пост в Instagram - <strong> от 25.000 руб.</strong></li>
+                        <li>Пост во ВКонтакте -<strong> 15.000 руб.</strong></li>
+                    </ul>
+                    <ul class="actions">
+                        <li><a href="https://vk.com/m.nash" class="button alt" target="_blank">Заказать</a></li>
+                    </ul>
+                </div>
+                <div class="postnav">
+                    <a href="#11" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+                    <a href="#13" class="scrolly next disabled"><span class="icon fa-chevron-down"></span></a>
+                </div>
+            </div>
+        </article>
             
             
             
