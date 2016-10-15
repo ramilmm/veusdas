@@ -128,15 +128,15 @@
             <div class="8u 12u$(small)">
                 <form method="POST" action="/publiclist/add" th:action="@{/publiclist/add}" th:object="@{PublicForm}">
                     <div class="row uniform 50%">
-                        <div class="6u 12u$(xsmall)">
+                        <div class="4u 12u$(xsmall)">
                             <input type="text" name="name" th:field="*{name}" id="name" placeholder="Название паблика" />
                             <#--<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>-->
                         </div>
-                        <div class="3u 12u$(xsmall)">
-                            <input type="text" name="link" th:field="*{link}" id="link" placeholder="Ссылка на ваш  профиль ВКонтакте" />
+                        <div class="4u 12u$(xsmall)">
+                            <input type="text" name="link" th:field="*{link}" id="link" placeholder="Рекламный контакт" />
                             <#--<div th:if="${#fields.hasErrors('link')}" th:errors="*{link}">Link Error</div>-->
                         </div>
-                        <div class="3u$ 12u$(xsmall)">
+                        <div class="4u$ 12u$(xsmall)">
                             <input type="text" name="pub" th:field="*{pub}" id="pub" placeholder="Ссылка на паблик" />
                             <#--<div th:if="${#fields.hasErrors('pub')}" th:errors="*{pub}">Public link Error</div>-->
                         </div>

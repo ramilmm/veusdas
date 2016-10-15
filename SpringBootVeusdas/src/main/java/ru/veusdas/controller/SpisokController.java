@@ -12,6 +12,7 @@ import ru.veusdas.Service.ServiceImp.SpisokServiceImpl;
 import ru.veusdas.form.PublicForm;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 
 @Controller
 @RequestMapping(value = "/publiclist")
@@ -24,13 +25,27 @@ public class SpisokController {
 
     @GetMapping("/20")
     public String renderPublic20(Model model){
-        model.addAttribute("publicList",publicService.getSpisok20());
+        ArrayList<Spisok> spisok = (ArrayList<Spisok>) publicService.getSpisok20();
+        for (Spisok s : spisok){
+            if (s.getName().contains("Kalemba")){
+                spisok.set(0,s);
+                break;
+            }
+        }
+        model.addAttribute("publicList",spisok);
         return "ListOfPublic/index";
     }
 
     @RequestMapping(value = "/50",method = RequestMethod.GET)
     public String renderPublic50(Model model){
-        model.addAttribute("publicList",publicService.getSpisok50());
+        ArrayList<Spisok> spisok = (ArrayList<Spisok>) publicService.getSpisok20();
+        for (Spisok s : spisok){
+            if (s.getName().contains("Mor")){
+                spisok.set(0,s);
+                break;
+            }
+        }
+        model.addAttribute("publicList",spisok);
         return "ListOfPublic/index";
     }
 

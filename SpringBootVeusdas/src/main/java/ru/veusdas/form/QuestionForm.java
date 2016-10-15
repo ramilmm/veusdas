@@ -22,7 +22,13 @@ public class QuestionForm {
     }
 
     public void setName(String name) {
-        this.name = name;
+        String buf = name;
+        if (buf.contains("<") && buf.contains(">")){
+            buf = buf.replace("<", "&lt");
+            buf = buf.replace(">", "&gt");
+        }
+
+        this.name = buf;
     }
 
     public String getEmail() {
@@ -38,7 +44,13 @@ public class QuestionForm {
     }
 
     public void setMessage(String message) {
-        this.message = message;
+        String buf = message;
+        if (buf.contains("<") && buf.contains(">")){
+            buf = buf.replace("<", "&lt");
+            buf = buf.replace(">", "&gt");
+        }
+
+        this.message = buf;
     }
 
     @Override

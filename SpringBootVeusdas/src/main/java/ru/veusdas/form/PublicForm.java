@@ -38,7 +38,13 @@ public class PublicForm {
     }
 
     public void setName(String name) {
-        this.name = name;
+        String buf = name;
+        if (buf.contains("<") && buf.contains(">")){
+            buf = buf.replace("<", "&lt");
+            buf = buf.replace(">", "&gt");
+        }
+
+        this.name = buf;
     }
 
     public String getLink() {
@@ -46,7 +52,13 @@ public class PublicForm {
     }
 
     public void setLink(String link) {
-        this.link = link;
+        String buf = link;
+        if (buf.contains("<") && buf.contains(">")){
+            buf = buf.replace("<", "&lt");
+            buf = buf.replace(">", "&gt");
+        }
+
+        this.link = buf;
     }
 
     public String getAva() {
@@ -54,7 +66,13 @@ public class PublicForm {
     }
 
     public void setAva(String ava) {
-        this.ava = ava;
+        String buf = ava;
+        if (buf.contains("<") && buf.contains(">")){
+            buf = buf.replace("<", "&lt");
+            buf = buf.replace(">", "&gt");
+        }
+
+        this.ava = buf;
     }
 
     public Long getCost() {
@@ -78,7 +96,13 @@ public class PublicForm {
     }
 
     public void setStat(String stat) {
-        this.stat = stat;
+        String buf = stat;
+        if (buf.contains("<") && buf.contains(">")){
+            buf = buf.replace("<", "&lt");
+            buf = buf.replace(">", "&gt");
+        }
+
+        this.stat = buf;
     }
 
 
@@ -87,7 +111,13 @@ public class PublicForm {
     }
 
     public void setPub(String pub) {
-        this.pub = pub;
+        String buf = pub;
+        if (buf.contains("<") && buf.contains(">")){
+            buf = buf.replace("<", "&lt");
+            buf = buf.replace(">", "&gt");
+        }
+
+        this.pub = buf;
     }
 
     public String getSubscribes() {
@@ -95,7 +125,13 @@ public class PublicForm {
     }
 
     public void setSubscribes(String subscribes) {
-        this.subscribes = subscribes;
+        String buf = subscribes;
+        if (buf.contains("<") && buf.contains(">")){
+            buf = buf.replace("<", "&lt");
+            buf = buf.replace(">", "&gt");
+        }
+
+        this.subscribes = buf;
     }
 
     @Override

@@ -27,7 +27,13 @@ public class AdvertForm {
     }
 
     public void setLink(String link) {
-        this.link = link;
+        String buf = link;
+        if (buf.contains("<") && buf.contains(">")){
+            buf = buf.replace("<", "&lt");
+            buf = buf.replace(">", "&gt");
+        }
+
+        this.link = buf;
     }
 
     public String getName() {
@@ -35,7 +41,13 @@ public class AdvertForm {
     }
 
     public void setName(String name) {
-        this.name = name;
+        String buf = name;
+        if (buf.contains("<") && buf.contains(">")){
+            buf = buf.replace("<", "&lt");
+            buf = buf.replace(">", "&gt");
+        }
+
+        this.name = buf;
     }
 
     public String getAva() {
@@ -43,7 +55,14 @@ public class AdvertForm {
     }
 
     public void setAva(String ava) {
-        this.ava = ava;
+
+        String buf = ava;
+        if (buf.contains("<") && buf.contains(">")){
+            buf = buf.replace("<", "&lt");
+            buf = buf.replace(">", "&gt");
+        }
+
+        this.ava = buf;
     }
 
     public String getCost() {
@@ -51,7 +70,13 @@ public class AdvertForm {
     }
 
     public void setCost(String cost) {
-        this.cost = cost;
+        String buf = cost;
+        if (buf.contains("<") && buf.contains(">")){
+            buf = buf.replace("<", "&lt");
+            buf = buf.replace(">", "&gt");
+        }
+
+        this.cost = buf;
     }
 
     public String getCategory() {
@@ -67,7 +92,13 @@ public class AdvertForm {
     }
 
     public void setDopLink(String dopLink) {
-        this.dopLink = dopLink;
+        String buf = dopLink;
+        if (buf.contains("<") && buf.contains(">")){
+            buf = buf.replace("<", "&lt");
+            buf = buf.replace(">", "&gt");
+        }
+
+        this.dopLink = buf;
     }
 
     public String getMessage() {
@@ -75,7 +106,13 @@ public class AdvertForm {
     }
 
     public void setMessage(String message) {
-        this.message = message;
+        String buf = message;
+        if (buf.contains("<") && buf.contains(">")){
+            buf = buf.replace("<", "&lt");
+            buf = buf.replace(">", "&gt");
+        }
+
+        this.message = buf;
     }
 
     @Override
