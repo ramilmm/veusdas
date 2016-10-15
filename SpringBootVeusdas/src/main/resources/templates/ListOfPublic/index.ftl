@@ -123,7 +123,11 @@
 <section id="form">
     <div class="form">
         <h2>Добавь своё сообщество в этот список!</h2>
-        <p>Просто оставь заявку и мы рассмотрим её в ближайшее время!</p>
+        <p>Существует одно и единственное условия попадания в наши список! <br/>
+        Вы дожны разместить на своей стене <a href="https://vk.com/page-110924774_51186843?from=wall365105597_129">ЭТУ СТРАНИЦУ</a>
+        и держать её не ниже второго местa на стене!
+        Если остались вопросы, пишите основателю проекта - <a href="https://vk.com/id365105597">Vladislav Leus</a>
+        </p>
         <div class="row modal-dialog">
             <div class="8u 12u$(small)">
                 <form method="POST" action="/publiclist/add" th:action="@{/publiclist/add}" th:object="@{PublicForm}">
