@@ -38,7 +38,7 @@ public class SpisokController {
 
     @RequestMapping(value = "/50",method = RequestMethod.GET)
     public String renderPublic50(Model model){
-        ArrayList<Spisok> spisok = (ArrayList<Spisok>) publicService.getSpisok20();
+        ArrayList<Spisok> spisok = (ArrayList<Spisok>) publicService.getSpisok50();
         for (Spisok s : spisok){
             if (s.getName().contains("Mor")){
                 spisok.set(0,s);
