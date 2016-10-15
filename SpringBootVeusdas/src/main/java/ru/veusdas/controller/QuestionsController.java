@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import ru.veusdas.MailSender.Sender;
 import ru.veusdas.Model.Questions;
 import ru.veusdas.Service.ServiceImp.QuestionServiceImpl;
 import ru.veusdas.form.QuestionForm;
@@ -19,6 +20,9 @@ public class QuestionsController {
     QuestionServiceImpl questionService;
 
     private Long countID = 5L;
+
+    private final String leusEmail = "Leusvladis@mail.ru";
+
 
     @GetMapping("/youtube")
     public String render(Model model){
@@ -45,6 +49,11 @@ public class QuestionsController {
 
         questionService.addQuestion(question);
         countID++;
+
+        Sender sender = new Sender("veusdas@bk.ru","parolparolparol");
+        sender.send("Новый вопрос",
+                "Новый вопрос:" + "\n" +
+                question.getQuestion() + "\n","veusdas@bk.ru",leusEmail);
 
         return "redirect:/youtube";
 

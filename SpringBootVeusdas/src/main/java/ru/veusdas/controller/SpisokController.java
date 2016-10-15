@@ -7,6 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import ru.veusdas.MailSender.Sender;
 import ru.veusdas.Model.Spisok;
 import ru.veusdas.Service.ServiceImp.SpisokServiceImpl;
 import ru.veusdas.form.PublicForm;
@@ -21,7 +22,9 @@ public class SpisokController {
     @Autowired
     SpisokServiceImpl publicService;
 
-    private Long countID = 5L;
+    private Long countID = 86L;
+
+    private final String leusEmail = "Leusvladis@mail.ru";
 
     @GetMapping("/20")
     public String renderPublic20(Model model){
@@ -83,6 +86,10 @@ public class SpisokController {
 
         publicService.addSpisok(pub);
         countID++;
+
+        Sender sender = new Sender("veusdas@bk.ru","parolparolparol");
+        sender.send("Заявка на добавление паблика!",
+                "Новая заявка на добавление паблика!","veusdas@bk.ru",leusEmail);
 
         return "redirect:/publiclist/20";
     }

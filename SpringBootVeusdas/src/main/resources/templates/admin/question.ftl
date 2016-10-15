@@ -6,7 +6,7 @@
     <td>
         <textarea name="reply" id="reply${question.id}" cols="30" rows="1"></textarea>
     </td>
-    <td><a href="#" class="sendReply" data-id="${question.id}">Ответить</a></td>
+    <td id="rep"><a href="#" class="sendReply" data-id="${question.id}">Ответить</a></td>
 </tr>
 
 </#macro>

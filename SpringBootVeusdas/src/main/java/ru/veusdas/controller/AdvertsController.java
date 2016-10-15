@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import ru.veusdas.MailSender.Sender;
 import ru.veusdas.Model.Adverts;
 import ru.veusdas.Service.ServiceImp.AdvertsServiceImpl;
 import ru.veusdas.form.AdvertForm;
@@ -20,6 +21,8 @@ public class AdvertsController {
     AdvertsServiceImpl advertsService;
 
     private Long countID = 5L;
+
+    private final String leusEmail = "Leusvladis@mail.ru";
 
     @GetMapping("/ads")
     public String render(Model model){
@@ -56,6 +59,10 @@ public class AdvertsController {
 
         advertsService.addAdvert(ad);
         countID++;
+
+        Sender sender = new Sender("veusdas@bk.ru","parolparolparol");
+        sender.send("Заявка на добавление объявления!",
+                "Новая заявка на добавление объявления!","veusdas@bk.ru",leusEmail);
 
         return "redirect:/ads";
 

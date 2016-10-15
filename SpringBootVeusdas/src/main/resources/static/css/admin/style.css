@@ -88,6 +88,13 @@ table.site_list_partner th:first-child{
 .group  .site_list tr:hover a{
     color:#fff;
 }
+.group  .site_list tr:hover td#rep a{
+    color: #060719;
+}
+.group  .site_list tr:hover div.buttons a{
+    color:#060719;
+}
+
 table.centered td:not(:first-child),
 table.centered th:not(:first-child){
     text-align:center;
