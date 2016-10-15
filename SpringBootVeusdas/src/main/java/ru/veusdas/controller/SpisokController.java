@@ -28,6 +28,7 @@ public class SpisokController {
         ArrayList<Spisok> spisok = (ArrayList<Spisok>) publicService.getSpisok20();
         for (Spisok s : spisok){
             if (s.getName().contains("Kalemba")){
+                spisok.remove(spisok.indexOf(s));
                 spisok.set(0,s);
                 break;
             }
@@ -41,6 +42,7 @@ public class SpisokController {
         ArrayList<Spisok> spisok = (ArrayList<Spisok>) publicService.getSpisok50();
         for (Spisok s : spisok){
             if (s.getName().contains("Mor")){
+                spisok.remove(spisok.indexOf(s));
                 spisok.set(0,s);
                 break;
             }
