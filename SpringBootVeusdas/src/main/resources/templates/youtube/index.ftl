@@ -505,7 +505,7 @@
 				</div>
 			</article>
 
-        <article id="17" class="post invert style2 alt">
+        <article id="17" class="post style3">
             <div class="image">
                 <img src="https://pp.vk.me/c837331/v837331439/380f/wal3Gm77gV4.jpg" alt="" data-position="40% center" />
             </div>
