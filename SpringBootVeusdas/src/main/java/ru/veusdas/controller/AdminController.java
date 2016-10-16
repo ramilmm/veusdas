@@ -68,7 +68,8 @@ public class AdminController {
 
     @PostMapping("/admin/questionReply")
     public String reply(String question,String reply){
-        Questions q = questionService.getById(Long.valueOf(question).longValue());
+        Integer id = Integer.parseInt(question);
+        Questions q = questionService.getById(id.longValue());
         Sender sender = new Sender("veusdas@bk.ru","parolparolparol");
         sender.send("Мы ответили на ваш вопрос",
                 "Доброе время суток!" + "\n" +
@@ -83,7 +84,8 @@ public class AdminController {
 
     @PostMapping("/admin/setActive")
     public String acceptApplication(String id){
-        Spisok pub = spisokService.getById(Long.valueOf(id).longValue());
+        Integer app = Integer.parseInt(id);
+        Spisok pub = spisokService.getById(app.longValue());
         pub.setActive(true);
         spisokService.update(pub);
 
@@ -92,7 +94,8 @@ public class AdminController {
 
     @PostMapping("/admin/cancel")
     public String cancelApplication(String id){
-        spisokService.deleteSpisokById(Long.valueOf(id).longValue());
+        Integer app = Integer.parseInt(id);
+        spisokService.deleteSpisokById(app.longValue());
 
         return "admin/ajaxSpisok";
     }
@@ -108,14 +111,16 @@ public class AdminController {
             String cost,
             String admin){
 
-        Spisok pub = spisokService.getById(Long.valueOf(id).longValue());
+        Integer pid = Integer.parseInt(id);
+        Spisok pub = spisokService.getById(pid.longValue());
 
         pub.setName(name);
         pub.setAdmin_link(avatar);
         pub.setStat_link(stat);
         pub.setSubscribes(subscribes);
         pub.setPublic_category(Integer.parseInt(oxvat));
-        pub.setCost(Long.valueOf(cost).longValue());
+        Integer pcost = Integer.parseInt(cost);
+        pub.setCost(pcost.longValue());
         pub.setAdmin_link(admin);
 
         spisokService.update(pub);
@@ -125,8 +130,8 @@ public class AdminController {
 
     @PostMapping("/admin/deletePublic")
     public String deletePublic(String id){
-
-        spisokService.deleteSpisokById(Long.valueOf(id).longValue());
+        Integer pid = Integer.parseInt(id);
+        spisokService.deleteSpisokById(pid.longValue());
 
         return "admin/ajaxPublic";
     }
@@ -134,8 +139,8 @@ public class AdminController {
 
     @PostMapping("/admin/acceptAdvert")
     public String acceptAdvert(String id){
-
-        Adverts advert = advertsService.getAdvertById(Long.valueOf(id).longValue());
+        Integer adid = Integer.parseInt(id);
+        Adverts advert = advertsService.getAdvertById(adid.longValue());
         advert.setActive(true);
         advertsService.updateAdvert(advert);
 
@@ -144,8 +149,8 @@ public class AdminController {
 
     @PostMapping("/admin/cancelAdvert")
     public String cancelAdvert(String id){
-
-        advertsService.deleteAdvertById(Long.valueOf(id).longValue());
+        Integer adid = Integer.parseInt(id);
+        advertsService.deleteAdvertById(adid.longValue());
 
         return "admin/ajaxAdvert";
     }
@@ -160,13 +165,14 @@ public class AdminController {
             String type,
             String comment
     ){
-
-        Adverts advert = advertsService.getAdvertById(Long.valueOf(id).longValue());
+        Integer adid = Integer.parseInt(id);
+        Adverts advert = advertsService.getAdvertById(adid.longValue());
 
         advert.setAdvert_name(name);
         advert.setAvatar_link(avatar);
         advert.setProfile_link(profile);
-        advert.setCost(Long.valueOf(cost).longValue());
+        Integer acost = Integer.parseInt(cost);
+        advert.setCost(acost.longValue());
         advert.setAdvert_type(type);
         advert.setComment(comment);
 
@@ -177,8 +183,8 @@ public class AdminController {
 
     @PostMapping("/admin/deleteAdvert")
     public String deleteAdvert(String id){
-
-        advertsService.deleteAdvertById(Long.valueOf(id).longValue());
+        Integer adid = Integer.parseInt(id);
+        advertsService.deleteAdvertById(adid.longValue());
 
         return "admin/ajaxAdvertList";
     }
