@@ -57,7 +57,12 @@
                             <tr id="/sites/3/" class="click" style="cursor: pointer">
                                 <td>
                                     <div class="image">
-                                        <a href="${public.link}" target="_blank"><img id="avatar" src="${public.avatar_link}" width="30" height="30" alt="${public.name}" /></a>
+                                        <#if public.avatar_link??>
+                                            <a href="${public.link}" target="_blank"><img id="avatar" src="${public.avatar_link}" width="30" height="30" alt="${public.name}" /></a>
+                                        <#else >
+                                            <a href="${public.link}" target="_blank"><img id="avatar" src="http://joomline.ru/images/jlvkgroup-ico2.png" width="30" height="30" alt="${public.name}" /></a>
+                                        </#if>
+
                                     </div>
                                     <a href="${public.link}">${public.name}</a>
                                 </td>

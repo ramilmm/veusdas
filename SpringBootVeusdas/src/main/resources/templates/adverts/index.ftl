@@ -47,7 +47,11 @@
 								<div class="4u 6u(small) 12u$(xsmall) wow fadeInLeft">
 									<div class="image rounded">
 										<a href="${ad.profile_link}" target="_blank">
-											<img src="${ad.avatar_link}" alt="${ad.advert_name}" width="160px"/>
+											<#if ad.avatar_link??>
+                                                <img src="${ad.avatar_link}" alt="${ad.advert_name}" width="160px"/>
+												<#else >
+                                                    <img src="http://weezywap.xtgem.com/images/ad_icon.png" alt="${ad.advert_name}" width="160px"/>
+											</#if>
 										</a>
 									</div>
 									<div class="content">
