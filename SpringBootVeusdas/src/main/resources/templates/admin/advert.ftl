@@ -1,6 +1,13 @@
 <#macro advert adv>
 <tr class="row${adv.id}">
-    <td>${adv.avatar_link}</td>
+    <td>
+        <#if adv.avatar_link??>
+            ${adv.avatar_link}
+        <#else >
+           null
+        </#if>
+
+    </td>
     <td>${adv.advert_name}</td>
     <td><a href="${adv.profile_link}">Профиль вк</a></td>
     <td>${adv.cost}</td>

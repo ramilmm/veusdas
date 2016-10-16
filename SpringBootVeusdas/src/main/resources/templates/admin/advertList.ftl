@@ -1,6 +1,12 @@
 <#macro advertList ad>
 <tr>
-    <td><input type="text" id="avatar${ad.id}" value="${ad.avatar_link}"></td>
+    <td>
+        <#if ad.avatar_link??>
+            <input type="text" id="avatar${ad.id}" value="${ad.avatar_link}">
+        <#else >
+            <input type="text" id="avatar${ad.id}" value="null">
+        </#if>
+    </td>
     <td><input type="text" id="nameAdvert${ad.id}" value="${ad.advert_name}" maxlength="60"></td>
     <td><input type="text" id="profileAdvert${ad.id}" value="${ad.profile_link}" maxlength="220"></td>
     <td><input type="text" id="costAdvert${ad.id}" value="${ad.cost}" maxlength="12"></td>
