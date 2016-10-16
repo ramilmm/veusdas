@@ -119,7 +119,7 @@ public class AdminController {
         Spisok pub = spisokService.getById(pid.longValue());
 
         pub.setName(name);
-        pub.setAdmin_link(avatar);
+        pub.setAvatar_link(avatar);
         pub.setStat_link(stat);
         pub.setSubscribes(subscribes);
         pub.setPublic_category(Integer.parseInt(oxvat));
