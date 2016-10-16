@@ -17,7 +17,10 @@
         </select>
         <script>
             $(document).ready(function () {
-                switch (${ad.advert_type}){
+                if (${ad.advert_type} || ${ad.advert_type}.length == 0){
+                    $('.type${ad.id}').val(7);
+                }
+                switch ("${ad.advert_type}"){
                     case "Продажа":
                         $('.type${ad.id}').val(1);
                         break;
