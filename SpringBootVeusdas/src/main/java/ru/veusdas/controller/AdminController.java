@@ -13,6 +13,8 @@ import ru.veusdas.Service.ServiceImp.AdvertsServiceImpl;
 import ru.veusdas.Service.ServiceImp.QuestionServiceImpl;
 import ru.veusdas.Service.ServiceImp.SpisokServiceImpl;
 
+import java.util.List;
+
 @Controller
 public class AdminController {
 
@@ -27,11 +29,36 @@ public class AdminController {
 
     @GetMapping("/admin")
     public String render(Model model){
-        model.addAttribute("publicApplications",spisokService.getNonActiveSpisok());
-        model.addAttribute("spisok",spisokService.getActiveSpisok());
+        List<Spisok> app = spisokService.getNonActiveSpisok();
+        for (Spisok s : app){
+            if(s.getAvatar_link().equals("") || s.getAvatar_link() == null){
+                s.setAvatar_link("http://joomline.ru/images/jlvkgroup-ico2.png");
+            }
+        }
+        model.addAttribute("publicApplications",app);
+        List<Spisok> activeSpisok = spisokService.getActiveSpisok();
+        for (Spisok s : activeSpisok){
+            if(s.getAvatar_link().equals("") || s.getAvatar_link() == null){
+                s.setAvatar_link("http://joomline.ru/images/jlvkgroup-ico2.png");
+            }
+        }
+        model.addAttribute("spisok",activeSpisok);
 
-        model.addAttribute("advertsApplications",advertsService.getNonActiveAdverts());
-        model.addAttribute("adverts",advertsService.getActiveAdverts());
+        model.addAttribute("publicApplications",app);
+        List<Adverts> advApp = advertsService.getNonActiveAdverts();
+        for (Adverts s : advApp){
+            if(s.getAvatar_link().equals("") || s.getAvatar_link() == null){
+                s.setAvatar_link("http://weezywap.xtgem.com/images/ad_icon.png");
+            }
+        }
+        model.addAttribute("advertsApplications",advApp);
+        List<Adverts> activeAdverts = advertsService.getActiveAdverts();
+        for (Adverts s : activeAdverts){
+            if(s.getAvatar_link().equals("") || s.getAvatar_link() == null){
+                s.setAvatar_link("http://weezywap.xtgem.com/images/ad_icon.png");
+            }
+        }
+        model.addAttribute("adverts",activeAdverts);
 
         model.addAttribute("questions",questionService.getActiveQuestions());
 
