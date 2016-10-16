@@ -22,7 +22,7 @@ public class SpisokController {
     @Autowired
     SpisokServiceImpl publicService;
 
-    private Long countID = 94L;
+    private Long countID = 95L;
 
     private final String leusEmail = "Leusvladis@mail.ru";
 
