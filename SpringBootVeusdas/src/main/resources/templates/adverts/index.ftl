@@ -50,7 +50,7 @@
 											<#if ad.avatar_link??>
                                                 <img src="${ad.avatar_link}" alt="${ad.advert_name}" width="160px" height="140px"/>
 												<#else >
-                                                    <img src="http://weezywap.xtgem.com/images/ad_icon.png" alt="${ad.advert_name}" width="160px"/>
+                                                    <img src="http://weezywap.xtgem.com/images/ad_icon.png" alt="${ad.advert_name}" width="160px" height="140px"/>
 											</#if>
 										</a>
 									</div>
