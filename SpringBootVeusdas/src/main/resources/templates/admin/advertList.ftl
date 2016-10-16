@@ -17,7 +17,8 @@
         </select>
         <script>
             $(document).ready(function () {
-                if (${ad.advert_type} || ${ad.advert_type}.length == 0){
+                var type = '${ad.advert_type}';
+                if (type){
                     $('.type${ad.id}').val(7);
                 }
                 switch ("${ad.advert_type}"){
