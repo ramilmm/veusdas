@@ -46,18 +46,18 @@ public class AdminController {
 
         model.addAttribute("publicApplications",app);
         List<Adverts> advApp = advertsService.getNonActiveAdverts();
-        for (Adverts s : advApp){
-            if(s.getAvatar_link().equals("") || s.getAvatar_link() == null){
-                s.setAvatar_link("http://weezywap.xtgem.com/images/ad_icon.png");
-            }
-        }
+//        for (Adverts s : advApp){
+//            if(s.getAvatar_link().equals("") || s.getAvatar_link() == null){
+//                s.setAvatar_link("http://weezywap.xtgem.com/images/ad_icon.png");
+//            }
+//        }
         model.addAttribute("advertsApplications",advApp);
         List<Adverts> activeAdverts = advertsService.getActiveAdverts();
-        for (Adverts s : activeAdverts){
-            if(s.getAvatar_link().equals("") || s.getAvatar_link() == null){
-                s.setAvatar_link("http://weezywap.xtgem.com/images/ad_icon.png");
-            }
-        }
+//        for (Adverts s : activeAdverts){
+//            if(s.getAvatar_link().equals("") || s.getAvatar_link() == null){
+//                s.setAvatar_link("http://weezywap.xtgem.com/images/ad_icon.png");
+//            }
+//        }
         model.addAttribute("adverts",activeAdverts);
 
         model.addAttribute("questions",questionService.getActiveQuestions());
