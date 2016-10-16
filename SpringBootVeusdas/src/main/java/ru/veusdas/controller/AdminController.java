@@ -68,7 +68,8 @@ public class AdminController {
 
     @PostMapping("/admin/questionReply")
     public String reply(String question,String reply){
-        Integer id = Integer.parseInt(question);
+        String buf = question.replaceAll("\\D", "");
+        Integer id = Integer.parseInt(buf);
         Questions q = questionService.getById(id.longValue());
         Sender sender = new Sender("veusdas@bk.ru","parolparolparol");
         sender.send("Мы ответили на ваш вопрос",
@@ -84,7 +85,8 @@ public class AdminController {
 
     @PostMapping("/admin/setActive")
     public String acceptApplication(String id){
-        Integer app = Integer.parseInt(id);
+        String buf = id.replaceAll("\\D", "");
+        Integer app = Integer.parseInt(buf);
         Spisok pub = spisokService.getById(app.longValue());
         pub.setActive(true);
         spisokService.update(pub);
@@ -94,7 +96,8 @@ public class AdminController {
 
     @PostMapping("/admin/cancel")
     public String cancelApplication(String id){
-        Integer app = Integer.parseInt(id);
+        String buf = id.replaceAll("\\D", "");
+        Integer app = Integer.parseInt(buf);
         spisokService.deleteSpisokById(app.longValue());
 
         return "admin/ajaxSpisok";
@@ -111,7 +114,8 @@ public class AdminController {
             String cost,
             String admin){
 
-        Integer pid = Integer.parseInt(id);
+        String buf = id.replaceAll("\\D", "");
+        Integer pid = Integer.parseInt(buf);
         Spisok pub = spisokService.getById(pid.longValue());
 
         pub.setName(name);
@@ -119,7 +123,9 @@ public class AdminController {
         pub.setStat_link(stat);
         pub.setSubscribes(subscribes);
         pub.setPublic_category(Integer.parseInt(oxvat));
-        Integer pcost = Integer.parseInt(cost);
+
+        String buf1 = cost.replaceAll("\\D", "");
+        Integer pcost = Integer.parseInt(buf1);
         pub.setCost(pcost.longValue());
         pub.setAdmin_link(admin);
 
@@ -130,7 +136,8 @@ public class AdminController {
 
     @PostMapping("/admin/deletePublic")
     public String deletePublic(String id){
-        Integer pid = Integer.parseInt(id);
+        String buf = id.replaceAll("\\D", "");
+        Integer pid = Integer.parseInt(buf);
         spisokService.deleteSpisokById(pid.longValue());
 
         return "admin/ajaxPublic";
@@ -139,7 +146,8 @@ public class AdminController {
 
     @PostMapping("/admin/acceptAdvert")
     public String acceptAdvert(String id){
-        Integer adid = Integer.parseInt(id);
+        String buf = id.replaceAll("\\D", "");
+        Integer adid = Integer.parseInt(buf);
         Adverts advert = advertsService.getAdvertById(adid.longValue());
         advert.setActive(true);
         advertsService.updateAdvert(advert);
@@ -149,7 +157,8 @@ public class AdminController {
 
     @PostMapping("/admin/cancelAdvert")
     public String cancelAdvert(String id){
-        Integer adid = Integer.parseInt(id);
+        String buf = id.replaceAll("\\D", "");
+        Integer adid = Integer.parseInt(buf);
         advertsService.deleteAdvertById(adid.longValue());
 
         return "admin/ajaxAdvert";
@@ -165,14 +174,18 @@ public class AdminController {
             String type,
             String comment
     ){
-        Integer adid = Integer.parseInt(id);
+        String buf = id.replaceAll("\\D", "");
+        Integer adid = Integer.parseInt(buf);
         Adverts advert = advertsService.getAdvertById(adid.longValue());
 
         advert.setAdvert_name(name);
         advert.setAvatar_link(avatar);
         advert.setProfile_link(profile);
-        Integer acost = Integer.parseInt(cost);
+
+        String buf1 = comment.replaceAll("\\D", "");
+        Integer acost = Integer.parseInt(buf1);
         advert.setCost(acost.longValue());
+
         advert.setAdvert_type(type);
         advert.setComment(comment);
 
@@ -183,7 +196,8 @@ public class AdminController {
 
     @PostMapping("/admin/deleteAdvert")
     public String deleteAdvert(String id){
-        Integer adid = Integer.parseInt(id);
+        String buf = id.replaceAll("\\D", "");
+        Integer adid = Integer.parseInt(buf);
         advertsService.deleteAdvertById(adid.longValue());
 
         return "admin/ajaxAdvertList";
