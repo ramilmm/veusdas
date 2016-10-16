@@ -1,5 +1,6 @@
 <#macro advertList ad>
 <tr>
+    <td><input type="text" id="avatar${ad.id}" value="${ad.avatar_link}"></td>
     <td><input type="text" id="nameAdvert${ad.id}" value="${ad.advert_name}" maxlength="60"></td>
     <td><input type="text" id="profileAdvert${ad.id}" value="${ad.profile_link}" maxlength="220"></td>
     <td><input type="text" id="costAdvert${ad.id}" value="${ad.cost}" maxlength="12"></td>
@@ -16,7 +17,7 @@
         </select>
         <script>
             $(document).ready(function () {
-                $('.type${ad.id}').val('${ad.advert_type}');
+                $('.type${ad.id}').val(${ad.advert_type});
             });
         </script>
     </td>

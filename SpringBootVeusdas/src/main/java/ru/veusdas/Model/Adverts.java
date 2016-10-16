@@ -12,7 +12,6 @@ public class Adverts {
     private Long id;
 
 
-
     @Column(name = "advert_name", length = 100,nullable = false)
     private String advert_name;
 

@@ -1,5 +1,6 @@
 <#macro public app>
     <tr class="row${app.id}">
+        <td>${app.avatar_link}</td>
         <td>${app.name}</td>
         <td>${app.stat_link}</td>
         <td>${app.subscribes}</td>

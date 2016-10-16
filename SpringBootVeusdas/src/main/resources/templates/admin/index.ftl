@@ -33,6 +33,7 @@
                                       <div class="group">
                                           <table class="site_list site_list_big">
                                               <tr>
+                                                <th>Фото</th>
                                                 <th>Название</th>
                                                 <th width="150">Статистика</th>
                                                 <th width="150">Подписчиков</th>
@@ -79,6 +80,7 @@
                                       <div class="group">
                                           <table class="site_list site_list_big">
                                               <tr>
+                                                <th>Фото</th>
                                                 <th>Название</th>
                                                 <th width="150">Статистика</th>
                                                 <th width="150">Подписчиков</th>
@@ -96,6 +98,7 @@
 
 
                                                       <tr class="row${public.id}">
+                                                          <td><input type="text" id="avatarSpisok${public.id}" value="${public.avatar_link}"></td>
                                                           <td><input type="text" id="nameSpisok${public.id}"  value="${public.name}" maxlength="60"></td>
                                                           <td><input type="text" id="stat_linkSpisok${public.id}"  value="${public.stat_link}" maxlength="70"></td>
                                                           <td><input type="text" id="subscribesSpisok${public.id}"  value="${public.subscribes}" maxlength="20"></td>
@@ -140,6 +143,7 @@
                                       <div class="group">
                                           <table class="site_list site_list_big">
                                               <tr>
+                                                <th>Фото</th>
                                                 <th>Название</th>
                                                 <th width="150">Профиль вк</th>
                                                 <th width="180">Цена (руб.)</th>
@@ -186,6 +190,7 @@
                                       <div class="group">
                                           <table class="site_list site_list_big">
                                               <tr>
+                                                <th>Фото</th>
                                                 <th>Название</th>
                                                 <th width="150">Профиль вк</th>
                                                 <th width="180">Цена (руб.)</th>
@@ -367,12 +372,14 @@
             event.preventDefault();
             var $this = $(this);
             var publicID = $this.data('id');
+            var h_avatar = '#avatarSpisok'+publicID;
             var h_name = '#nameSpisok'+publicID;
             var h_stat = '#stat_linkSpisok'+publicID;
             var h_sub = '#subscribesSpisok'+publicID;
             var h_okhvat = '#okhvatSpisok'+publicID;
             var h_cost = '#costSpisok'+publicID;
             var h_admin = '#admin_linkSpisok'+publicID;
+            var avatar = $(h_avatar).val();
             var name = $(h_name).val();
             var stat = $(h_stat).val();
             var subscribes = $(h_sub).val();
@@ -386,6 +393,7 @@
                 data: {
                     id:publicID,
                     name:name,
+                    avatar:avatar,
                     stat:stat,
                     subscribes:subscribes,
                     oxvat:okhvat,
@@ -474,11 +482,13 @@
             event.preventDefault();
             var $this = $(this);
             var advertID = $this.data('id');
+            var h_avatar = 'avatar'+advertID;
             var h_name = '#nameAdvert'+advertID;
             var h_profile = '#profileAdvert'+advertID;
             var h_cost = '#costAdvert'+advertID;
             var h_type = '#typeAdvert'+advertID;
             var h_comment = '#commentAdvert'+advertID;
+            var avatar = $(h_avatar).val();
             var name = $(h_name).val();
             var profile = $(h_profile).val();
             var cost = $(h_cost).val();
@@ -490,6 +500,7 @@
                 url: '/admin/editAdvert',
                 data: {
                     id:advertID,
+                    avatar:avatar,
                     name:name,
                     profile:profile,
                     cost:cost,

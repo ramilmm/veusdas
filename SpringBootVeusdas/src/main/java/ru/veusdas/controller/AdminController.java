@@ -82,6 +82,7 @@ public class AdminController {
     public String editPublic(
             String id,
             String name,
+            String avatar,
             String stat,
             String subscribes,
             String oxvat,
@@ -95,6 +96,7 @@ public class AdminController {
         Spisok pub = spisokService.getById(k);
 
         pub.setName(name);
+        pub.setAdmin_link(avatar);
         pub.setStat_link(stat);
         pub.setSubscribes(subscribes);
         pub.setPublic_category(Integer.parseInt(oxvat));
@@ -142,6 +144,7 @@ public class AdminController {
     @PostMapping("/admin/editAdvert")
     public String editAdvert(
             String id,
+            String avatar,
             String name,
             String profile,
             String cost,
@@ -152,6 +155,7 @@ public class AdminController {
         Adverts advert = advertsService.getAdvertById(Long.parseLong(id));
 
         advert.setAdvert_name(name);
+        advert.setAvatar_link(avatar);
         advert.setProfile_link(profile);
         advert.setCost(Long.parseLong(cost));
         advert.setAdvert_type(type);

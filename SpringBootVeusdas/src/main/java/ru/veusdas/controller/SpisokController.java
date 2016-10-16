@@ -22,7 +22,7 @@ public class SpisokController {
     @Autowired
     SpisokServiceImpl publicService;
 
-    private Long countID = 89L;
+    private Long countID = 94L;
 
     private final String leusEmail = "Leusvladis@mail.ru";
 
@@ -74,11 +74,18 @@ public class SpisokController {
 
         Spisok pub = new Spisok();
 
+
+
         pub.setId(countID);
         pub.setName(pf.getName());
         pub.setAdmin_link(pf.getLink());
         pub.setLink(pf.getPub());
         pub.setAvatar_link(pf.getAva());
+        if(pf.getAva() != null){
+            if (!pf.getAva().contains("http")){
+                pub.setAvatar_link("http://joomline.ru/images/jlvkgroup-ico2.png");
+            }else pub.setAvatar_link(pf.getAva());
+        }else pub.setAvatar_link("http://joomline.ru/images/jlvkgroup-ico2.png");
         pub.setCost(pf.getCost());
         pub.setPublic_category(pf.getCategory());
         pub.setStat_link(pf.getStat());

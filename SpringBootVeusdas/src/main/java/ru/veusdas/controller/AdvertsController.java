@@ -20,7 +20,7 @@ public class AdvertsController {
     @Autowired
     AdvertsServiceImpl advertsService;
 
-    private Long countID = 5L;
+    private Long countID = 10L;
 
     private final String leusEmail = "Leusvladis@mail.ru";
 
@@ -50,8 +50,10 @@ public class AdvertsController {
         ad.setProfile_link(af.getLink());
         ad.setCost(new Long(af.getCost()));
         if(af.getAva() != null){
-            ad.setAvatar_link(af.getAva());
-        }else ad.setAvatar_link("http://weezywap.xtgem.com/images/ad_icon.png");
+            if (!af.getAva().contains("http")){
+                ad.setAvatar_link("http://weezywap.xtgem.com/images/ad_icon.png");
+            }else ad.setAvatar_link(af.getAva());
+        }else  ad.setAvatar_link("http://weezywap.xtgem.com/images/ad_icon.png");
         if(af.getDopLink() != null){
             ad.setPublic_link(af.getDopLink());
         }
