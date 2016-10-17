@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="css/objavleniya/main.css" />
 		<link rel="stylesheet" href="css/objavleniya/animate.css" />
-		
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	</head>
 	<body class="landing">
 
@@ -163,7 +163,7 @@
 			<script src="js/objavleniya/util.js"></script>
 			<script src="js/objavleniya/main.js"></script>
 			<script src="js/objavleniya/wow.min.js"></script>
-			<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+			<#--<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>-->
 			<script src="js/objavleniya/common.js"></script>
 <script>
     $(document).ready(function(){      
