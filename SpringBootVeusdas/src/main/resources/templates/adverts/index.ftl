@@ -97,16 +97,40 @@
 										<div class="5u 12u$(xsmall)">
 										    <select name="category" th:field="*{category}" id="category">
 										        <option value>- Тип объявления -</option>
-										        <option value="1">Продажа</option>
-										        <option value="2">Аренда</option>
-										        <option value="3">ВПШЕР</option>
-										        <option value="4">Дизайнер</option>
-										        <option value="5">Менеджер по рекламе</option>
-										        <option value="6">Заливщик</option>
-										        <option value="7">Прочее</option>
+										        <option value="1" class="types">Продажа</option>
+										        <option value="2" class="types">Аренда</option>
+										        <option value="3" class="types">ВПШЕР</option>
+										        <option value="4" class="types">Дизайнер</option>
+										        <option value="5" class="types">Менеджер по рекламе</option>
+										        <option value="6" class="types">Заливщик</option>
+										        <option value="7" class="types">Прочее</option>
 										    </select>
 										</div>
-										<div class="7u$ 12u$(xsmall)"><input type="text" name="dopLink" th:field="*{dopLink}" id="dop-link" placeholder="Ссылка на паблик или статистику (Необязательно)"></div>
+                                        <script type="text/javascript">
+                                            $(document).ready(function() {
+                                                $(document).on('click', '.types', function () {
+                                                    var radio = $('#category').options.selectedIndex;
+                                                    var $this = $('#ava');
+                                                    if (radio == 1){
+														$this.val('https://pp.vk.me/c837730/v837730597/90d3/Ag3lrgd7kec.jpg');
+													}else if (radio == 2){
+														$this.val('https://pp.vk.me/c837730/v837730597/90f1/D2ID5CQ6WYI.jpg');
+													}else if (radio == 3){
+                                                        $this.val('https://pp.vk.me/c623816/v623816298/45d98/zBbJ2wM31Vw.jpg');
+													}else if (radio == 4){
+                                                        $this.val('http://iklife.ru/wp-content/uploads/2016/02/chem-zanimaetsja-graficheskij-dizajner.jpg');
+													}else if (radio == 5){
+                                                        $this.val('http://101million.com/wp-content/uploads/2014/11/DETAIL_PICTURE__29718419.jpg');
+													}else if (radio == 6){
+                                                        $this.val('http://orthodoxbj.com/wp-content/uploads/2016/09/16092014_0.jpg');
+													}else {
+                                                        $this.val('http://orthodoxbj.com/wp-content/uploads/2016/09/16092014_0.jpg');
+													}
+                                                });
+                                            });
+                                        </script>
+
+                                        <div class="7u$ 12u$(xsmall)"><input type="text" name="dopLink" th:field="*{dopLink}" id="dop-link" placeholder="Ссылка на паблик или статистику (Необязательно)"></div>
 										<div class="12u$"><textarea name="message" th:field="*{message}" id="message" placeholder="Комментарии. Описание услуги. Максимум 200 символов " maxlength="200" rows="4"></textarea></div>
 									</div>
                                     <ul class="actions">

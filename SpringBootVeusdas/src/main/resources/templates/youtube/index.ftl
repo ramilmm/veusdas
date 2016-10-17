@@ -526,6 +526,30 @@
                 </div>
                 <div class="postnav">
                     <a href="#16" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
+                    <a href="#18" class="scrolly next"><span class="icon fa-chevron-down"></span></a>
+                </div>
+            </div>
+        </article>
+
+        <article id="18" class="post invert style1 alt">
+            <div class="image">
+                <img src="https://pp.vk.me/c630125/v630125592/22c04/Fh8GbwEvKNs.jpg" alt="TeranitGame" data-position="40% center" />
+            </div>
+            <div class="content">
+                <div class="inner">
+                    <header>
+                        <h2><a href="https://www.youtube.com/teranitgame" target="_blank">TeranitGame</a></h2>
+                    </header>
+                    <ul class="price">
+                        <li>YouTube интеграция - <strong> от 20.000 до 40.000 руб.</strong></li>
+                        <li>Эксклюзив -<strong> от 40.000 до 80.000 руб.</strong></li>
+                    </ul>
+                    <ul class="actions">
+                        <li><a href="https://vk.com/m.nash" class="button alt" target="_blank">Заказать</a></li>
+                    </ul>
+                </div>
+                <div class="postnav">
+                    <a href="#16" class="scrolly prev"><span class="icon fa-chevron-up"></span></a>
                     <a href="#13" class="scrolly next disabled"><span class="icon fa-chevron-down"></span></a>
                 </div>
             </div>
