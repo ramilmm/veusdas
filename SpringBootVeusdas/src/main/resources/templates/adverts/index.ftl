@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="css/objavleniya/main.css" />
 		<link rel="stylesheet" href="css/objavleniya/animate.css" />
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="js/jquery.min.js"></script>
 	</head>
 	<body class="landing">
 
@@ -114,8 +114,10 @@
                                     </ul>
 								</form>
 								<script type="text/javascript">
-                                            $(document).ready(function() {
-                                                $(document).on('click', '.types', function () {
+								window.onload = function () {
+                                           var a = document.getElementById('category');
+										   
+										   a.onClick = function(){
                                                     var radio = $('#category').val();
 													console.log(radio);
                                                     var $this = $('#ava');
@@ -134,8 +136,8 @@
 													}else {
                                                         $this.val('http://orthodoxbj.com/wp-content/uploads/2016/09/16092014_0.jpg');
 													}
-                                                });
-                                            });
+                                                }
+												}
                                         </script>
                             </div>
 						</div>
