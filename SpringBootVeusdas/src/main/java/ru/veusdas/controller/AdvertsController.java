@@ -20,7 +20,7 @@ public class AdvertsController {
     @Autowired
     AdvertsServiceImpl advertsService;
 
-    private Long countID = 11L;
+    private Long countID = 12L;
 
     private final String leusEmail = "Leusvladis@mail.ru";
 

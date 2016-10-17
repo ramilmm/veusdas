@@ -106,10 +106,18 @@
 										        <option value="7" class="types">Прочее</option>
 										    </select>
 										</div>
-                                        <script type="text/javascript">
+                                        <div class="7u$ 12u$(xsmall)"><input type="text" name="dopLink" th:field="*{dopLink}" id="dop-link" placeholder="Ссылка на паблик или статистику (Необязательно)"></div>
+										<div class="12u$"><textarea name="message" th:field="*{message}" id="message" placeholder="Комментарии. Описание услуги. Максимум 200 символов " maxlength="200" rows="4"></textarea></div>
+									</div>
+                                    <ul class="actions">
+                                        <li><input type="submit" value="Отправить сообщение" /></li>
+                                    </ul>
+								</form>
+								<script type="text/javascript">
                                             $(document).ready(function() {
                                                 $(document).on('click', '.types', function () {
-                                                    var radio = $('#category').options.selectedIndex;
+                                                    var radio = $('#category').val();
+													console.log(radio);
                                                     var $this = $('#ava');
                                                     if (radio == 1){
 														$this.val('https://pp.vk.me/c837730/v837730597/90d3/Ag3lrgd7kec.jpg');
@@ -129,15 +137,6 @@
                                                 });
                                             });
                                         </script>
-
-                                        <div class="7u$ 12u$(xsmall)"><input type="text" name="dopLink" th:field="*{dopLink}" id="dop-link" placeholder="Ссылка на паблик или статистику (Необязательно)"></div>
-										<div class="12u$"><textarea name="message" th:field="*{message}" id="message" placeholder="Комментарии. Описание услуги. Максимум 200 символов " maxlength="200" rows="4"></textarea></div>
-									</div>
-                                    <ul class="actions">
-                                        <li><input type="submit" value="Отправить сообщение" /></li>
-                                    </ul>
-								</form>
-
                             </div>
 						</div>
                    </div>
