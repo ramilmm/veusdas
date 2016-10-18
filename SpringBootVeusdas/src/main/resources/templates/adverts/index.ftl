@@ -114,12 +114,9 @@
                                     </ul>
 								</form>
 								<script type="text/javascript">
-								window.onload = function () {
-                                           var a = document.getElementById('category');
-										   
-										   a.onClick = function(){
+                                     $(document).ready(function(){ 
+										     $(document).on('click','#category', function(){
                                                     var radio = $('#category').val();
-													console.log(radio);
                                                     var $this = $('#ava');
                                                     if (radio == 1){
 														$this.val('https://pp.vk.me/c837730/v837730597/90d3/Ag3lrgd7kec.jpg');
@@ -136,9 +133,9 @@
 													}else {
                                                         $this.val('http://orthodoxbj.com/wp-content/uploads/2016/09/16092014_0.jpg');
 													}
-                                                }
-												}
-                                        </script>
+                                                });
+                                     });
+								</script>
                             </div>
 						</div>
                    </div>
