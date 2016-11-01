@@ -24,7 +24,7 @@ public class InstagramController {
     @Autowired
     InstagramServiceImpl instagramService;
 
-    @GetMapping("/services")
+    @GetMapping("/instagram")
     public String render(Model model){
         model.addAttribute("instList",instagramService.getActiveInst());
         return "inst/index";
