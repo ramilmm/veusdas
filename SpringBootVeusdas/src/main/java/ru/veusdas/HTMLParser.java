@@ -2,9 +2,12 @@ package ru.veusdas;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 /**
  * Created by ramilmmk on 28.10.16.
@@ -13,7 +16,11 @@ public class HTMLParser {
 
     public static void main(String[] args) throws IOException {
 
-//            writeFile("https://vk.com/maktubul");
+//        Document doc = Jsoup.connect("https://vk.com/kalembaa").get();
+//        Elements el = doc.select(".op_header");
+//        System.out.println(el);
+
+//            writeFile("https://vk.com/moreena");
 //
 //
 //            getPublicData();
@@ -23,14 +30,14 @@ public class HTMLParser {
 
 //            getInstData();
 
-        writeFile("https://www.instagram.com/instagramrussia/");
+//        writeFile("https://www.instagram.com/instagramrussia/");
 
-        getInstData();
+//        getInstData();
 
     }
 
     static public void writeFile(String url) throws IOException {
-        File output = new File("/tmp/input.html");
+        File output = new File("input.html");
         FileWriter fw = new FileWriter(output,false);
         Document pub = null;
         try {
@@ -42,7 +49,7 @@ public class HTMLParser {
         fw.write(pub.outerHtml());
     }
 
-    static public void getInstData() throws IOException {
+    static public ArrayList<String> getInstData() throws IOException {
         String photoLink = "";
 
         String instName = "username";
@@ -64,13 +71,11 @@ public class HTMLParser {
                     buf = line.substring(line.indexOf(instName));
                     buf = buf.substring(buf.indexOf("=") + 1);
                     buf = buf.substring(0,buf.indexOf("\""));
-//                    System.out.println(buf);
                     instNameParsed = buf;
                 } else if (line.contains(instPhoto)) {
                     buf = line.substring(line.indexOf(instPhoto));
                     buf = buf.substring(buf.indexOf("=\"") + 2);
                     buf = buf.substring(0, buf.indexOf("\">"));
-//                    System.out.println(buf);
                     instPhotoParsed = buf;
                 }
                 buf = "";
@@ -78,31 +83,49 @@ public class HTMLParser {
         } catch (IOException e) {
             System.out.println("error");
         }
-        File output = new File("/tmp/input.html");
+        File output = new File("input.html");
         if (output.exists()) {
             output.delete();
             output.createNewFile();
         }
-        System.out.println(instNameParsed);
-        System.out.println(instPhotoParsed);
+
+        ArrayList<String> res = new ArrayList<>();
+        res.add(instNameParsed);
+        res.add(instPhotoParsed);
+        return res;
     }
 
-    static public String getPublicData() throws IOException {
-        String photoLink = "";
+    static public ArrayList<String> getPublicData() throws IOException {
+        ArrayList<String> outputList = new ArrayList<>();
 
         String publicName = "op_header";
         String publicPhoto = "<a href=\"/photo";
         String publicSubscribes = "pm_counter";
+        String publicId = "name=\"post-";
 
-        String publicNameParsed = "", publicPhotoParsed = "", publicSubscribesParserd = "";
+        String publicNameParsed = "", publicPhotoParsed = "", publicSubscribesParserd = "", publicStatParsed = "";
         int count = 0;
+        int countId = 0;
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(
                         new FileInputStream("/tmp/input.html"), StandardCharsets.UTF_8))){
             String line;
             String buf;
             while ((line = reader.readLine()) != null) {
-                if (line.contains(publicName)) {
+                if (line.contains(publicId)) {
+                    if (countId != 0){
+                        if (count != 0){
+                            break;
+                        }
+                        continue;
+                    }
+                    countId++;
+                    buf = line.substring(line.indexOf(publicId));
+                    buf = buf.substring(buf.indexOf(publicId) + 11);
+                    buf = buf.substring(0,buf.indexOf("_"));
+                    System.out.println("https://vk.com/stats?act=reach&gid=" + buf);
+                    publicStatParsed = "https://vk.com/stats?act=reach&gid=" + buf;
+                }else if (line.contains(publicName)) {
                     buf = line.substring(line.indexOf(publicName));
                     buf = buf.substring(buf.indexOf(">") + 1);
                     buf = buf.substring(0,buf.indexOf("</h2>"));
@@ -116,7 +139,10 @@ public class HTMLParser {
                     publicPhotoParsed = buf;
                 }else if (line.contains(publicSubscribes)) {
                     if (count != 0){
-                        break;
+                        if (countId != 0){
+                            break;
+                        }
+                        continue;
                     }
                     count++;
                     buf = line.substring(line.indexOf(publicSubscribes));
@@ -131,12 +157,17 @@ public class HTMLParser {
         } catch (IOException e) {
             System.out.println("error");
         }
-        File output = new File("/tmp/input.html");
+        File output = new File("input.html");
         if (output.exists()) {
             output.delete();
             output.createNewFile();
         }
-        return photoLink;
+        outputList.add(publicNameParsed);
+        outputList.add(publicPhotoParsed);
+        outputList.add(publicSubscribesParserd);
+        outputList.add(publicStatParsed);
+
+        return outputList;
     }
 
 }

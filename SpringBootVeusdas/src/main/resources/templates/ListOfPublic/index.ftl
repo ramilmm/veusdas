@@ -128,27 +128,27 @@
             <div class="8u 12u$(small)">
                 <form method="POST" action="/publiclist/add" th:action="@{/publiclist/add}" th:object="@{PublicForm}">
                     <div class="row uniform 50%">
-                        <div class="6u 12u$(xsmall)">
-                            <input type="text" name="name" th:field="*{name}" id="name" placeholder="Название паблика" />
-                            <#--<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>-->
-                        </div>
-                        <div class="3u 12u$(xsmall)">
-                            <input type="text" name="link" th:field="*{link}" id="link" placeholder="Ссылка на ваш  профиль ВКонтакте" />
+                        <#--<div class="6u 12u$(xsmall)">-->
+                            <#--<input type="text" name="name" th:field="*{name}" id="name" placeholder="Название паблика" />-->
+                            <#--&lt;#&ndash;<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>&ndash;&gt;-->
+                        <#--</div>-->
+                        <div class="4u 12u$(xsmall)">
+                            <input type="text" name="link" th:field="*{link}" id="link" placeholder="Рекламный контакт" />
                             <#--<div th:if="${#fields.hasErrors('link')}" th:errors="*{link}">Link Error</div>-->
                         </div>
-                        <div class="3u$ 12u$(xsmall)">
+                        <div class="8u$ 12u$(xsmall)">
                             <input type="text" name="pub" th:field="*{pub}" id="pub" placeholder="Ссылка на паблик" />
                             <#--<div th:if="${#fields.hasErrors('pub')}" th:errors="*{pub}">Public link Error</div>-->
                         </div>
-                        <div class="9u 12u$(xsmall)">
-                            <input type="text" name="ava" th:field="*{ava}" id="ava" placeholder="Ссылка на аватарку паблика" />
-                            <#--<div th:if="${#fields.hasErrors('ava')}" th:errors="*{ava}">Avatar link Error</div>-->
-                        </div>
-                        <div class="3u$ 12u$(xsmall)">
+                        <#--<div class="9u 12u$(xsmall)">-->
+                            <#--<input type="text" name="ava" th:field="*{ava}" id="ava" placeholder="Ссылка на аватарку паблика" />-->
+                            <#--&lt;#&ndash;<div th:if="${#fields.hasErrors('ava')}" th:errors="*{ava}">Avatar link Error</div>&ndash;&gt;-->
+                        <#--</div>-->
+                        <div class="4u 12u$(xsmall)">
                             <input type="text" name="cost" th:field="*{cost}" id="cost" placeholder="Цена" maxlength="10">
                             <#--<div th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}">Cost Error</div>-->
                         </div>
-                        <div class="6u 12u$(xsmall)">
+                        <div class="8u$ 12u$(xsmall)">
                             <select name="category" th:field="*{category}" id="category">
                                 <option value>- Охват пабликa -</option>
                                 <option value="20">>20.000</option>
@@ -157,14 +157,14 @@
                             </select>
                             <#--<div th:if="${#fields.hasErrors('category')}" th:errors="*{category}">Category Error</div>-->
                         </div>
-                        <div class="6u$ 12u$(xsmall)">
-                            <input type="text" name="subscribes" th:field="*{subscribes}" id="sub" placeholder="Количество подписчиков" maxlength="10">
-                        <#--<div th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}">Cost Error</div>-->
-                        </div>
-                        <div class="12u$ 12u$(xsmall)">
-                            <input type="text" name="stat" th:field="*{stat}" id="dop-link" placeholder="Ссылка на статистику паблика">
-                            <#--<div th:if="${#fields.hasErrors('stat')}" th:errors="*{stat}">Statistic link Error</div>-->
-                        </div>
+                        <#--<div class="6u$ 12u$(xsmall)">-->
+                            <#--<input type="text" name="subscribes" th:field="*{subscribes}" id="sub" placeholder="Количество подписчиков" maxlength="10">-->
+                        <#--&lt;#&ndash;<div th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}">Cost Error</div>&ndash;&gt;-->
+                        <#--</div>-->
+                        <#--<div class="12u$ 12u$(xsmall)">-->
+                            <#--<input type="text" name="stat" th:field="*{stat}" id="dop-link" placeholder="Ссылка на статистику паблика">-->
+                            <#--&lt;#&ndash;<div th:if="${#fields.hasErrors('stat')}" th:errors="*{stat}">Statistic link Error</div>&ndash;&gt;-->
+                        <#--</div>-->
                     </div>
                     <ul class="actions">
                         <li><input type="submit" value="Отправить заявку"/></li>

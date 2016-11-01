@@ -7,11 +7,14 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import ru.veusdas.HTMLParser;
 import ru.veusdas.Model.Spisok;
 import ru.veusdas.Service.ServiceImp.SpisokServiceImpl;
 import ru.veusdas.form.PublicForm;
 
 import javax.validation.Valid;
+import java.io.IOException;
+import java.util.ArrayList;
 
 @Controller
 @RequestMapping(value = "/publiclist")
@@ -45,21 +48,28 @@ public class SpisokController {
             return "ListOfPublic/index";
         }
 
-        if (pf.getName().equals("") || pf.getCost().equals("") || pf.getLink().equals("") || pf.getAva().equals("")
-                || pf.getPub().equals("") || pf.getStat().equals("") || pf.getSubscribes().equals("")) {
+        if (pf.getCost().equals("") || pf.getLink().equals("") || pf.getPub().equals("")) {
             return "redirect:/";
         }
 
         Spisok pub = new Spisok();
 
-        pub.setName(pf.getName());
+        ArrayList<String> info = new ArrayList<>();
+        try {
+            HTMLParser.writeFile(pf.getPub());
+            info = HTMLParser.getPublicData();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        pub.setName(info.get(0));
         pub.setAdmin_link(pf.getLink());
         pub.setLink(pf.getPub());
-        pub.setAvatar_link(pf.getAva());
+        pub.setAvatar_link(info.get(1));
         pub.setCost(pf.getCost());
         pub.setPublic_category(pf.getCategory());
-        pub.setStat_link(pf.getStat());
-        pub.setSubscribes(pf.getSubscribes());
+        pub.setStat_link(info.get(3));
+        pub.setSubscribes(info.get(2));
 
         publicService.addSpisok(pub);
         return "redirect:/publiclist/20";

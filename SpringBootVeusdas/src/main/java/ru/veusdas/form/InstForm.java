@@ -1,37 +1,33 @@
 package ru.veusdas.form;
 
-
 import javax.validation.constraints.NotNull;
 
-public class PublicForm {
+/**
+ * Created by ramilmmk on 01.11.16.
+ */
+public class InstForm {
 
-
-//    private String name;
 
     @NotNull
     private String link;
 
-//    @NotNull
-//    private String subscribes;
+    @NotNull
+    private String subscribes;
 
     @NotNull
     private String pub;
 
-//    @NotNull
-//    private String ava;
-
     @NotNull
     private Long cost;
 
-    @NotNull
-    private int category;
+    public InstForm() {}
 
-//    @NotNull
-//    private String stat;
-
-
-    public PublicForm(){}
-
+    public InstForm(String link, String subscribes, String pub, Long cost) {
+        this.link = link;
+        this.subscribes = subscribes;
+        this.pub = pub;
+        this.cost = cost;
+    }
 
     public String getLink() {
         return link;
@@ -39,6 +35,14 @@ public class PublicForm {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    public String getSubscribes() {
+        return subscribes;
+    }
+
+    public void setSubscribes(String subscribes) {
+        this.subscribes = subscribes;
     }
 
     public String getPub() {
@@ -57,21 +61,13 @@ public class PublicForm {
         this.cost = cost;
     }
 
-    public int getCategory() {
-        return category;
-    }
-
-    public void setCategory(int category) {
-        this.category = category;
-    }
-
     @Override
     public String toString() {
-        return "PublicForm{" +
+        return "InstForm{" +
                 "link='" + link + '\'' +
+                ", subscribes='" + subscribes + '\'' +
                 ", pub='" + pub + '\'' +
                 ", cost=" + cost +
-                ", category=" + category +
                 '}';
     }
 }
