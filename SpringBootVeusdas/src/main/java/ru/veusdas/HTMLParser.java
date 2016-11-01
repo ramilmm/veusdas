@@ -14,28 +14,6 @@ import java.util.ArrayList;
  */
 public class HTMLParser {
 
-    public static void main(String[] args) throws IOException {
-
-//        Document doc = Jsoup.connect("https://vk.com/kalembaa").get();
-//        Elements el = doc.select(".op_header");
-//        System.out.println(el);
-
-//            writeFile("https://vk.com/moreena");
-//
-//
-//            getPublicData();
-
-
-//            writeFile("https://www.instagram.com/instagramrussia/");
-
-//            getInstData();
-
-//        writeFile("https://www.instagram.com/instagramrussia/");
-
-//        getInstData();
-
-    }
-
     static public void writeFile(String url) throws IOException {
         File output = new File("input.html");
         FileWriter fw = new FileWriter(output,false);
