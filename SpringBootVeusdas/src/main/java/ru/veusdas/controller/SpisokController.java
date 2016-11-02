@@ -22,6 +22,8 @@ public class SpisokController {
 
     @Autowired
     SpisokServiceImpl publicService;
+    
+    Integer count = 108;
 
     @GetMapping("/20")
     public String renderPublic20(Model model){
@@ -77,7 +79,8 @@ public class SpisokController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+        
+        pub.setId(count);
         pub.setName(info.get(0));
         pub.setAdmin_link(pf.getLink());
         pub.setLink(pf.getPub());
@@ -88,6 +91,7 @@ public class SpisokController {
         pub.setSubscribes(info.get(2));
 
         publicService.addSpisok(pub);
+        count++;
         return "redirect:/publiclist/20";
     }
 }

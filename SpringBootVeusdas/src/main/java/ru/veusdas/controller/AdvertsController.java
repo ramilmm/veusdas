@@ -18,6 +18,8 @@ public class AdvertsController {
 
     @Autowired
     AdvertsServiceImpl advertsService;
+    
+    Integer count = 12;
 
     @GetMapping("/ads")
     public String render(Model model){
@@ -38,7 +40,8 @@ public class AdvertsController {
         }
 
         Adverts ad = new Adverts();
-
+        
+        ad.setId(count);
         ad.setAdvert_name(af.getName());
         ad.setAdvert_type(af.getCategory());
         ad.setProfile_link(af.getLink());
@@ -52,6 +55,7 @@ public class AdvertsController {
         ad.setComment(af.getMessage());
 
         advertsService.addAdvert(ad);
+        count++;
 
         return "redirect:/ads";
 
