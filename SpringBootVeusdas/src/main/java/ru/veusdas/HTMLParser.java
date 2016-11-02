@@ -135,6 +135,9 @@ public class HTMLParser {
                     buf = buf.substring(buf.indexOf(">") + 1);
                     buf = buf.substring(0, buf.indexOf("</em>"));
                     buf = buf.replace("<span class=\"num_delim\"> </span>","");
+                    if (buf.contains(",")) {
+                        buf = buf.replace(",","");
+                    }
                     System.out.println(buf);
                     publicSubscribesParserd = buf;
                 }
