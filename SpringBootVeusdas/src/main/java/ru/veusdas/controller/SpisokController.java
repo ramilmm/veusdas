@@ -23,7 +23,7 @@ public class SpisokController {
     @Autowired
     SpisokServiceImpl publicService;
     
-    Integer count = 108;
+    Long count = 108L;
 
     @GetMapping("/20")
     public String renderPublic20(Model model){

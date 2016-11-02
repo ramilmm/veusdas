@@ -19,7 +19,7 @@ public class AdvertsController {
     @Autowired
     AdvertsServiceImpl advertsService;
     
-    Integer count = 12;
+    Long count = 12L;
 
     @GetMapping("/ads")
     public String render(Model model){
