@@ -13,13 +13,21 @@ import java.util.ArrayList;
  * Created by ramilmmk on 28.10.16.
  */
 public class HTMLParser {
+//    public static void main(String[] args) throws IOException {
+//        writeFile("https://vk.com/kalembaa");
+//        getPublicData();
+//    }
 
     static public void writeFile(String url) throws IOException {
         File output = new File("input.html");
         FileWriter fw = new FileWriter(output,false);
         Document pub = null;
+        String url_modified = "";
+        if (!url.contains("http")) {
+            url_modified = "http://" + url;
+        }else url_modified = url;
         try {
-            pub = Jsoup.connect(url).get();
+            pub = Jsoup.connect(url_modified).get();
         } catch (IOException e) {
             System.out.println("cannot connect to site");
         }
@@ -37,7 +45,7 @@ public class HTMLParser {
         int count = 0;
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(
-                        new FileInputStream("/tmp/input.html"), StandardCharsets.UTF_8))){
+                        new FileInputStream("input.html"), StandardCharsets.UTF_8))){
             String line;
             String buf;
             while ((line = reader.readLine()) != null) {
@@ -86,7 +94,7 @@ public class HTMLParser {
         int countId = 0;
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(
-                        new FileInputStream("/tmp/input.html"), StandardCharsets.UTF_8))){
+                        new FileInputStream("input.html"), StandardCharsets.UTF_8))){
             String line;
             String buf;
             while ((line = reader.readLine()) != null) {
@@ -135,11 +143,11 @@ public class HTMLParser {
         } catch (IOException e) {
             System.out.println("error");
         }
-        File output = new File("input.html");
-        if (output.exists()) {
-            output.delete();
-            output.createNewFile();
-        }
+//        File output = new File("input.html");
+//        if (output.exists()) {
+//            output.delete();
+//            output.createNewFile();
+//        }
         outputList.add(publicNameParsed);
         outputList.add(publicPhotoParsed);
         outputList.add(publicSubscribesParserd);

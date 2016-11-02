@@ -26,6 +26,8 @@
 						<li><a href="/youtube">Youtube каналы</a></li>
 						<li><a href="/garant">Гарант</a></li>
 						<li><a href="/ads">Доска объявлений</a></li>
+                        <li><a href="/web">Создание сайтов</a></li>
+                        <li><a href="/services">Услуги</a></li>
 					</ul>
 				</nav>
 			</header>

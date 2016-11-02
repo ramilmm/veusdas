@@ -9,11 +9,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-        <!-- Favicons -->
-        <link rel="shortcut icon" href="images/web/favicon.png">
-        <link rel="apple-touch-icon" href="images/web/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/web/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/web/apple-touch-icon-114x114.png">
 
         <!-- Load Core CSS
         =====================================-->
@@ -80,7 +75,7 @@
         
         <!-- Intro Area
         ===================================== -->
-        <header class="intro bg-dark2" style="background:url(assets/img/bg/img-bg-5.jpg) 50% 0 no-repeat;">
+        <header class="intro bg-dark2" style="background:url(images/web/bg/img-bg-5.jpg) 50% 0 no-repeat;">
             <div class="intro-body">
                 <div class="container-fluid">
                     <div class="row">
@@ -514,7 +509,7 @@
         
         <!-- Info Area
         ===================================== -->
-        <div id="info-1" class="pt50 pb50 mt75 parallax-window" data-parallax="scroll" data-speed="0.5" data-image-src="assets/img/own/apple-camera-desk-office.jpg">
+        <div id="info-1" class="pt50 pb50 mt75 parallax-window" data-parallax="scroll" data-speed="0.5" data-image-src="images/web/own/apple-camera-desk-office.jpg">
             <div class="container">
                 <div class="row pt75">
                     <div class="col-md-12 text-center">
@@ -561,7 +556,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="#" class="button button-sm button-rounded button-success hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-success hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -580,7 +575,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="#" class="button button-sm button-rounded button-cyan hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-cyan hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -599,7 +594,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="#" class="button button-sm button-rounded button-blue hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-blue hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -631,7 +626,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="#" class="button button-sm button-rounded button-success hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-success hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -650,7 +645,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="#" class="button button-sm button-rounded button-cyan hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-cyan hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -669,7 +664,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="#" class="button button-sm button-rounded button-blue hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-blue hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -701,7 +696,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="#" class="button button-sm button-rounded button-success hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-success hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -720,7 +715,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="#" class="button button-sm button-rounded button-blue hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-blue hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -744,8 +739,8 @@
                 <!-- title start -->
                 <div class="row text-center mb25">
                     <h1 class="font-size-normal">
-                        <small>Testimonials</small>
-                        What Our Clients Say About Us
+                        <small>Отзывы</small>
+                        Почитайте что говорят о нас наши клиенты
                         <small class="heading heading-solid center-block"></small>
                     </h1>
                 </div>

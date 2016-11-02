@@ -2,7 +2,7 @@
 
 <html lang="ru">
 <head>
-    <title>VEUSDAS</title>
+    <title>Instagram VEUSDAS</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/ListOfPublic/main.css" />
@@ -20,7 +20,7 @@
             <li><a href="/ads">Объявления</a></li>
             <li><a href="/garant">Гарант</a></li>
             <li><a href="/web">Создание сайтов</a></li>
-            <li><a href="/services">Услуги</a></li>
+            <li><a href="/services">Наши услуги</a></li>
             <li><a href="/youtube">YouTube каналы</a></li>
         </ul>
     </nav>

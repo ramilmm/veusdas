@@ -37,8 +37,12 @@ public class InstagramController {
             return "inst/index";
         }
 
+        if (!pf.getPub().contains(".com")){
+            return "redirect:/instagram";
+        }
+
         if (pf.getCost().equals("") || pf.getLink().equals("") || pf.getPub().equals("")) {
-            return "redirect:/";
+            return "redirect:/instagram";
         }
 
         Instagram inst = new Instagram();
@@ -57,7 +61,12 @@ public class InstagramController {
         inst.setAdmin_link(pf.getLink());
         inst.setCost(pf.getCost());
         inst.setSubscribes(pf.getSubscribes());
-        inst.setLink(pf.getPub());
+        String instLink = "";
+        if (!pf.getPub().contains("http")) {
+            instLink = "http://" + pf.getPub();
+        }else instLink = pf.getPub();
+        inst.setLink(instLink);
+//        inst.setActive(true);
 
         instagramService.addInst(inst);
         return "redirect:/instagram";

@@ -16,8 +16,8 @@
                 <span class="tittle">Управление сайтом Veusdas</span>
                 <ul class="nav nav-tabs">
                     <li><a class="menu active" href="#" data-id="publicList">Список пабликов</a></li>
+                    <li><a class="menu" href="#" data-id="inst">Instagram</a></li>
                     <li><a class="menu" href="#" data-id="ads">Объявления</a></li>
-                <#--<li><a class="menu" href="#" data-id="youtube">Youtube каналы</a></li>-->
                     <li><a class="menu" href="#" data-id="questions">Вопросы</a></li>
                     <li><a href="/">Главная страница</a></li>
                 </ul>
@@ -125,6 +125,83 @@
                                          </div>
                                    </div>
                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="active-pub"></div>
+                </div>
+                <#--inst-->
+                <div id="inst" class="inst" style="display:none">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <h2 class="header" style="text-align:center;font-weight:700">Новые заявки</h2>
+                                <div class="applications">
+                                    <div id="community">
+                                        <div class="group">
+                                            <table class="site_list site_list_big">
+                                                <tr>
+                                                    <th>Название</th>
+                                                    <th width="150">Подписчиков</th>
+                                                    <th width="180">Цена (руб.)</th>
+                                                    <th width="180">Администратор</th>
+                                                </tr>
+
+                                            <#if instApplications??>
+
+                                                <#include "instApp.ftl">
+
+                                                <#list instApplications as q>
+                                                    <@inst inst=q />
+                                                </#list>
+                                            <#else >
+                                                <span style="text-align: center">Новых заявок нет</span>
+                                            </#if>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <h2 class="header" style="text-align:center;font-weight:700">Редактирование информации</h2>
+                                <div class="editing">
+                                    <div id="community">
+                                        <div class="group">
+                                            <table class="site_list site_list_big">
+                                                <tr>
+                                                    <th>Название</th>
+                                                    <th width="150">Подписчиков</th>
+                                                    <th width="180">Цена (руб.)</th>
+                                                    <th width="180">Администратор</th>
+                                                    <th>Действие</th>
+                                                </tr>
+
+                                            <#if instList??>
+
+                                            <#--<#include "public.ftl">-->
+
+                                                <#list instList as inst>
+                                                <#--<@spisok public=q />-->
+
+
+                                                    <tr class="row${inst.id}">
+                                                        <td><input type="text" id="nameInst${inst.id}" value="${inst.name}" maxlength="60"></td>
+                                                        <td><input type="text" id="subscribesInst${inst.id}" value="${inst.subscribes}" maxlength="20"></td>
+                                                        <td><input type="text" id="costInst${inst.id}" value="${inst.cost}" maxlength="10"></td>
+                                                        <td><input type="text" id="admin_linkInst${inst.id}" value="${inst.admin_link}" maxlength="100"></td>
+                                                        <td>
+                                                            <div class="buttons">
+                                                                <a href="#"  class="accept acceptEditingInst" data-id="${inst.id}">Сохранить</a>
+                                                                <a href="#"  class="delete deleteInst" data-id="${inst.id}">Удалить</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </#list>
+                                            </#if>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -420,6 +497,87 @@
                 error: function () {    // На сервере произошла ошибка
                     // console.log(data);
                     alert('Приносим извинения.<br/>На сервере произошла ошибка');
+                }
+            });
+        });
+
+//        instagram
+
+        $(document).on('click', '.acceptInst', function () {
+            event.preventDefault();
+            var $this = $(this);
+            var publicID = $this.data('id');
+            var row = '.row' + publicID;
+            $.ajax({
+                type: 'POST',
+                url: '/admin/setActiveInst',
+                data: {
+                    id:publicID
+                },
+                success: function (data, status) {  // успешное завершение работы
+                    $this.hide();
+                    $(row).css('display','none');
+                    $('.alert').css('display','block');
+                },
+                error: function () {    // На сервере произошла ошибка
+                    // console.log(data);
+                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
+                }
+            });
+        });
+
+
+        $(document).on('click', '.acceptEditingInst', function () {
+            event.preventDefault();
+            var $this = $(this);
+            var publicID = $this.data('id');
+            var h_name = '#nameInst'+publicID;
+            var h_sub = '#subscribesInst'+publicID;
+            var h_cost = '#costInst'+publicID;
+            var h_admin = '#admin_linkInst'+publicID;
+            var name = $(h_name).val();
+            var subscribes = $(h_sub).val();
+            var cost = $(h_cost).val();
+            var admin = $(h_admin).val();
+            var row = '.row' + publicID;
+            $.ajax({
+                type: 'POST',
+                url: '/admin/editInst',
+                data: {
+                    id:publicID,
+                    name:name,
+                    subscribes:subscribes,
+                    cost:cost,
+                    admin:admin
+                },
+                success: function (data, status) {  // успешное завершение работы
+                    $('.alert').css('display','block');
+                },
+                error: function () {    // На сервере произошла ошибка
+//                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
+                }
+            });
+        });
+
+        $(document).on('click', '.deleteInst', function () {
+            event.preventDefault();
+            var $this = $(this);
+            var publicID = $this.data('id');
+            var row = '.row' + publicID;
+            $.ajax({
+                type: 'POST',
+                url: '/admin/deleteInst',
+                data: {
+                    id:publicID
+                },
+                success: function (data, status) {  // успешное завершение работы
+                    $this.hide();
+                    $(row).css('display','none');
+                    $('.alert').css('display','block');
+                },
+                error: function () {    // На сервере произошла ошибка
+                    // console.log(data);
+//                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
                 }
             });
         });

@@ -504,72 +504,69 @@ $(window).load(function() {
    
     /* --------------------------------------------
      CONTACT FORM
-    -------------------------------------------- */
-    var messageDelay = 2000;
-    $(init);
-
-    function init() {
-      $('#contactForm').show().submit( submitForm ).addClass( 'positioned' );  
-    }
+    // -------------------------------------------- */
+    // var messageDelay = 2000;
+    // $(init);
+    //
+    // function init() {
+    //   $('#contactForm').show().submit( submitForm ).addClass( 'positioned' );
+    // }
 
     // Submit the form via Ajax
-    function submitForm() {
-      var contactForm = $(this);
-
-      // Are all the fields filled in?
-
-      if ( !$('#senderName').val() || !$('#senderEmail').val() || !$('#message').val() ) {
-
-        // No; display a warning message and return to the form
-        $('#incompleteMessage').fadeIn().delay(messageDelay).fadeOut();
-        contactForm.fadeOut().delay(messageDelay).fadeIn();
-
-      } else {
-
-        // Yes; submit the form to the PHP script via Ajax
-
-        $('#sendingMessage').fadeIn();
-        contactForm.show();
-
-        $.ajax( {
-          url: contactForm.attr( 'action' ) + "?ajax=true",
-          type: contactForm.attr( 'method' ),
-          data: contactForm.serialize(),
-          success: submitFinished
-        } );
-      }
-
-      // Prevent the default form submission occurring
-      return false;
-    }
+    // function submitForm() {
+    //   var contactForm = $(this);
+    //
+    //   // Are all the fields filled in?
+    //
+    //   if ( !$('#senderName').val() || !$('#senderEmail').val() || !$('#message').val() ) {
+    //
+    //     // No; display a warning message and return to the form
+    //     $('#incompleteMessage').fadeIn().delay(messageDelay).fadeOut();
+    //     contactForm.fadeOut().delay(messageDelay).fadeIn();
+    //
+    //       contactForm.submit();
+    //
+    //   } else {
+    //
+    //     // Yes; submit the form to the PHP script via Ajax
+    //
+    //     $('#sendingMessage').fadeIn();
+    //     contactForm.show();
+    //
+    //     contactForm.submit();
+    //   }
+    //
+    //   // Prevent the default form submission occurring
+    //   return false;
+    // }
 
 
     // Handle the Ajax response
-    function submitFinished( response ) {
-      response = $.trim( response );
-      $('#sendingMessage').fadeOut();
-
-      if ( response == "success" ) {
-
-        // Form submitted successfully:
-        // 1. Display the success message
-        // 2. Clear the form fields
-        // 3. Fade the content back in
-
-        $('#successMessage').fadeIn().delay(messageDelay).fadeOut();
-        $('#senderName').val( "" );
-        $('#senderEmail').val( "" );
-        $('#message').val( "" );
-
-        $('#content').delay(messageDelay+500).fadeTo( 'slow', 1 );
-
-      } else {
-
-        // Form submission failed: Display the failure message,
-        // then redisplay the form
-        $('#failureMessage').fadeIn().delay(messageDelay).fadeOut();
-        $('#contactForm').delay(messageDelay+500).fadeIn();
-      }
-    }
+    // function submitFinished( response ) {
+    //   response = $.trim( response );
+    //   $('#sendingMessage').fadeOut();
+    //
+    //   if ( response == "success" ) {
+    //
+    //     // Form submitted successfully:
+    //     // 1. Display the success message
+    //     // 2. Clear the form fields
+    //     // 3. Fade the content back in
+    //
+    //     $('#successMessage').fadeIn().delay(messageDelay).fadeOut();
+    //     $('#senderName').val( "" );
+    //     $('#senderEmail').val( "" );
+    //     $('#message').val( "" );
+    //
+    //     $('#content').delay(messageDelay+500).fadeTo( 'slow', 1 );
+    //
+    //   } else {
+    //
+    //     // Form submission failed: Display the failure message,
+    //     // then redisplay the form
+    //     $('#failureMessage').fadeIn().delay(messageDelay).fadeOut();
+    //     $('#contactForm').delay(messageDelay+500).fadeIn();
+    //   }
+    // }
 
 });

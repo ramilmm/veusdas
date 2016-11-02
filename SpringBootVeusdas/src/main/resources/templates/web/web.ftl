@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Pasific Site Template | Parallax One</title>
+        <title>Veusdas Web</title>
         <meta name="description" content="">
         <meta name="keywords" content="">
         <meta charset="utf-8">
@@ -9,12 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
         
-        <!-- Favicons -->
-        <link rel="shortcut icon" href="images/web/favicon.png">
-        <link rel="apple-touch-icon" href="images/web/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/web/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/web/apple-touch-icon-114x114.png">
-        
+
         <!-- Load Core CSS 
         =====================================-->
         <link rel="stylesheet" href="css/web/core/bootstrap.min.css">
@@ -73,7 +68,7 @@
                 <div class="item carousel-img carousel-img16 active">
                     <div class="container">
                         <div class="carousel-caption animated" data-animation="bounceInDown" data-animation-delay="100">
-                            <h1 class="font-pacifico text-capitalize color-light">Veusdas media</h1>
+                            <h1 class="font-pacifico text-capitalize color-light">Veusdas web</h1>
                             <p class="color-light mt25">Разработка сайтов<br/><br/>
                                  <a class="button button-red button-lg hover-ripple-out animated" data-animation="fadeInUp" data-animation-delay="1200">Подробнее</a>
                             </p>
@@ -105,7 +100,7 @@
                     <!-- title start -->
                     <div class="col-md-12 text-center">
                         <h1 class="font-size-normal">
-                            <small>Prizma media приветствует вас!</small>
+                            <small>Veusdas media приветствует вас!</small>
                             Предлагаем решения для Бизнеса
                             <small class="heading heading-solid center-block"></small>
                         </h1>
@@ -548,7 +543,7 @@
         
         <!-- Achievement Area
         ===================================== -->
-        <div class="pt50" style="background: url(assets/img/bg/bg-wood.jpg) 100% 100% repeat-x #e8f3f5;">
+        <div class="pt50" style="background: url(images/web/bg/bg-wood.jpg) 100% 100% repeat-x #e8f3f5;">
             <div class="container">
                 
                 <!-- title and short description start -->
@@ -737,11 +732,11 @@
                     </div>
                     
                     <div class="col-md-10">
-                        <form name="newsletter">
+                        <form name="newsletter" method="post" action="/web/subscribe">
                             <div class="input-newsletter-container">
                                 <input type="text" name="email" class="input-newsletter" placeholder="введите ваш email">
                             </div>
-                            <a href="#" class="button button-sm button-pasific hover-ripple-out">Отправить<i class="fa fa-envelope"></i></a>
+                            <button class="button button-sm button-pasific hover-ripple-out">Отправить<i class="fa fa-envelope"></i></button>
                         </form>
                     </div>
                 </div><!-- row end -->
@@ -818,12 +813,12 @@
                 </div>
                 
                 <div class="row mt30">
-                    <form name="contactform" id="contactForm" method="post" action="assets/php/send.php">
+                    <form name="contactform" id="contactForm" method="post" action="/web/addQuestion">
                                 
                                 <!-- fullname start -->
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                        <input type="text" name="senderName" id="senderName" class="input-md input-rounded form-control" placeholder="имя" maxlength="100" required>
+                                        <input type="text" name="name" id="name" class="input-md input-rounded form-control" placeholder="имя" maxlength="100" required>
                                     </div>                                               
                                 </div>
                                 <!-- fullname end -->
@@ -831,7 +826,7 @@
                                 <!-- email start -->
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                        <input type="email" name="senderEmail" id="senderEmail" class="input-md input-rounded form-control" placeholder="email" maxlength="100" required>
+                                        <input type="email" name="email" id="email" class="input-md input-rounded form-control" placeholder="email" maxlength="100" required>
                                     </div>                                               
                                 </div>
                                 <!-- email end -->
