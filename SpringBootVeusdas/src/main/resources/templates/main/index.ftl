@@ -22,7 +22,7 @@
 						<li><a href="#one">О нас</a></li>
 						<li><a href="#three">Команда</a></li>
 						<li><a href="#five">Сообщества</a></li>
-						<li><a href="#works">Услуги Дизайна</a></li>
+                        <li><a href="/instagram">Instagram</a></li>
 						<li><a href="/youtube">Youtube каналы</a></li>
 						<li><a href="/garant">Гарант</a></li>
 						<li><a href="/ads">Доска объявлений</a></li>

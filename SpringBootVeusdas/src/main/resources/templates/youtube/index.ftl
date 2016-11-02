@@ -26,6 +26,7 @@
                     <li><a href="/youtube">YouTube каналы</a></li>
                     <li><a href="/web">Создание сайтов</a></li>
                     <li><a href="/services">Наши услуги</a></li>
+                    <li><a href="/instagram">Instagram</a></li>
 				</ul>
 			</nav>
 

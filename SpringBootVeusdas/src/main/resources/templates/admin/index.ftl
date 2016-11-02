@@ -145,6 +145,7 @@
                                                     <th width="150">Подписчиков</th>
                                                     <th width="180">Цена (руб.)</th>
                                                     <th width="180">Администратор</th>
+                                                    <th>Действие</th>
                                                 </tr>
 
                                             <#if instApplications??>

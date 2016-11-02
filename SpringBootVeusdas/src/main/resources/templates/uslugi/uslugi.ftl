@@ -65,6 +65,7 @@
                         <li class="megamenu-fw"><a href="/garant" class="color-light">Гарант </a>
                         <li class="megamenu-fw"><a href="/publiclist/20" class="color-light">Сообщества </a>
                         <li class="megamenu-fw"><a href="/ads" class="color-light">Объявления </a>
+                        <li class="megamenu-fw"><a href="/instagram" class="color-light">Instagram </a>
                         <li class="megamenu-fw"><a href="/web" class="color-pasific">Создание Сайтов </a>
                     </ul>
                 
