@@ -620,7 +620,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="#" class="button button-sm button-rounded button-green hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/kalemb" target="_blank" class="button button-sm button-rounded button-green hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -648,7 +648,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="#" class="button button-sm button-rounded button-success hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/kalemb" target="_blank" class="button button-sm button-rounded button-success hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -676,7 +676,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="#" class="button button-sm button-rounded button-cyan hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/kalemb" target="_blank" class="button button-sm button-rounded button-cyan hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -704,7 +704,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="#" class="button button-sm button-rounded button-blue hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/kalemb" target="_blank" class="button button-sm button-rounded button-blue hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
