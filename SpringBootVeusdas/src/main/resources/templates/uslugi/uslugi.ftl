@@ -92,8 +92,8 @@
                                     <span id="typed" style="white-space:pre;"></span>
                             </div>
                             <p class="intro-text color-light alpha6 animated" data-animation="fadeInUp" data-animation-delay="200">Лучший выбор для вашего паблика.</p>
-                            <a class="button button-pasific button-md hover-ripple-out mr10 animated" data-animation="fadeInUp" data-animation-delay="300">Подробнее</a>
-                            <a class="button button-success button-md hover-ripple-out animated" data-animation="fadeInUp" data-animation-delay="500">Напишите нам</a>
+                            <a href="#welcome" class="button button-pasific button-md hover-ripple-out mr10 animated" data-animation="fadeInUp" data-animation-delay="300">Подробнее</a>
+                            <a href="https://vk.com/id385022409" target="_blank" class="button button-success button-md hover-ripple-out animated" data-animation="fadeInUp" data-animation-delay="500">Напишите нам</a>
                         </div>
                     </div>
                 </div>
@@ -502,7 +502,7 @@
                 <div class="row">                
                     <div class="col-md-8 col-md-offset-2 text-center pb35">
                         <h4></h4>
-                        <a href="https://vk.com/id365105597" target="_blank" class="button button-md button-blue hover-ripple-out mr10">Заказать продвижение и ведение публичной страницы</a>
+                        <a href="https://vk.com/id385022409" target="_blank" class="button button-md button-blue hover-ripple-out mr10">Заказать продвижение и ведение публичной страницы</a>
                     </div>                
                 </div>
             </div>
@@ -557,7 +557,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-success hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id385022409" target="_blank" class="button button-sm button-rounded button-success hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -576,7 +576,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-cyan hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id385022409" target="_blank" class="button button-sm button-rounded button-cyan hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -595,7 +595,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-blue hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id385022409" target="_blank" class="button button-sm button-rounded button-blue hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -627,7 +627,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-success hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id385022409" target="_blank" class="button button-sm button-rounded button-success hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -646,7 +646,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-cyan hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id385022409" target="_blank" class="button button-sm button-rounded button-cyan hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -665,7 +665,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-blue hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id385022409" target="_blank" class="button button-sm button-rounded button-blue hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -697,7 +697,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-success hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id385022409" target="_blank" class="button button-sm button-rounded button-success hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>
@@ -716,7 +716,7 @@
                             </div>
                             <div class="price-footer">
 
-                                <a href="https://vk.com/id365105597" target="_blank" class="button button-sm button-rounded button-blue hover-ripple-out">Заказать</a>
+                                <a href="https://vk.com/id385022409" target="_blank" class="button button-sm button-rounded button-blue hover-ripple-out">Заказать</a>
                             </div>
                         </div>
                     </div>

@@ -70,7 +70,7 @@
                         <div class="carousel-caption animated" data-animation="bounceInDown" data-animation-delay="100">
                             <h1 class="font-pacifico text-capitalize color-light">Veusdas web</h1>
                             <p class="color-light mt25">Разработка сайтов<br/><br/>
-                                 <a class="button button-red button-lg hover-ripple-out animated" data-animation="fadeInUp" data-animation-delay="1200">Подробнее</a>
+                                 <a href="#welcome" class="button button-red button-lg hover-ripple-out animated" data-animation="fadeInUp" data-animation-delay="1200">Подробнее</a>
                             </p>
                         </div>
                     </div>
@@ -80,14 +80,14 @@
                         <div class="carousel-caption animated" data-animation="bounceInUp" data-animation-delay="100">
                             <h1 class="text-center font-pacifico text-capitalize color-light mt50">Veusdas Web-developing</h1>
                             <p class="color-light text-center mt20 ml10">Мы используем самые популярные технологии<br>
-                                <a class="button-o button-white button-lg hover-bounce-to-right ml10 animated" data-animation="fadeInUp" data-animation-delay="1200">Написать нам</a>
+                                <a href="https://vk.com/kalemb" target="_blank" class="button-o button-white button-lg hover-bounce-to-right ml10 animated" data-animation="fadeInUp" data-animation-delay="1200">Написать нам</a>
                             </p>
                         </div>
                     </div>
                 </div>                
             </div>
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            <#--<a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>-->
+            <#--<a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>-->
          </div>
 
         

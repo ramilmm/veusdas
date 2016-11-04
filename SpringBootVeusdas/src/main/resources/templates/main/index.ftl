@@ -19,9 +19,6 @@
 			<header id="header" class="alt">
 				<nav id="nav">
 					<ul>
-						<li><a href="#one">О нас</a></li>
-						<li><a href="#three">Команда</a></li>
-						<li><a href="#five">Сообщества</a></li>
                         <li><a href="/instagram">Instagram</a></li>
 						<li><a href="/youtube">Youtube каналы</a></li>
 						<li><a href="/garant">Гарант</a></li>
@@ -87,6 +84,7 @@
 							<div class="6u 12u$(medium)">
 								<header class="major">
 									<h2>о нас</h2>
+                                    <img src="images/main/team.jpg" alt="Our team" style="max-width: 430px">
 								</header>
 							</div>
 							<div class="6u$ 12u$(medium)">
