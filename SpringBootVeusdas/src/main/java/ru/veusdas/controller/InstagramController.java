@@ -49,7 +49,7 @@ public class InstagramController {
 
         ArrayList<String> info = new ArrayList<>();
         try {
-            HTMLParser.writeFile(pf.getPub());
+            HTMLParser.writeFile(pf.getPub().toLowerCase());
             info = HTMLParser.getInstData();
         } catch (IOException e) {
             e.printStackTrace();

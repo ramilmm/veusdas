@@ -24,8 +24,8 @@ public class HTMLParser {
         Document pub = null;
         String url_modified = "";
         if (!url.contains("http")) {
-            url_modified = "http://" + url;
-        }else url_modified = url;
+            url_modified = "http://" + url.toLowerCase();
+        }else url_modified = url.toLowerCase();
         try {
             pub = Jsoup.connect(url_modified).get();
         } catch (IOException e) {
