@@ -7,8 +7,8 @@
     <td>${adv.comment}</td>
     <td>
         <div class="buttons">
-            <span class="accept acceptAppAdv" data-id="${adv.id}">Принять</span>
-            <span class="delete deleteAppAdv" data-id="${adv.id}">Отклонить</span>
+            <a class="accept acceptAppAdv" data-id="${adv.id}">Принять</a>
+            <a class="delete deleteAppAdv" data-id="${adv.id}">Отклонить</a>
         </div>
     </td>
 </tr>

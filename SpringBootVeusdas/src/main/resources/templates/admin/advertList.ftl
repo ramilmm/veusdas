@@ -16,7 +16,7 @@
         </select>
         <script>
             $(document).ready(function () {
-                $('.type${ad.id}').val('${ad.advert_type}');
+                $('.typeAdvert${ad.id}').val('${ad.advert_type}');
             });
         </script>
     </td>

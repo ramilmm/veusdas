@@ -228,7 +228,7 @@ public class AdminController {
     @PostMapping("/admin/editAdvert")
     public String editAdvert(
             String id,
-            String avatar,
+//            String avatar,
             String name,
             String profile,
             String cost,
@@ -240,10 +240,10 @@ public class AdminController {
         Adverts advert = advertsService.getAdvertById(adid.longValue());
 
         advert.setAdvert_name(name);
-        advert.setAvatar_link(avatar);
+//        advert.setAvatar_link(avatar);
         advert.setProfile_link(profile);
 
-        String buf1 = comment.replaceAll("\\D", "");
+        String buf1 = cost.replaceAll("\\D", "");
         Integer acost = Integer.parseInt(buf1);
         advert.setCost(acost.longValue());
 
