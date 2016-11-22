@@ -21,16 +21,15 @@
     <h1><a href="/">VEUSDAS</a></h1>
     <nav id="nav">
         <ul>
-            <li><a href="/">Главная</a></li>
             <li><a href="/ads">Объявления</a></li>
             <li><a href="/garant">Гарант</a></li>
-            <li><a href="/youtube">YouTube каналы</a></li>
             <li><a href="/web">Создание сайтов</a></li>
             <li><a href="/services">Наши услуги</a></li>
             <li><a href="/instagram">Instagram</a></li>
         </ul>
     </nav>
 </header>
+
 
 <!-- Banner -->
 <section id="banner">

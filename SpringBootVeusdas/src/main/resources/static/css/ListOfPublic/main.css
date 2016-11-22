@@ -3419,3 +3419,9 @@ section.public a {
 	transition: 0.65s;
 	color: #000;
 }
+.search {
+    background-color: #f5f7f9 !important;
+}
+.search form {
+    margin: 4% 0;
+}

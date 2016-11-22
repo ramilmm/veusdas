@@ -525,6 +525,96 @@
             </div>
         </div>
         
+         <!-- Manager Area
+        ===================================== -->
+        <div id="service" class="pt75 pb25">
+            <div class="container">
+                
+                <!-- title and short description start -->
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h1 class="font-size-normal">
+                            <small>Veusdas</small>
+                            Мы поможем вам продать рекламу
+                            <small class="heading heading-solid center-block"></small>
+                        </h1>
+                    </div>
+
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <p class="lead">
+                            Veusdas media предоставляет услуги по продаже рекламы публичных страниц ВКонтакте. <br/>
+                            Наш менеджер быстро продаст вашу рекламу.
+                        </p>
+                    </div>
+                </div>
+                <!-- title and short description end -->
+                
+                <!-- manager one start -->
+                 <div class="row mt50">
+                    
+                    <!-- item one start -->
+                    <div class="col-md-3 col-sm-6 col-xs-6 animated" data-animation="fadeInLeft" data-animation-delay="100">
+                        <div class="content-box content-box-center">               
+                               <i class="fa fa-shield color-pasific" aria-hidden="true"></i>         
+                                <h5>Проверенные рекламодатели</h5>
+                            <p>Мы работаем только с проверенными рекламодателями.</p>
+                      
+                        </div>
+                    </div>
+                    <!-- item one end -->
+                    
+                    <!-- item two start -->
+                    <div class="col-md-3 col-sm-6 col-xs-6 animated" data-animation="fadeInLeft" data-animation-delay="200">
+                        <div class="content-box content-box-center">                        
+                            <i class="fa fa-users fa-4 color-pasific" aria-hidden="true"></i>
+                                <h5>Широкая база рекламодателей</h5>
+                            <p>У нас имеется большая база проверенных рекламодателей</p>
+                      
+                        </div>
+                    </div>
+                    <!-- item two end -->
+                    
+                    <!-- item three start -->
+                    <div class="col-md-3 col-sm-6 col-xs-6 animated" data-animation="fadeInRight" data-animation-delay="300">
+                        <div class="content-box content-box-center">                        
+                           <i class="fa fa-vk color-pasific" aria-hidden="true"></i>
+                                <h5>Соблюдение правил</h5>
+                            <p>Мы принимаем посты, соблюдающие все правила социальной сети Вконтакте.</p>
+                      
+                        </div>
+                    </div>
+                    <!-- item three end -->
+                    
+                    <!-- item three start -->
+                    <div class="col-md-3 col-sm-6 col-xs-6 animated" data-animation="fadeInRight" data-animation-delay="300">
+                        <div class="content-box content-box-center">                        
+                           <i class="fa fa-percent color-pasific" aria-hidden="true"></i>
+                                <h5>Мы берём 10%</h5>
+                            <p>Мы берём очень маленький процент с проданной рекламы.</p>
+                      
+                        </div>
+                    </div>
+                    <!-- item three end -->
+                    
+                    
+                </div> 
+                <!-- manager three end -->
+                
+            </div><!-- container end -->
+        </div><!-- section manager end -->
+        
+          <!-- Info Area
+        ===================================== -->
+        <div id="Info-1" class="bg-gray pt30 bb-solid-1">
+            <div class="container">
+                <div class="row">                
+                    <div class="col-md-8 col-md-offset-2 text-center pb35">
+                        <h4></h4>
+                        <a href="https://vk.com/id390604029" target="_blank" class="button button-md button-blue hover-ripple-out mr10">Написать менеджеру</a>
+                    </div>                
+                </div>
+            </div>
+        </div>
         
         <!-- Price Area
         ===================================== -->

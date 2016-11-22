@@ -1,5 +1,6 @@
 <#macro spisok public>
 <tr class="row${public.id}">
+    <td><a href="#" class="top" data-id="${public.id}">Поднять</a></td>
     <td><input type="text" id="nameSpisok"  value="${public.name}" maxlength="60"></td>
     <td><input type="text" id="stat_linkSpisok"  value="${public.stat_link}" maxlength="70"></td>
     <td><input type="text" id="subscribesSpisok"  value="${public.subscribes}" maxlength="20"></td>

@@ -15,6 +15,7 @@ import ru.veusdas.Service.ServiceImp.InstagramServiceImpl;
 import ru.veusdas.Service.ServiceImp.QuestionServiceImpl;
 import ru.veusdas.Service.ServiceImp.SpisokServiceImpl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -28,8 +29,6 @@ public class AdminController {
     SpisokServiceImpl spisokService;
     @Autowired
     InstagramServiceImpl instagramService;
-//    @Autowired
-//    YouTubeServiceImpl youTubeService;
 
     @GetMapping("/admin")
     public String render(Model model){
@@ -50,18 +49,9 @@ public class AdminController {
 
         model.addAttribute("publicApplications",app);
         List<Adverts> advApp = advertsService.getNonActiveAdverts();
-//        for (Adverts s : advApp){
-//            if(s.getAvatar_link().equals("") || s.getAvatar_link() == null){
-//                s.setAvatar_link("http://weezywap.xtgem.com/images/ad_icon.png");
-//            }
-//        }
         model.addAttribute("advertsApplications",advApp);
+
         List<Adverts> activeAdverts = advertsService.getActiveAdverts();
-//        for (Adverts s : activeAdverts){
-//            if(s.getAvatar_link().equals("") || s.getAvatar_link() == null){
-//                s.setAvatar_link("http://weezywap.xtgem.com/images/ad_icon.png");
-//            }
-//        }
         model.addAttribute("adverts",activeAdverts);
 
         model.addAttribute("instApplications",instagramService.getNonActiveInst());
@@ -106,6 +96,41 @@ public class AdminController {
         String buf = id.replaceAll("\\D", "");
         Integer app = Integer.parseInt(buf);
         spisokService.deleteSpisokById(app.longValue());
+
+        return "admin/ajaxSpisok";
+    }
+
+    @PostMapping("/admin/top")
+    public String publicTop(String id){
+        String buf = id.replaceAll("\\D", "");
+        Integer publicID = Integer.parseInt(buf);
+        Spisok pub = spisokService.getById(publicID.longValue());
+        ArrayList<Spisok> spisok = null;
+        if (pub.getPublic_category() == 20) {
+            spisok = (ArrayList<Spisok>) spisokService.getSpisok20();
+        }else if (pub.getPublic_category() == 50) {
+            spisok = (ArrayList<Spisok>) spisokService.getSpisok50();
+        }else {
+            spisok = (ArrayList<Spisok>) spisokService.getSpisok100();
+        }
+        for (Spisok s : spisok) {
+            s.setPosition(s.getPosition() + 1);
+            spisokService.update(s);
+        }
+        for (Spisok s : spisok) {
+            if (s.getId() == publicID.longValue()) {
+                if (s.getPublic_category() == 20) {
+                    s.setPosition(2001L);
+                }else if (s.getPublic_category() == 50) {
+                    s.setPosition(5001L);
+                }else {
+                    s.setPosition(10001L);
+                }
+                spisokService.update(s);
+                break;
+            }
+        }
+
 
         return "admin/ajaxSpisok";
     }

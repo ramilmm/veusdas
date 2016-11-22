@@ -19,6 +19,9 @@ public class Spisok {
     @Column(name = "link",nullable = false)
     private String link;
 
+    @Column(name = "position",nullable = false)
+    private Long position;
+
     @Column(name = "subscribes",nullable = false)
     private String subscribes;
 
@@ -42,12 +45,13 @@ public class Spisok {
 
     public Spisok() {}
 
-    public Spisok(String name, String link, String subscribes, String avatar_link, String stat_link, String admin_link, Long cost, int public_category, boolean active) {
+    public Spisok(String name, String link, String subscribes, String avatar_link,Long position, String stat_link, String admin_link, Long cost, int public_category, boolean active) {
         this.name = name;
         this.link = link;
         this.subscribes = subscribes;
         this.avatar_link = avatar_link;
         this.stat_link = stat_link;
+        this.position = position;
         this.admin_link = admin_link;
         this.cost = cost;
         this.public_category = public_category;
@@ -132,6 +136,14 @@ public class Spisok {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public Long getPosition() {
+        return position;
+    }
+
+    public void setPosition(Long position) {
+        this.position = position;
     }
 
     @Override

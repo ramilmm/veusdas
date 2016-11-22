@@ -1,5 +1,6 @@
 package ru.veusdas.Model;
 
+import javax.mail.search.IntegerComparisonTerm;
 import javax.persistence.*;
 
 @Entity
@@ -28,6 +29,9 @@ public class Instagram {
     @Column(name = "admin_link",nullable = false)
     private String admin_link;
 
+    @Column(name = "instagram_type", nullable = false)
+    private Integer instagram_type;
+
     @Column(name = "cost",nullable = false)
     private Long cost;
 
@@ -36,12 +40,13 @@ public class Instagram {
 
     public Instagram() {}
 
-    public Instagram(String name, String link, String subscribes, String avatar_link, String admin_link, Long cost, boolean active) {
+    public Instagram(String name, String link, String subscribes, String avatar_link, Integer instagram_type, String admin_link, Long cost, boolean active) {
         this.name = name;
         this.link = link;
         this.subscribes = subscribes;
         this.avatar_link = avatar_link;
         this.admin_link = admin_link;
+        this.instagram_type = instagram_type;
         this.cost = cost;
         this.active = active;
     }
@@ -110,6 +115,14 @@ public class Instagram {
         this.active = active;
     }
 
+    public Integer getInstagram_type() {
+        return instagram_type;
+    }
+
+    public void setInstagram_type(Integer instagram_type) {
+        this.instagram_type = instagram_type;
+    }
+
     @Override
     public String toString() {
         return "Instagram{" +
@@ -119,6 +132,7 @@ public class Instagram {
                 ", subscribes='" + subscribes + '\'' +
                 ", avatar_link='" + avatar_link + '\'' +
                 ", admin_link='" + admin_link + '\'' +
+                ", instagram_type=" + instagram_type +
                 ", cost=" + cost +
                 ", active=" + active +
                 '}';

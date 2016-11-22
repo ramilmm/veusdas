@@ -6,9 +6,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../css/ListOfPublic/main.css" />
+    <link rel="stylesheet" href="../css/ListOfPublic/jquery.remodal.css">
+    
+
 
 </head>
-<body class="landing">
+<body class="landing remodal-bg">
 
 
 <!-- Header -->
@@ -16,10 +19,8 @@
     <h1><strong><a href="/">VEUSDAS</a></strong></h1>
     <nav id="nav">
         <ul>
-            <li><a href="/">Главная</a></li>
             <li><a href="/ads">Объявления</a></li>
             <li><a href="/garant">Гарант</a></li>
-            <li><a href="/youtube">YouTube каналы</a></li>
             <li><a href="/web">Создание сайтов</a></li>
             <li><a href="/services">Наши услуги</a></li>
             <li><a href="/instagram">Instagram</a></li>
@@ -39,6 +40,30 @@
     </ul>
 </section>
 
+ <div class="row modal-dialog search">
+            <div class="8u 12u$(small)">
+                <form>
+                    <div class="row uniform 50%">
+                       <div class="7u"></div>
+                        <div class="2u$ 12u$(xsmall)">
+                            <a href="#modal" class="order button small">Поднять сообщество в топ</a>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
+<div class="remodal" data-remodal-id="modal">
+    <h1>Выведи свой паблик в топ</h1>
+    <p>
+      В список ежедневно добавляется 5-20 пабликов, из-за чего ваша группа быстро уходит из поля зрения рекламодателя. Если вывести паблик в топ списка, эффективность вырастает в несколько раз, так как люди будут сразу видеть Ваш паблик попадая на сайт. <br/>
+      Стоимость закрепления на неделю - <strong>299</strong> рублей. <br/>
+      Стоимость закрепления на месяц   - <strong>799</strong> рублей.
+    </p>
+    <br>
+    <a class="order button small" target="_blank" href="https://vk.com/write390604029">Напиши нашему менеджеру</a>
+</div>
 
 <!-- Three -->
 <section id="six" class="wrapper style1">
@@ -131,25 +156,14 @@
             <div class="8u 12u$(small)">
                 <form method="POST" action="/publiclist/add" th:action="@{/publiclist/add}" th:object="@{PublicForm}">
                     <div class="row uniform 50%">
-                        <#--<div class="6u 12u$(xsmall)">-->
-                            <#--<input type="text" name="name" th:field="*{name}" id="name" placeholder="Название паблика" />-->
-                            <#--&lt;#&ndash;<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>&ndash;&gt;-->
-                        <#--</div>-->
                         <div class="4u 12u$(xsmall)">
                             <input type="text" name="link" th:field="*{link}" id="link" placeholder="Рекламный контакт" />
-                            <#--<div th:if="${#fields.hasErrors('link')}" th:errors="*{link}">Link Error</div>-->
                         </div>
                         <div class="8u$ 12u$(xsmall)">
                             <input type="text" name="pub" th:field="*{pub}" id="pub" placeholder="Ссылка на паблик" />
-                            <#--<div th:if="${#fields.hasErrors('pub')}" th:errors="*{pub}">Public link Error</div>-->
                         </div>
-                        <#--<div class="9u 12u$(xsmall)">-->
-                            <#--<input type="text" name="ava" th:field="*{ava}" id="ava" placeholder="Ссылка на аватарку паблика" />-->
-                            <#--&lt;#&ndash;<div th:if="${#fields.hasErrors('ava')}" th:errors="*{ava}">Avatar link Error</div>&ndash;&gt;-->
-                        <#--</div>-->
                         <div class="4u 12u$(xsmall)">
                             <input type="text" name="cost" th:field="*{cost}" id="cost" placeholder="Цена" maxlength="10">
-                            <#--<div th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}">Cost Error</div>-->
                         </div>
                         <div class="8u$ 12u$(xsmall)">
                             <select name="category" th:field="*{category}" id="category">
@@ -158,16 +172,7 @@
                                 <option value="50">>50.000</option>
                                 <option value="100">>100.000</option>
                             </select>
-                            <#--<div th:if="${#fields.hasErrors('category')}" th:errors="*{category}">Category Error</div>-->
                         </div>
-                        <#--<div class="6u$ 12u$(xsmall)">-->
-                            <#--<input type="text" name="subscribes" th:field="*{subscribes}" id="sub" placeholder="Количество подписчиков" maxlength="10">-->
-                        <#--&lt;#&ndash;<div th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}">Cost Error</div>&ndash;&gt;-->
-                        <#--</div>-->
-                        <#--<div class="12u$ 12u$(xsmall)">-->
-                            <#--<input type="text" name="stat" th:field="*{stat}" id="dop-link" placeholder="Ссылка на статистику паблика">-->
-                            <#--&lt;#&ndash;<div th:if="${#fields.hasErrors('stat')}" th:errors="*{stat}">Statistic link Error</div>&ndash;&gt;-->
-                        <#--</div>-->
                     </div>
                     <ul class="actions">
                         <li><input type="submit" value="Отправить заявку"/></li>
@@ -200,6 +205,7 @@
 <script src="../js/ListOfPublic/wow.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="../js/ListOfPublic/common.js"></script>
+<script src="../js/ListOfPublic/jquery.remodal.js"></script>
 
 <script>
     $(document).ready(function(){

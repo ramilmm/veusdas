@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Spatial by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
 	<head>
 		<title>VEUSDAS</title>
@@ -20,7 +15,6 @@
 				<nav id="nav">
 					<ul>
                         <li><a href="/instagram">Instagram</a></li>
-						<li><a href="/youtube">Youtube каналы</a></li>
 						<li><a href="/garant">Гарант</a></li>
 						<li><a href="/ads">Доска объявлений</a></li>
                         <li><a href="/web">Создание сайтов</a></li>
@@ -107,7 +101,7 @@
 					<div class="flex flex-4">
 						<div class="profile-box person">
 							<div class="image round">
-								<a href="https://vk.com/id365105597" target="_blank"><img src="images/main/crew-blaz-robar.jpg" alt="Person 1" /></a>
+								<a href="https://vk.com/id390604029" target="_blank"><img src="images/main/crew-blaz-robar.jpg" alt="Person 1" /></a>
 							</div>
 							<h3>Владислав Леус</h3>
 							<p>Директор агенства. SEO-продвижение.</p>
@@ -165,7 +159,7 @@
 						    </div>
 						
                             <ul class="actions">
-                                <li><a href="https://vk.com/id365105597" class="button special big">Напишите нам</a></li>
+                                <li><a href="https://vk.com/id390604029" class="button special big">Напишите нам</a></li>
                             </ul>
 						</div>
 				</section>
@@ -300,7 +294,7 @@
 			<footer id="footer">
 				<div class="container">
 					<ul class="icons">
-						<li><a href="https://vk.com/id365105597" class="icon fa-vk" target="_blank"></a></li>
+						<li><a href="https://vk.com/id390604029" class="icon fa-vk" target="_blank"></a></li>
 					</ul>
 					<ul class="copyright">
 						<li>&copy; Veusdas 2016</li>

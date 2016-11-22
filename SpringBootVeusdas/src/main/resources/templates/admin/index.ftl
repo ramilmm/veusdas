@@ -18,7 +18,7 @@
                     <li><a class="menu active" href="#" data-id="publicList">Список пабликов</a></li>
                     <li><a class="menu" href="#" data-id="inst">Instagram</a></li>
                     <li><a class="menu" href="#" data-id="ads">Объявления</a></li>
-                    <li><a class="menu" href="#" data-id="questions">Вопросы</a></li>
+                    <#--<li><a class="menu" href="#" data-id="questions">Вопросы</a></li>-->
                     <li><a href="/">Главная страница</a></li>
                 </ul>
             </div>
@@ -79,6 +79,7 @@
                                       <div class="group">
                                           <table class="site_list site_list_big">
                                               <tr>
+                                                <th>Топ</th>
                                                 <th>Название</th>
                                                 <th width="150">Статистика</th>
                                                 <th width="150">Подписчиков</th>
@@ -96,6 +97,7 @@
 
 
                                                       <tr class="row${public.id}">
+                                                          <td><a href="#" class="top" data-id="${public.id}">Поднять</a></td>
                                                           <td><input type="text" id="nameSpisok${public.id}"  value="${public.name}" maxlength="60"></td>
                                                           <td><input type="text" id="stat_linkSpisok${public.id}"  value="${public.stat_link}" maxlength="70"></td>
                                                           <td><input type="text" id="subscribesSpisok${public.id}"  value="${public.subscribes}" maxlength="20"></td>
@@ -306,46 +308,46 @@
                 <#--<div id="youtube" class="youtube" style="display:none">-->
                     <#--aaaaaaaaaaaaaaaaa-->
                 <#--</div>-->
-                <div id="questions" class="questions" style="display:none">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 col-xs-12">
-                                <div class="questions">
-                                    <div id="community">
-                                      <div class="group">
-                                          <table class="site_list site_list_big">
-                                              <tr>
-                                                <th>Вопрос</th>
-                                                <th width="100">Имя</th>
-                                                <th width="100">Email</th>
-                                                <th width="200">Ваш ответ</th>
-                                                <th width="100">Действие</th>
-                                              </tr>
-                                              <#include "question.ftl">
+                <#--<div id="questions" class="questions" style="display:none">-->
+                    <#--<div class="container">-->
+                        <#--<div class="row">-->
+                            <#--<div class="col-md-12 col-xs-12">-->
+                                <#--<div class="questions">-->
+                                    <#--<div id="community">-->
+                                      <#--<div class="group">-->
+                                          <#--<table class="site_list site_list_big">-->
+                                              <#--<tr>-->
+                                                <#--<th>Вопрос</th>-->
+                                                <#--<th width="100">Имя</th>-->
+                                                <#--<th width="100">Email</th>-->
+                                                <#--<th width="200">Ваш ответ</th>-->
+                                                <#--<th width="100">Действие</th>-->
+                                              <#--</tr>-->
+                                              <#--<#include "question.ftl">-->
 
-                                              <#list questions as q>
-                                                  <@question question=q />
-                                              </#list>
-
-                                              <#--<#list questions as question>-->
-                                                  <#--<tr class="row${question.id}">-->
-                                                      <#--<td>${question.question}</td>-->
-                                                      <#--<td>${question.name}</td>-->
-                                                      <#--<td>${question.email}</td>-->
-                                                      <#--<td>-->
-                                                          <#--<textarea name="reply" id="reply${question.id}" cols="30" rows="1"></textarea>-->
-                                                      <#--</td>-->
-                                                      <#--<td><a href="#" class="sendReply" data-id="${question.id}">Ответить</a></td>-->
-                                                  <#--</tr>-->
+                                              <#--<#list questions as q>-->
+                                                  <#--<@question question=q />-->
                                               <#--</#list>-->
-                                           </table>
-                                         </div>
-                                   </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
+                                              <#--&lt;#&ndash;<#list questions as question>&ndash;&gt;-->
+                                                  <#--&lt;#&ndash;<tr class="row${question.id}">&ndash;&gt;-->
+                                                      <#--&lt;#&ndash;<td>${question.question}</td>&ndash;&gt;-->
+                                                      <#--&lt;#&ndash;<td>${question.name}</td>&ndash;&gt;-->
+                                                      <#--&lt;#&ndash;<td>${question.email}</td>&ndash;&gt;-->
+                                                      <#--&lt;#&ndash;<td>&ndash;&gt;-->
+                                                          <#--&lt;#&ndash;<textarea name="reply" id="reply${question.id}" cols="30" rows="1"></textarea>&ndash;&gt;-->
+                                                      <#--&lt;#&ndash;</td>&ndash;&gt;-->
+                                                      <#--&lt;#&ndash;<td><a href="#" class="sendReply" data-id="${question.id}">Ответить</a></td>&ndash;&gt;-->
+                                                  <#--&lt;#&ndash;</tr>&ndash;&gt;-->
+                                              <#--&lt;#&ndash;</#list>&ndash;&gt;-->
+                                           <#--</table>-->
+                                         <#--</div>-->
+                                   <#--</div>-->
+                                <#--</div>-->
+                            <#--</div>-->
+                        <#--</div>-->
+                    <#--</div>-->
+                <#--</div>-->
                 <div class="alert alert-success alert-dismissable" style="display:none">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
                     <strong>Отлично!</strong> Обработано.
@@ -478,6 +480,27 @@
                 }
             });
         });
+
+
+        $(document).on('click', '.top', function () {
+            event.preventDefault();
+            var $this = $(this);
+            var publicID = $this.data('id');
+            $.ajax({
+                type: 'POST',
+                url: '/admin/top',
+                data: {
+                    id:publicID,
+                },
+                success: function (data, status) {  // успешное завершение работы
+                    $('.alert').css('display','block');
+                },
+                error: function () {    // На сервере произошла ошибка
+                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
+                }
+            });
+        });
+
 
         $(document).on('click', '.deletePublic', function () {
             event.preventDefault();

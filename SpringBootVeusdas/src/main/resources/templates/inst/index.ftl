@@ -21,7 +21,6 @@
             <li><a href="/garant">Гарант</a></li>
             <li><a href="/web">Создание сайтов</a></li>
             <li><a href="/services">Наши услуги</a></li>
-            <li><a href="/youtube">YouTube каналы</a></li>
         </ul>
     </nav>
 </header>
@@ -38,6 +37,42 @@
     </ul>
 </section>
 
+<!-- Info Area
+        ===================================== -->
+
+<div class="row modal-dialog search">
+    <div class="8u 12u$(small)">
+        <form method="POST" action="/instagram/add" th:action="@{/instagram/add}" th:object="@{InstForm}">
+            <div class="row uniform 50%">
+                <div class="6u"></div>
+                <div class="4u 12u$(xsmall)">
+                    <select name="category" th:field="*{category}" id="category">
+                        <option value>Выберите тематику</option>
+                        <option value="1">Видео</option>
+                        <option value="2">Спорт </option>
+                        <option value="3">Девушки</option>
+                        <option value="4">Политика</option>
+                        <option value="5">Путешествия</option>
+                        <option value="7">Цитаты</option>
+                        <option value="7">Фотографии</option>
+                        <option value="7">Женское сообщество</option>
+                        <option value="7">Мужское сообщество</option>
+                        <option value="7">Кино</option>
+                        <option value="7">Мода</option>
+                        <option value="7">Наука</option>
+                        <option value="7">Гороскоп</option>
+                        <option value="7">Личная страница</option>
+                        <option value="7">Прочее</option>
+                    </select>
+                </div>
+                <div class="2u$ 12u$(xsmall)">
+                    <input type="submit" class="order button small" value="Подобрать"/>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
 
 <!-- Three -->
 <section id="six" class="wrapper style1">
