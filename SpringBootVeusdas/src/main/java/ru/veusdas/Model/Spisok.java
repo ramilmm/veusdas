@@ -1,6 +1,7 @@
 package ru.veusdas.Model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "spisok")
@@ -19,8 +20,14 @@ public class Spisok {
     @Column(name = "link",nullable = false)
     private String link;
 
-    @Column(name = "position",nullable = false)
-    private Long position;
+    @Column(name = "onTop", nullable = false)
+    private boolean onTop;
+
+    @Column(name = "topStart")
+    private Date topStart;
+
+    @Column(name = "topEnd")
+    private Date topEnd;
 
     @Column(name = "subscribes",nullable = false)
     private String subscribes;
@@ -45,13 +52,15 @@ public class Spisok {
 
     public Spisok() {}
 
-    public Spisok(String name, String link, String subscribes, String avatar_link,Long position, String stat_link, String admin_link, Long cost, int public_category, boolean active) {
+    public Spisok(String name, String link, String subscribes, String avatar_link, Boolean onTop, Date topStart, Date topEnd, String stat_link, String admin_link, Long cost, int public_category, boolean active) {
         this.name = name;
         this.link = link;
         this.subscribes = subscribes;
         this.avatar_link = avatar_link;
         this.stat_link = stat_link;
-        this.position = position;
+        this.onTop = onTop;
+        this.topStart = topStart;
+        this.topEnd = topEnd;
         this.admin_link = admin_link;
         this.cost = cost;
         this.public_category = public_category;
@@ -138,20 +147,40 @@ public class Spisok {
         this.active = active;
     }
 
-    public Long getPosition() {
-        return position;
+    public boolean isOnTop() {
+        return onTop;
     }
 
-    public void setPosition(Long position) {
-        this.position = position;
+    public void setOnTop(boolean onTop) {
+        this.onTop = onTop;
+    }
+
+    public Date getTopStart() {
+        return topStart;
+    }
+
+    public void setTopStart(Date topStart) {
+        this.topStart = topStart;
+    }
+
+    public Date getTopEnd() {
+        return topEnd;
+    }
+
+    public void setTopEnd(Date topEnd) {
+        this.topEnd = topEnd;
     }
 
     @Override
     public String toString() {
-        return "Public{" +
+        return "Spisok{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", link='" + link + '\'' +
+                ", onTop=" + onTop +
+                ", topStart=" + topStart +
+                ", topEnd=" + topEnd +
+                ", subscribes='" + subscribes + '\'' +
                 ", avatar_link='" + avatar_link + '\'' +
                 ", stat_link='" + stat_link + '\'' +
                 ", admin_link='" + admin_link + '\'' +
@@ -160,5 +189,4 @@ public class Spisok {
                 ", active=" + active +
                 '}';
     }
-
 }

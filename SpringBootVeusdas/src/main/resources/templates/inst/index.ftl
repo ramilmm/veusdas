@@ -215,15 +215,15 @@
         $("#menu").on("click","button", function (event) {
             event.preventDefault();
             var id  = $(this).attr('data-id'),
-                    top = $(id).offset().top;
-            $('body,html').animate({scrollTop: top}, 800);
+                    onTop = $(id).offset().onTop;
+            $('body,html').animate({scrollTop: onTop}, 800);
         });
 
         $("#menu").on("click","a", function (event) {
             event.preventDefault();
             var id  = $(this).attr('href'),
-                    top = $(id).offset().top;
-            $('body,html').animate({scrollTop: top}, 800);
+                    onTop = $(id).offset().onTop;
+            $('body,html').animate({scrollTop: onTop}, 800);
         });
 
 

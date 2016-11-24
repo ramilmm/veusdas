@@ -42,7 +42,7 @@
         
         
     </head>
-    <body  id="page-top" data-spy="scroll" data-target=".navbar" data-offset="100">
+    <body  id="page-onTop" data-spy="scroll" data-target=".navbar" data-offset="100">
         
         <!-- Page Loader
         ===================================== -->
@@ -52,7 +52,7 @@
             </div>
 		</div>
         
-        <a href="#page-top" class="go-to-top">
+        <a href="#page-onTop" class="go-to-onTop">
             <i class="fa fa-long-arrow-up"></i>
         </a>
         
@@ -925,7 +925,7 @@
                     $('a[href*=#]').bind("click", function (e) {
                         var anchor = $(this);
                         $('html, body').stop().animate({
-                            scrollTop: $(anchor.attr('href')).offset().top
+                            scrollTop: $(anchor.attr('href')).offset().onTop
                         }, 5000);
                         e.preventDefault();
                     });

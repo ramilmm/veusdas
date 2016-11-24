@@ -6,7 +6,7 @@ import ru.veusdas.Service.SpisokService;
 import ru.veusdas.Model.Spisok;
 import ru.veusdas.Repository.SpisokRepositoryCustom;
 
-import java.util.List;
+import java.util.*;
 
 @Service
 public class SpisokServiceImpl implements SpisokService {
@@ -54,5 +54,33 @@ public class SpisokServiceImpl implements SpisokService {
         spisokRepositoryCustom.save(pub);
     }
 
-
+    @Override
+    public List<Spisok> getList(ArrayList<Spisok> spisok){
+        Date now = new Date();
+        for (Spisok s : spisok) {
+            if (s.getTopEnd() != null && now.after(s.getTopEnd())) {
+                s.setOnTop(false);
+                s.setTopEnd(null);
+                s.setTopStart(null);
+                update(s);
+            }
+        }
+        System.out.println(spisok);
+        Collections.sort(spisok, new Comparator<Spisok>() {
+            @Override
+            public int compare(Spisok s1, Spisok s2) {
+                return Boolean.compare(s2.isOnTop(),s1.isOnTop());
+            }
+        });
+        System.out.println(spisok);
+        Collections.sort(spisok, new Comparator<Spisok>() {
+            public int compare(Spisok s1, Spisok s2) {
+                if (s1.getTopStart() == null || s2.getTopStart() == null)
+                    return 0;
+                return s2.getTopStart().compareTo(s1.getTopStart());
+            }
+        });
+        System.out.println(spisok);
+        return spisok;
+    }
 }

@@ -1,6 +1,13 @@
 <#macro spisok public>
 <tr class="row${public.id}">
-    <td><a href="#" class="top" data-id="${public.id}">Поднять</a></td>
+    <td>
+        <a href="#" class="onTopWeek" data-id="${public.id}">Поднять на</a>
+        <input type="text" value="1" id="countWeeks">
+    </td>
+    <td>
+        <a href="#" class="onTopMonth" data-id="${public.id}">Поднять на месяц</a>
+        <input type="text" value="1" id="countMonths">
+    </td>
     <td><input type="text" id="nameSpisok"  value="${public.name}" maxlength="60"></td>
     <td><input type="text" id="stat_linkSpisok"  value="${public.stat_link}" maxlength="70"></td>
     <td><input type="text" id="subscribesSpisok"  value="${public.subscribes}" maxlength="20"></td>

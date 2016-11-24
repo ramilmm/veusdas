@@ -43,18 +43,18 @@
 
 
     </head>
-    <body  id="page-top" data-spy="scroll" data-target=".navbar" data-offset="100">
+    <body  id="page-onTop" data-spy="scroll" data-target=".navbar" data-offset="100">
         
         
         <!-- Navigation Area
         ===================================== -->
-        <nav class="navbar navbar-pasific navbar-mp megamenu navbar-fixed-top">
+        <nav class="navbar navbar-pasific navbar-mp megamenu navbar-fixed-onTop">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand page-scroll" href="#page-top">
+                    <a class="navbar-brand page-scroll" href="#page-onTop">
                         Veusdas
                     </a>
                 </div>
@@ -1002,7 +1002,7 @@
                     $('a[href*=#]').bind("click", function (e) {
                         var anchor = $(this);
                         $('html, body').stop().animate({
-                            scrollTop: $(anchor.attr('href')).offset().top
+                            scrollTop: $(anchor.attr('href')).offset().onTop
                         }, 5000);
                         e.preventDefault();
                     });

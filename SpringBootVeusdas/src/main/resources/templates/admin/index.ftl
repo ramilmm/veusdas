@@ -97,7 +97,24 @@
 
 
                                                       <tr class="row${public.id}">
-                                                          <td><a href="#" class="top" data-id="${public.id}">Поднять</a></td>
+                                                          <td>
+                                                              <a href="#" class="onTopWeek" data-id="${public.id}">Поднять на</a>
+                                                              <#--<input type="text" placeholder="1" id="countWeeks">-->
+                                                              <select id="countWeeks">
+                                                                  <option value>- количество недель -</option>
+                                                                  <option value="1">1</option>
+                                                                  <option value="2">2</option>
+                                                                  <option value="3">3</option>
+                                                              </select>
+                                                              <a href="#" class="onTopMonth" data-id="${public.id}">Поднять на</a>
+                                                              <select id="countMonths">
+                                                                  <option value>- количество месяцев -</option>
+                                                                  <option value="1">1</option>
+                                                                  <option value="2">2</option>
+                                                                  <option value="3">3</option>
+                                                              </select>
+                                                              <#--<input type="text" placeholder="1" id="countMonths">-->
+                                                          </td>
                                                           <td><input type="text" id="nameSpisok${public.id}"  value="${public.name}" maxlength="60"></td>
                                                           <td><input type="text" id="stat_linkSpisok${public.id}"  value="${public.stat_link}" maxlength="70"></td>
                                                           <td><input type="text" id="subscribesSpisok${public.id}"  value="${public.subscribes}" maxlength="20"></td>
@@ -482,15 +499,38 @@
         });
 
 
-        $(document).on('click', '.top', function () {
+        $(document).on('click', '.onTopWeek', function () {
             event.preventDefault();
             var $this = $(this);
             var publicID = $this.data('id');
+            var weeks = $('#countWeeks').val();
             $.ajax({
                 type: 'POST',
-                url: '/admin/top',
+                url: '/admin/topWeek',
                 data: {
                     id:publicID,
+                    weeks: weeks
+                },
+                success: function (data, status) {  // успешное завершение работы
+                    $('.alert').css('display','block');
+                },
+                error: function () {    // На сервере произошла ошибка
+                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
+                }
+            });
+        });
+
+        $(document).on('click', '.onTopMonth', function () {
+            event.preventDefault();
+            var $this = $(this);
+            var publicID = $this.data('id');
+            var months = $('#countMonths').val();
+            $.ajax({
+                type: 'POST',
+                url: '/admin/topMonth',
+                data: {
+                    id:publicID,
+                    months: months
                 },
                 success: function (data, status) {  // успешное завершение работы
                     $('.alert').css('display','block');

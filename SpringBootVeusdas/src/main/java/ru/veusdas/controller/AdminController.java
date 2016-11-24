@@ -15,7 +15,9 @@ import ru.veusdas.Service.ServiceImp.InstagramServiceImpl;
 import ru.veusdas.Service.ServiceImp.QuestionServiceImpl;
 import ru.veusdas.Service.ServiceImp.SpisokServiceImpl;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -29,6 +31,9 @@ public class AdminController {
     SpisokServiceImpl spisokService;
     @Autowired
     InstagramServiceImpl instagramService;
+
+    final Long WEEK = 604800000L;
+    final Long MONTH = 2628000000L;
 
     @GetMapping("/admin")
     public String render(Model model){
@@ -100,38 +105,49 @@ public class AdminController {
         return "admin/ajaxSpisok";
     }
 
-    @PostMapping("/admin/top")
-    public String publicTop(String id){
+    @PostMapping("/admin/topWeek")
+    public String publicTopWeek(String id, String weeks){
         String buf = id.replaceAll("\\D", "");
         Integer publicID = Integer.parseInt(buf);
+        if (weeks == null) {
+            return "redirect:/admin";
+        }
+        String buf1 = weeks.replaceAll("\\D", "");
+        Integer countWeek = Integer.parseInt(buf1);
+        if (countWeek <= 0) {
+            return "redirect:/admin";
+        }
+
         Spisok pub = spisokService.getById(publicID.longValue());
-        ArrayList<Spisok> spisok = null;
-        if (pub.getPublic_category() == 20) {
-            spisok = (ArrayList<Spisok>) spisokService.getSpisok20();
-        }else if (pub.getPublic_category() == 50) {
-            spisok = (ArrayList<Spisok>) spisokService.getSpisok50();
-        }else {
-            spisok = (ArrayList<Spisok>) spisokService.getSpisok100();
+        pub.setOnTop(true);
+        Date now = new Date();
+        pub.setTopStart(now);
+        Date end = new Date(now.getTime()+(WEEK*countWeek));
+        pub.setTopEnd(end);
+        spisokService.update(pub);
+        return "admin/ajaxSpisok";
+    }
+
+    @PostMapping("/admin/topMonth")
+    public String publicTopMonth(String id,String months){
+        String buf = id.replaceAll("\\D", "");
+        Integer publicID = Integer.parseInt(buf);
+        if (months == null) {
+            return "redirect:/admin";
         }
-        for (Spisok s : spisok) {
-            s.setPosition(s.getPosition() + 1);
-            spisokService.update(s);
-        }
-        for (Spisok s : spisok) {
-            if (s.getId() == publicID.longValue()) {
-                if (s.getPublic_category() == 20) {
-                    s.setPosition(2001L);
-                }else if (s.getPublic_category() == 50) {
-                    s.setPosition(5001L);
-                }else {
-                    s.setPosition(10001L);
-                }
-                spisokService.update(s);
-                break;
-            }
+        String buf1 = months.replaceAll("\\D", "");
+        Integer countMonth = Integer.parseInt(buf1);
+        if (countMonth <= 0) {
+            return "redirect:/admin";
         }
 
-
+        Spisok pub = spisokService.getById(publicID.longValue());
+        pub.setOnTop(true);
+        Date now = new Date();
+        pub.setTopStart(now);
+        Date end = new Date(now.getTime()+(MONTH*countMonth));
+        pub.setTopEnd(end);
+        spisokService.update(pub);
         return "admin/ajaxSpisok";
     }
 

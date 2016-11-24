@@ -3,6 +3,7 @@ package ru.veusdas.Service;
 
 import ru.veusdas.Model.Spisok;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface SpisokService {
@@ -23,5 +24,7 @@ public interface SpisokService {
      void deleteSpisok(Spisok pub);
      void deleteSpisokById(Long id);
      void update(Spisok pub);
+
+     List<Spisok> getList(ArrayList<Spisok> list);
 
 }
