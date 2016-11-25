@@ -66,6 +66,7 @@ public class InstagramController {
             instLink = "http://" + pf.getPub();
         }else instLink = pf.getPub();
         inst.setLink(instLink);
+        inst.setInstagram_type(1);
 //        inst.setActive(true);
 
         instagramService.addInst(inst);

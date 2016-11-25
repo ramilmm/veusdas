@@ -67,23 +67,46 @@ public class AdminController {
         return "admin/index";
     }
 
+    @GetMapping("/admin/vk")
+    public String renderVk(Model model){
+        model.addAttribute("spisok20",spisokService.getSpisok20());
+        model.addAttribute("spisok50",spisokService.getSpisok50());
+        model.addAttribute("spisok100",spisokService.getSpisok100());
 
-    @PostMapping("/admin/questionReply")
-    public String reply(String question,String reply){
-        String buf = question.replaceAll("\\D", "");
-        Integer id = Integer.parseInt(buf);
-        Questions q = questionService.getById(id.longValue());
-        Sender sender = new Sender("veusdas@bk.ru","parolparolparol");
-        sender.send("Мы ответили на ваш вопрос",
-                "Доброе время суток!" + "\n" +
-                        "Мы ответили на ваш вопрос:" + "\n" +
-                        reply + "\n" +
-                        "Надеюсь мы ответили на все ваши вопросы!" + "\n" +
-                        "С уважением ,Администрация сайта Veusdas.ru","veusdas@bk.ru",q.getEmail());
-        questionService.deleteQuestion(q);
-
-        return "admin/ajaxQuestion";
+        return "admin/vk";
     }
+
+    @GetMapping("/admin/adverts")
+    public String renderAdverts(Model model){
+        model.addAttribute("adverts",advertsService.getActiveAdverts());
+
+        return "admin/adverts";
+    }
+
+    @GetMapping("/admin/instagram")
+    public String renderInstagram(Model model) {
+        model.addAttribute("instList",instagramService.getActiveInst());
+
+        return "admin/instagram";
+    }
+
+
+//    @PostMapping("/admin/questionReply")
+//    public String reply(String question,String reply){
+//        String buf = question.replaceAll("\\D", "");
+//        Integer id = Integer.parseInt(buf);
+//        Questions q = questionService.getById(id.longValue());
+//        Sender sender = new Sender("veusdas@bk.ru","parolparolparol");
+//        sender.send("Мы ответили на ваш вопрос",
+//                "Доброе время суток!" + "\n" +
+//                        "Мы ответили на ваш вопрос:" + "\n" +
+//                        reply + "\n" +
+//                        "Надеюсь мы ответили на все ваши вопросы!" + "\n" +
+//                        "С уважением ,Администрация сайта Veusdas.ru","veusdas@bk.ru",q.getEmail());
+//        questionService.deleteQuestion(q);
+//
+//        return "admin/ajaxQuestion";
+//    }
 
     @PostMapping("/admin/setActive")
     public String acceptApplication(String id){

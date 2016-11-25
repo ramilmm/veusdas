@@ -1,419 +1,429 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
-    <meta charset="utf-8"/>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 2 | Data Tables</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="css/admin/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- DataTables -->
+  <!--  <link rel="stylesheet" href="../../plugins/datatables/dataTables.bootstrap.css">-->
+  <!-- Theme style -->
+  <link rel="stylesheet" href="css/admin/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="css/admin/skins/_all-skins.min.css">
 
-    <title>Admin page</title>
-    <link rel="stylesheet" href="css/admin/style.css"/>
-    <link rel="stylesheet" href="css/admin/bootstrap.min.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- jQuery 2.2.3 -->
+  <script src="js/admin/jQuery/jquery-2.2.3.min.js"></script>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
-<body class="admin">
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
 
-<div class="container">
-    <div class="row">
-            <div class="col-md-12">
-                <span class="tittle">Управление сайтом Veusdas</span>
-                <ul class="nav nav-tabs">
-                    <li><a class="menu active" href="#" data-id="publicList">Список пабликов</a></li>
-                    <li><a class="menu" href="#" data-id="inst">Instagram</a></li>
-                    <li><a class="menu" href="#" data-id="ads">Объявления</a></li>
-                    <#--<li><a class="menu" href="#" data-id="questions">Вопросы</a></li>-->
-                    <li><a href="/">Главная страница</a></li>
-                </ul>
+  <header class="main-header">
+    <!-- Logo -->
+    <a href="/admin" class="logo">
+      <!-- mini logo for sidebar mini 50x50 pixels -->
+      <span class="logo-mini"><b>adm</b></span>
+      <!-- logo for regular state and mobile devices -->
+      <span class="logo-lg"><b>Veusdas</b></span>
+    </a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top">
+      <!-- Sidebar toggle button-->
+      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+      </a>
+
+      <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+          <!-- User Account: style can be found in dropdown.less -->
+          <li class="dropdown user user-menu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <img src="images/admin/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Alexander Pierce</span>
+            </a>
+            <ul class="dropdown-menu">
+              <!-- User image -->
+              <li class="user-header">
+                <img src="images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                <p>
+                  Alexander Pierce
+                  <small>Member since Nov. 2012</small>
+                </p>
+              </li>
+              <!-- Menu Body -->
+              <li class="user-body">
+                <div class="row">
+                  <div class="col-xs-12 text-center">
+                    Счёт: 500р
+                  </div>
+                </div>
+                <!-- /.row -->
+              </li>
+              <!-- Menu Footer-->
+              <li class="user-footer">
+                <div class="pull-left">
+                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                </div>
+                <div class="pull-right">
+                  <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p>Alexander Pierce</p>
+          <a ><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        <li class="header">Меню</li>
+        <li class="active treeview">
+          <a href="/admin">
+            <i class="fa fa-dashboard"></i> <span>Главная</span>
+          </a>
+        </li>
+<!--
+        <li class="treeview">
+          <a href="pages/charts/chartjs.html">
+            <i class="fa fa-pie-chart"></i>
+            <span>Статистика</span>
+          </a>
+        </li>
+-->
+        <li class="treeview">
+          <a href="/admin/vk">
+            <i class="fa fa-vk"></i> <span>VK</span>
+          </a>
+        </li>
+         <li class="treeview">
+          <a href="/admin/instagram">
+            <i class="fa fa-instagram"></i> <span>Instagram</span>
+          </a>
+        </li>
+         <li class="treeview">
+          <a href="/admin/adverts">
+            <i class="fa fa-table"></i> <span>Объявления</span>
+          </a>
+        </li>
+         <li class="treeview">
+          <a href="/admin/clients">
+            <i class="fa fa-user"></i> <span>Пользователи</span>
+          </a>
+        </li>
+        
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>Control panel</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="/admin"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>150</h3>
+
+              <p>Объявлений</p>
             </div>
-            <div class="col-md-12">
-                <div id="publicList" class="publicList">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 col-xs-12">
-                              <h2 class="header" style="text-align:center;font-weight:700">Новые заявки</h2>
-                               <div class="applications">
-                                 <div id="community">
-                                      <div class="group">
-                                          <table class="site_list site_list_big">
-                                              <tr>
-                                                <th>Название</th>
-                                                <th width="150">Статистика</th>
-                                                <th width="150">Подписчиков</th>
-                                                <th width="180">Цена (руб.)</th>
-                                                <th width="180">Администратор</th>
-                                                <th>Действие</th>
-                                              </tr>
-                                              <#if publicApplications??>
-
-                                                  <#include "spisokApp.ftl">
-
-                                                  <#list publicApplications as q>
-                                                      <@public app=q />
-                                                  </#list>
-
-                                                  <#--<#list publicApplications as app>-->
-        <#---->
-                                                      <#--<tr class="row${app.id}">-->
-                                                          <#--<td>${app.name}</td>-->
-                                                          <#--<td>${app.stat_link}</td>-->
-                                                          <#--<td>${app.subscribes}</td>-->
-                                                          <#--<td>${app.cost}</td>-->
-                                                          <#--<td>${app.admin_link}</td>-->
-                                                          <#--<td>-->
-                                                            <#--<div class="buttons">-->
-                                                               <#--<a href="#" class="accept acceptSpisok" data-id="${app.id}">Принять</a>-->
-                                                               <#--<a href="#"  class="delete deleteSpisok" data-id="${app.id}">Отклонить</a>-->
-                                                            <#--</div>-->
-                                                          <#--</td>-->
-                                                      <#--</tr>-->
-                                                  <#--</#list>-->
-                                              <#else >
-                                                <span style="text-align: center">Новых заявок нет</span>
-                                              </#if>
-                                           </table>
-                                         </div>
-                                   </div>
-                               </div>
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                              <h2 class="header" style="text-align:center;font-weight:700">Редактирование информации</h2>
-                               <div class="editing">
-                                 <div id="community">
-                                      <div class="group">
-                                          <table class="site_list site_list_big">
-                                              <tr>
-                                                <th>Топ</th>
-                                                <th>Название</th>
-                                                <th width="150">Статистика</th>
-                                                <th width="150">Подписчиков</th>
-                                                <th width="150">Категория охвата</th>
-                                                <th width="180">Цена (руб.)</th>
-                                                <th width="180">Администратор</th>
-                                                <th>Действие</th>
-                                              </tr>
-                                              <#if spisok??>
-
-                                                  <#--<#include "public.ftl">-->
-
-                                                  <#list spisok as public>
-                                                      <#--<@spisok public=q />-->
-
-
-                                                      <tr class="row${public.id}">
-                                                          <td>
-                                                              <a href="#" class="onTopWeek" data-id="${public.id}">Поднять на</a>
-                                                              <#--<input type="text" placeholder="1" id="countWeeks">-->
-                                                              <select id="countWeeks">
-                                                                  <option value>- количество недель -</option>
-                                                                  <option value="1">1</option>
-                                                                  <option value="2">2</option>
-                                                                  <option value="3">3</option>
-                                                              </select>
-                                                              <a href="#" class="onTopMonth" data-id="${public.id}">Поднять на</a>
-                                                              <select id="countMonths">
-                                                                  <option value>- количество месяцев -</option>
-                                                                  <option value="1">1</option>
-                                                                  <option value="2">2</option>
-                                                                  <option value="3">3</option>
-                                                              </select>
-                                                              <#--<input type="text" placeholder="1" id="countMonths">-->
-                                                          </td>
-                                                          <td><input type="text" id="nameSpisok${public.id}"  value="${public.name}" maxlength="60"></td>
-                                                          <td><input type="text" id="stat_linkSpisok${public.id}"  value="${public.stat_link}" maxlength="70"></td>
-                                                          <td><input type="text" id="subscribesSpisok${public.id}"  value="${public.subscribes}" maxlength="20"></td>
-                                                          <td><select id="okhvatSpisok${public.id}" class="okhvat${public.id}" >
-                                                              <option value>- Охват пабликa -</option>
-                                                              <option value="20">>20.000</option>
-                                                              <option value="50">>50.000</option>
-                                                              <option value="100">>100.000</option>
-                                                          </select></td>
-                                                          <script>
-                                                              $(document).ready(function () {
-                                                                  $('.okhvat${public.id}').val('${public.public_category}');
-                                                              });
-                                                          </script>
-                                                          <td><input type="text" id="costSpisok${public.id}" value="${public.cost}" maxlength="10"></td>
-                                                          <td><input type="text" id="admin_linkSpisok${public.id}"  value="${public.admin_link}" maxlength="100"></td>
-                                                          <td>
-                                                              <div class="buttons">
-                                                                  <a href="#"  class="accept acceptEditing" data-id="${public.id}">Сохранить</a>
-                                                                  <a href="#"  class="delete deletePublic" data-id="${public.id}">Удалить</a>
-                                                              </div>
-                                                          </td>
-                                                      </tr>
-                                                  </#list>
-                                              </#if>
-                                           </table>
-                                         </div>
-                                   </div>
-                               </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="active-pub"></div>
-                </div>
-                <#--inst-->
-                <div id="inst" class="inst" style="display:none">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 col-xs-12">
-                                <h2 class="header" style="text-align:center;font-weight:700">Новые заявки</h2>
-                                <div class="applications">
-                                    <div id="community">
-                                        <div class="group">
-                                            <table class="site_list site_list_big">
-                                                <tr>
-                                                    <th>Название</th>
-                                                    <th width="150">Подписчиков</th>
-                                                    <th width="180">Цена (руб.)</th>
-                                                    <th width="180">Администратор</th>
-                                                    <th>Действие</th>
-                                                </tr>
-
-                                            <#if instApplications??>
-
-                                                <#include "instApp.ftl">
-
-                                                <#list instApplications as q>
-                                                    <@inst inst=q />
-                                                </#list>
-                                            <#else >
-                                                <span style="text-align: center">Новых заявок нет</span>
-                                            </#if>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <h2 class="header" style="text-align:center;font-weight:700">Редактирование информации</h2>
-                                <div class="editing">
-                                    <div id="community">
-                                        <div class="group">
-                                            <table class="site_list site_list_big">
-                                                <tr>
-                                                    <th>Название</th>
-                                                    <th width="150">Подписчиков</th>
-                                                    <th width="180">Цена (руб.)</th>
-                                                    <th width="180">Администратор</th>
-                                                    <th>Действие</th>
-                                                </tr>
-
-                                            <#if instList??>
-
-                                            <#--<#include "public.ftl">-->
-
-                                                <#list instList as inst>
-                                                <#--<@spisok public=q />-->
-
-
-                                                    <tr class="row${inst.id}">
-                                                        <td><input type="text" id="nameInst${inst.id}" value="${inst.name}" maxlength="60"></td>
-                                                        <td><input type="text" id="subscribesInst${inst.id}" value="${inst.subscribes}" maxlength="20"></td>
-                                                        <td><input type="text" id="costInst${inst.id}" value="${inst.cost}" maxlength="10"></td>
-                                                        <td><input type="text" id="admin_linkInst${inst.id}" value="${inst.admin_link}" maxlength="100"></td>
-                                                        <td>
-                                                            <div class="buttons">
-                                                                <a href="#"  class="accept acceptEditingInst" data-id="${inst.id}">Сохранить</a>
-                                                                <a href="#"  class="delete deleteInst" data-id="${inst.id}">Удалить</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </#list>
-                                            </#if>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="active-pub"></div>
-                </div>
-                <div id="ads" class="ads" style="display:none">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12 col-xs-12">
-                              <h2 class="header" style="text-align:center;font-weight:700">Новые заявки</h2>
-                               <div class="adverts">
-                                 <div id="community">
-                                      <div class="group">
-                                          <table class="site_list site_list_big">
-                                              <tr>
-                                                <th>Название</th>
-                                                <th width="150">Профиль вк</th>
-                                                <th width="180">Цена (руб.)</th>
-                                                <th width="180">Тип объявления</th>
-                                                <th width="180">Комментарий</th>
-                                                <th>Действие</th>
-                                              </tr>
-                                              <#if advertsApplications??>
-
-                                                  <#include "advert.ftl">
-
-                                                  <#list advertsApplications as q>
-                                                      <@advert adv=q />
-                                                  </#list>
-
-                                                  <#--<#list advertsApplications as adv>-->
-
-                                                      <#--<tr>-->
-                                                          <#--<td>${adv.advert_name}</td>-->
-                                                          <#--<td><a href="${adv.profile_link}">Профиль вк</a></td>-->
-                                                          <#--<td>${adv.cost}</td>-->
-                                                          <#--<td>${adv.advert_type}</td>-->
-                                                          <#--<td>${adv.comment}</td>-->
-                                                          <#--<td>-->
-                                                            <#--<div class="buttons">-->
-                                                               <#--<span class="accept acceptAppAdv" data-id="${adv.id}">Принять</span>-->
-                                                               <#--<span class="delete deleteAppAdv" data-id="${adv.id}">Отклонить</span>-->
-                                                            <#--</div>-->
-                                                          <#--</td>-->
-                                                      <#--</tr>-->
-                                                  <#--</#list>-->
-                                              <#else >
-                                                  <span style="text-align: center">Новых заявок нет</span>
-                                              </#if>
-                                           </table>
-                                         </div>
-                                   </div>
-                               </div>
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                              <h2 class="header" style="text-align:center;font-weight:700">Редактирование объявлений</h2>
-                               <div class="adverts">
-                                 <div id="community">
-                                      <div class="group">
-                                          <table class="site_list site_list_big">
-                                              <tr>
-                                                <th>Название</th>
-                                                <th width="150">Профиль вк</th>
-                                                <th width="180">Цена (руб.)</th>
-                                                <th width="180">Тип объявления</th>
-                                                <th width="180">Комментарий</th>
-                                                <th>Действие</th>
-                                              </tr>
-                                              <#if adverts??>
-
-                                                  <#include "advertList.ftl">
-
-                                                  <#list adverts as q>
-                                                      <@advertList ad=q />
-                                                  </#list>
-
-                                                  <#--<#list adverts as ad>-->
-                                                      <#--<tr>-->
-                                                          <#--<td><input type="text" value="${ad.advert_name}" maxlength="60"></td>-->
-                                                          <#--<td><input type="text" value="${ad.profile_link}" maxlength="220"></td>-->
-                                                          <#--<td><input type="text" value="${ad.cost}" maxlength="12"></td>-->
-                                                          <#--<td><input type="text" value="${ad.advert_type}" maxlength="60"></td>-->
-                                                          <#--<td><input type="text" value="${ad.comment}"  maxlength="200"></td>-->
-                                                          <#--<td>-->
-                                                            <#--<div class="buttons">-->
-                                                               <#--<span class="accept acceptEditingAdv" data-id="${ad.id}">Сохранить</span>-->
-                                                               <#--<span class="delete deleteAdv" data-id="${ad.id}">Удалить</span>-->
-                                                            <#--</div>-->
-                                                          <#--</td>-->
-                                                      <#--</tr>-->
-                                                  <#--</#list>-->
-                                              </#if>
-                                           </table>
-                                         </div>
-                                   </div>
-                               </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <#--<div id="youtube" class="youtube" style="display:none">-->
-                    <#--aaaaaaaaaaaaaaaaa-->
-                <#--</div>-->
-                <#--<div id="questions" class="questions" style="display:none">-->
-                    <#--<div class="container">-->
-                        <#--<div class="row">-->
-                            <#--<div class="col-md-12 col-xs-12">-->
-                                <#--<div class="questions">-->
-                                    <#--<div id="community">-->
-                                      <#--<div class="group">-->
-                                          <#--<table class="site_list site_list_big">-->
-                                              <#--<tr>-->
-                                                <#--<th>Вопрос</th>-->
-                                                <#--<th width="100">Имя</th>-->
-                                                <#--<th width="100">Email</th>-->
-                                                <#--<th width="200">Ваш ответ</th>-->
-                                                <#--<th width="100">Действие</th>-->
-                                              <#--</tr>-->
-                                              <#--<#include "question.ftl">-->
-
-                                              <#--<#list questions as q>-->
-                                                  <#--<@question question=q />-->
-                                              <#--</#list>-->
-
-                                              <#--&lt;#&ndash;<#list questions as question>&ndash;&gt;-->
-                                                  <#--&lt;#&ndash;<tr class="row${question.id}">&ndash;&gt;-->
-                                                      <#--&lt;#&ndash;<td>${question.question}</td>&ndash;&gt;-->
-                                                      <#--&lt;#&ndash;<td>${question.name}</td>&ndash;&gt;-->
-                                                      <#--&lt;#&ndash;<td>${question.email}</td>&ndash;&gt;-->
-                                                      <#--&lt;#&ndash;<td>&ndash;&gt;-->
-                                                          <#--&lt;#&ndash;<textarea name="reply" id="reply${question.id}" cols="30" rows="1"></textarea>&ndash;&gt;-->
-                                                      <#--&lt;#&ndash;</td>&ndash;&gt;-->
-                                                      <#--&lt;#&ndash;<td><a href="#" class="sendReply" data-id="${question.id}">Ответить</a></td>&ndash;&gt;-->
-                                                  <#--&lt;#&ndash;</tr>&ndash;&gt;-->
-                                              <#--&lt;#&ndash;</#list>&ndash;&gt;-->
-                                           <#--</table>-->
-                                         <#--</div>-->
-                                   <#--</div>-->
-                                <#--</div>-->
-                            <#--</div>-->
-                        <#--</div>-->
-                    <#--</div>-->
-                <#--</div>-->
-                <div class="alert alert-success alert-dismissable" style="display:none">
-                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                    <strong>Отлично!</strong> Обработано.
-                </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
             </div>
+            <a href="/admin/adverts" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+              <h3>250</h3>
+
+              <p>Пабликов</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-stats-bars"></i>
+            </div>
+            <a href="/admin/vk" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-yellow">
+            <div class="inner">
+              <h3>44</h3>
+
+              <p>Пользователя</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add"></i>
+            </div>
+            <a href="/admin/clients" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3>65</h3>
+
+              <p>Страниц instagram</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-social-instagram-outline"></i>
+            </div>
+            <a href="/admin/instagram" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
+<!--      </div>-->
+      <!-- /.row -->
+      <!-- Content Wrapper. Contains page content -->
+<!--
+  <div class="content-wrapper">
+     Content Header (Page header) 
+    <section class="content-header">
+      <h1>
+        Список пабликов
+      </h1>
+    </section>
+-->
+        <div class="col-xs-12">
+            
+
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Заявки в список пабликов</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Название</th>
+                  <th>Цена</th>
+                  <th>Статистика</th>
+                  <th>Охват</th>
+                  <th>Администратор</th>
+                  <th>Действие</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <#if publicApplications??>
+
+
+                    <#list publicApplications as app>
+
+                      <tr class="row${app.id}">
+                        <td>${app.name}</td>
+                        <td>
+                            ${app.cost}
+                        </td>
+                        <td>
+                            ${app.stat_link}
+                        </td>
+                        <td>
+                            ${app.public_category}
+                        </td>
+                        <td>
+                            ${app.admin_link}
+                        </td>
+                        <td>
+                            <div class="buttons">
+                              <a  class="accept acceptSpisok" data-id="${app.id}">Принять</a> <br/>
+                              <a  class="delete deleteSpisok" data-id="${app.id}">Отклонить</a>
+                            </div>
+                        </td>
+                    </tr>
+                    </#list>
+                  </#if>
+
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+          </div>
+        </div>
+        
+            
+
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Заявки в список instagram</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Название</th>
+                  <th>Подписчики</th>
+                  <th>Цена</th>
+                  <th>Администратор</th>
+                  <th>Действие</th>
+                </tr>
+                </thead>
+                <tbody>
+                <#if instApplications??>
+
+
+                  <#list instApplications as inst>
+
+                      <tr class="row${inst.id}">
+                        <td>${inst.name}</td>
+                        <td>
+                            ${inst.subscribes}
+                        </td>
+                        <td>
+                            ${inst.cost}
+                        </td>
+                        <td>
+                            ${inst.admin_link}
+                        </td>
+                        <td>
+                            <div class="buttons">
+                              <a class="accept acceptInst" data-id="${inst.id}">Принять</a> <br/>
+                              <a class="delete deleteInst" data-id="${inst.id}">Отклонить</a>
+                          </div>
+                        </td>
+                    </tr>
+                  </#list>
+                </#if>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+          
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Заявки в список объявлений</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Название</th>
+                  <th>Профиль вк</th>
+                  <th>Цена</th>
+                  <th>Комментарий</th>
+                  <th>Действие</th>
+                </tr>
+                </thead>
+                <tbody>
+                <#if advertsApplications??>
+
+
+                  <#list advertsApplications as ad>
+
+                      <tr class="row${ad.id}">
+                        <td>${ad.advert_name}</td>
+                        <td>
+                            ${ad.profile_link}
+                        </td>
+                        <td>
+                            ${ad.cost}
+                        </td>
+                        <td>
+                            ${ad.comment}
+                        </td>
+                        <td>
+                            <div class="buttons">
+                              <a class="accept acceptAppAdv" data-id="${ad.id}">Принять</a> <br/>
+                              <a class="delete deleteAppAdv" data-id="${ad.id}">Отклонить</a>
+                          </div>
+                        </td>
+                    </tr>
+
+                    </#list>
+                </#if>
+
+                </tbody>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+    
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.3.8
     </div>
+    <strong>Copyright &copy; 2016 <a href="http://www.veusdas.com">Veusdas</a>.</strong> All rights
+    reserved.
+  </footer>
+
+  <!-- /.control-sidebar -->
+  <!-- Add the sidebar's background. This div must be placed
+       immediately after the control sidebar -->
+  <div class="control-sidebar-bg"></div>
 </div>
+<!-- ./wrapper -->
 
-<script src="js/admin/bootstrap.min.js"></script>
-<script type="text/javascript">
+<!-- jQuery 2.2.3 -->
+<script src="js/admin/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="css/admin/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/admin/app.min.js"></script>
+
+<script>
     $(document).ready(function () {
-   
-    $(document).on('click', '.menu', function () {
-        var oldPage = '#'+$('.active').data('id');
-        var newPage = '#'+$(this).data('id');
-        
-        $('.active').removeClass('active');
-        $(this).addClass('active');
-        
-        $(oldPage).css('display','none');
-        $(newPage).css('display','block');
-    });
-
-
-
-        $(document).on('click', '.sendReply', function () {
-            event.preventDefault();
-            var $this = $(this);
-            var questionID = $this.data('id');
-            var textarea = $('#reply' + questionID).val();
-            var row = '.row' + questionID;
-            $.ajax({
-                type: 'POST',
-                url: '/admin/questionReply',
-                data: {
-                    question: questionID,
-                    reply: textarea
-                },
-                success: function (data, status) {  // успешное завершение работы
-                    $this.hide();
-                    $(row).css('display','none');
-                    $('.alert').css('display','block');
-                },
-                error: function () {    // На сервере произошла ошибка
-                    // console.log(data);
-                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
-                }
-            });
-        });
 
         $(document).on('click', '.acceptSpisok', function () {
             event.preventDefault();
@@ -460,110 +470,6 @@
                 }
             });
         });
-        $(document).on('click', '.acceptEditing', function () {
-            event.preventDefault();
-            var $this = $(this);
-            var publicID = $this.data('id');
-            var h_name = '#nameSpisok'+publicID;
-            var h_stat = '#stat_linkSpisok'+publicID;
-            var h_sub = '#subscribesSpisok'+publicID;
-            var h_okhvat = '#okhvatSpisok'+publicID;
-            var h_cost = '#costSpisok'+publicID;
-            var h_admin = '#admin_linkSpisok'+publicID;
-            var name = $(h_name).val();
-            var stat = $(h_stat).val();
-            var subscribes = $(h_sub).val();
-            var okhvat = $(h_okhvat).val();
-            var cost = $(h_cost).val();
-            var admin = $(h_admin).val();
-            var row = '.row' + publicID;
-            $.ajax({
-                type: 'POST',
-                url: '/admin/editPublic',
-                data: {
-                    id:publicID,
-                    name:name,
-                    stat:stat,
-                    subscribes:subscribes,
-                    oxvat:okhvat,
-                    cost:cost,
-                    admin:admin
-                },
-                success: function (data, status) {  // успешное завершение работы
-                    $('.alert').css('display','block');
-                },
-                error: function () {    // На сервере произошла ошибка
-                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
-                }
-            });
-        });
-
-
-        $(document).on('click', '.onTopWeek', function () {
-            event.preventDefault();
-            var $this = $(this);
-            var publicID = $this.data('id');
-            var weeks = $('#countWeeks').val();
-            $.ajax({
-                type: 'POST',
-                url: '/admin/topWeek',
-                data: {
-                    id:publicID,
-                    weeks: weeks
-                },
-                success: function (data, status) {  // успешное завершение работы
-                    $('.alert').css('display','block');
-                },
-                error: function () {    // На сервере произошла ошибка
-                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
-                }
-            });
-        });
-
-        $(document).on('click', '.onTopMonth', function () {
-            event.preventDefault();
-            var $this = $(this);
-            var publicID = $this.data('id');
-            var months = $('#countMonths').val();
-            $.ajax({
-                type: 'POST',
-                url: '/admin/topMonth',
-                data: {
-                    id:publicID,
-                    months: months
-                },
-                success: function (data, status) {  // успешное завершение работы
-                    $('.alert').css('display','block');
-                },
-                error: function () {    // На сервере произошла ошибка
-                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
-                }
-            });
-        });
-
-
-        $(document).on('click', '.deletePublic', function () {
-            event.preventDefault();
-            var $this = $(this);
-            var publicID = $this.data('id');
-            var row = '.row' + publicID;
-            $.ajax({
-                type: 'POST',
-                url: '/admin/deletePublic',
-                data: {
-                    id:publicID
-                },
-                success: function (data, status) {  // успешное завершение работы
-                    $this.hide();
-                    $(row).css('display','none');
-                    $('.alert').css('display','block');
-                },
-                error: function () {    // На сервере произошла ошибка
-                    // console.log(data);
-                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
-                }
-            });
-        });
 
 //        instagram
 
@@ -590,39 +496,6 @@
             });
         });
 
-
-        $(document).on('click', '.acceptEditingInst', function () {
-            event.preventDefault();
-            var $this = $(this);
-            var publicID = $this.data('id');
-            var h_name = '#nameInst'+publicID;
-            var h_sub = '#subscribesInst'+publicID;
-            var h_cost = '#costInst'+publicID;
-            var h_admin = '#admin_linkInst'+publicID;
-            var name = $(h_name).val();
-            var subscribes = $(h_sub).val();
-            var cost = $(h_cost).val();
-            var admin = $(h_admin).val();
-            var row = '.row' + publicID;
-            $.ajax({
-                type: 'POST',
-                url: '/admin/editInst',
-                data: {
-                    id:publicID,
-                    name:name,
-                    subscribes:subscribes,
-                    cost:cost,
-                    admin:admin
-                },
-                success: function (data, status) {  // успешное завершение работы
-                    $('.alert').css('display','block');
-                },
-                error: function () {    // На сервере произошла ошибка
-//                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
-                }
-            });
-        });
-
         $(document).on('click', '.deleteInst', function () {
             event.preventDefault();
             var $this = $(this);
@@ -645,6 +518,7 @@
                 }
             });
         });
+
 
         $(document).on('click', '.acceptAppAdv', function () {
             event.preventDefault();
@@ -692,66 +566,10 @@
             });
         });
 
-        $(document).on('click', '.acceptEditingAdv', function () {
-            event.preventDefault();
-            var $this = $(this);
-            var advertID = $this.data('id');
-            var h_name = '#nameAdvert'+advertID;
-            var h_profile = '#profileAdvert'+advertID;
-            var h_cost = '#costAdvert'+advertID;
-            var h_type = '#typeAdvert'+advertID;
-            var h_comment = '#commentAdvert'+advertID;
-            var name = $(h_name).val();
-            var profile = $(h_profile).val();
-            var cost = $(h_cost).val();
-            var type = $(h_type).val();
-            var comment = $(h_comment).val();
-            var row = '.row' + advertID;
-            $.ajax({
-                type: 'POST',
-                url: '/admin/editAdvert',
-                data: {
-                    id:advertID,
-                    name:name,
-                    profile:profile,
-                    cost:cost,
-                    type:type,
-                    comment:comment
-                },
-                success: function (data, status) {  // успешное завершение работы
-                    $('.alert').css('display','block');
-                },
-                error: function () {    // На сервере произошла ошибка
-                    // console.log(data);
-                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
-                }
-            });
-        });
-
-        $(document).on('click', '.deleteAdv', function () {
-            event.preventDefault();
-            var $this = $(this);
-            var advertID = $this.data('id');
-            var row = '.row' + advertID;
-            $.ajax({
-                type: 'POST',
-                url: '/admin/deleteAdvert',
-                data: {
-                    id:advertID
-                },
-                success: function (data, status) {  // успешное завершение работы
-                    $('.alert').css('display','block');
-                },
-                error: function () {    // На сервере произошла ошибка
-                    // console.log(data);
-                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
-                }
-            });
-        });
 
 
+    });
 
-});
 </script>
 </body>
 </html>
