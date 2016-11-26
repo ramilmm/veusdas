@@ -58,11 +58,11 @@ public class SpisokController {
     public String addPublic(@Valid PublicForm pf, BindingResult bindingResult){
 
         if (bindingResult.hasErrors()) {
-            return "ListOfPublic/index";
+            return "redirect:/publiclist/20";
         }
 
         if (pf.getCost().equals("") || pf.getLink().equals("") || pf.getPub().equals("")) {
-            return "redirect:/";
+            return "redirect:/publiclist/20";
         }
 
         Spisok pub = new Spisok();

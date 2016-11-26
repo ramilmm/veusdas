@@ -18,14 +18,18 @@ public class InstForm {
     private String pub;
 
     @NotNull
+    private Integer instagram_type;
+
+    @NotNull
     private Long cost;
 
     public InstForm() {}
 
-    public InstForm(String link, String subscribes, String pub, Long cost) {
+    public InstForm(String link, String subscribes, String pub, Integer instagram_type, Long cost) {
         this.link = link;
         this.subscribes = subscribes;
         this.pub = pub;
+        this.instagram_type = instagram_type;
         this.cost = cost;
     }
 
@@ -61,12 +65,21 @@ public class InstForm {
         this.cost = cost;
     }
 
+    public Integer getInstagram_type() {
+        return instagram_type;
+    }
+
+    public void setInstagram_type(Integer instagram_type) {
+        this.instagram_type = instagram_type;
+    }
+
     @Override
     public String toString() {
         return "InstForm{" +
                 "link='" + link + '\'' +
                 ", subscribes='" + subscribes + '\'' +
                 ", pub='" + pub + '\'' +
+                ", instagram_type=" + instagram_type +
                 ", cost=" + cost +
                 '}';
     }

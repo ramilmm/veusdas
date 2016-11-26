@@ -6,6 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/ListOfPublic/main.css" />
+    <script src="js/jquery.min.js"></script>
 
 </head>
 <body class="landing">
@@ -50,26 +51,45 @@
                         <option value>Выберите тематику</option>
                         <option value="1">Видео</option>
                         <option value="2">Спорт </option>
-                        <option value="3">Девушки</option>
-                        <option value="4">Политика</option>
+                        <option value="3">Дизайн</option>
+                        <option value="4">Животные</option>
                         <option value="5">Путешествия</option>
-                        <option value="7">Цитаты</option>
-                        <option value="7">Фотографии</option>
-                        <option value="7">Женское сообщество</option>
-                        <option value="7">Мужское сообщество</option>
+                        <option value="6">Личная страница</option>
                         <option value="7">Кино</option>
-                        <option value="7">Мода</option>
-                        <option value="7">Наука</option>
-                        <option value="7">Гороскоп</option>
-                        <option value="7">Личная страница</option>
-                        <option value="7">Прочее</option>
+                        <option value="8">Фотографии</option>
+                        <option value="9">Женские сообщества</option>
+                        <option value="10">Мужские сообщества</option>
+                        <option value="11">Творчество</option>
+                        <option value="12">Мода</option>
+                        <option value="13">Наука</option>
+                        <option value="14">Гороскоп</option>
+                        <option value="15">Прочее</option>
                     </select>
+
                 </div>
                 <div class="2u$ 12u$(xsmall)">
-                    <input type="submit" class="order button small" value="Подобрать"/>
+                    <input id="submit_type" type="submit" class="order button small" value="Подобрать"/>
                 </div>
             </div>
         </form>
+
+        <script>
+            $(document).ready(function(){
+
+                $("#submit_type").on("click", function (event) {
+                    event.preventDefault();
+                    var selected_type  = $('#category').val();
+                    var className = '.inst' + selected_type;
+
+                    console.log(selected_type);
+                    console.log(className);
+
+                    $('.inst').hide();
+                    $(className).show();
+                });
+
+            });
+        </script>
 
     </div>
 </div>
@@ -84,6 +104,7 @@
                         <table class="site_list site_list_big">
                             <tr>
                                 <th>Название</th>
+                                <th>Тематика</th>
                                 <th width="150">Подписчиков</th>
                                 <th width="180">Цена (руб.)</th>
                                 <th width="180">Администратор</th>
@@ -91,13 +112,84 @@
 
                             <#if instList??>
                                 <#list instList as inst>
-                                    <tr id="/sites/3/" class="click" style="cursor: pointer">
+                                    <tr id="/sites/3/" class="click inst inst${inst.instagram_type}" style="cursor: pointer">
                                         <td>
                                             <div class="image">
                                                 <a href="${inst.link}" target="_blank"><img id="avatar" src="${inst.avatar_link}" width="30" height="30" alt="${inst.name}" /></a>
                                             </div>
                                             <a href="${inst.link}">${inst.name}</a>
                                         </td>
+                                        <script>
+                                            $(document).ready(function () {
+                                                var type = '${inst.instagram_type}';
+                                                if (!type){
+                                                    $('#inst_type${inst.id}').text("Прочее");
+                                                }
+                                                switch (${inst.instagram_type}){
+                                                    case 1: {
+                                                        $('#inst_type${inst.id}').text("Видео");
+                                                        break;
+                                                    }
+                                                    case 2: {
+                                                        $('#inst_type${inst.id}').text("Спорт");
+                                                        break;
+                                                    }
+                                                    case 3: {
+                                                        $('#inst_type${inst.id}').text("Дизайн");
+                                                        break;
+                                                    }
+                                                    case 4: {
+                                                        $('#inst_type${inst.id}').text("Животные");
+                                                        break;
+                                                    }
+                                                    case 5: {
+                                                        $('#inst_type${inst.id}').text("Путешествия");
+                                                        break;
+                                                    }
+                                                    case 7: {
+                                                        $('#inst_type${inst.id}').text("Кино");
+                                                        break;
+                                                    }
+                                                    case 8: {
+                                                        $('#inst_type${inst.id}').text("Фотографии");
+                                                        break;
+                                                    }
+                                                    case 9: {
+                                                        $('#inst_type${inst.id}').text("Женские сообщества");
+                                                        break;
+                                                    }
+                                                    case 10: {
+                                                        $('#inst_type${inst.id}').text("Мужские сообщества");
+                                                        break;
+                                                    }
+                                                    case 11: {
+                                                        $('#inst_type${inst.id}').text("Творчество");
+                                                        break;
+                                                    }
+                                                    case 12: {
+                                                        $('#inst_type${inst.id}').text("Мода");
+                                                        break;
+                                                    }
+                                                    case 13: {
+                                                        $('#inst_type${inst.id}').text("Наука");
+                                                        break;
+                                                    }
+                                                    case 14: {
+                                                        $('#inst_type${inst.id}').text("Гороскоп");
+                                                        break;
+                                                    }
+                                                    case 15: {
+                                                        $('#inst_type${inst.id}').text("Прочее");
+                                                        break;
+                                                    }
+                                                    case 6: {
+                                                        $('#inst_type${inst.id}').text("Личная страница");
+                                                        break;
+                                                    }
+                                                }
+                                            });
+                                        </script>
+                                        <td id="inst_type${inst.id}"></td>
                                         <td>${inst.subscribes}</td>
                                         <td style="text-transform: lowercase">
                                         ${inst.cost}
@@ -139,43 +231,38 @@
             <div class="8u 12u$(small)">
                 <form method="POST" action="/instagram/add" th:action="@{/instagram/add}" th:object="@{InstForm}">
                     <div class="row uniform 50%">
-                        <#--<div class="6u 12u$(xsmall)">-->
-                            <#--<input type="text" name="name" th:field="*{name}" id="name" placeholder="Название паблика" />-->
-                            <#--<div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>-->
-                        <#--</div>-->
                         <div class="4u 12u$(xsmall)">
                             <input type="text" name="link" th:field="*{link}" id="link" placeholder="Ссылка на ваш  профиль ВКонтакте" />
-                            <#--<div th:if="${#fields.hasErrors('link')}" th:errors="*{link}">Link Error</div>-->
                         </div>
                         <div class="8u$ 12u$(xsmall)">
                             <input type="text" name="pub" th:field="*{pub}" id="pub" placeholder="Ссылка на instagram" />
-                            <#--<div th:if="${#fields.hasErrors('pub')}" th:errors="*{pub}">Public link Error</div>-->
                         </div>
-                        <#--<div class="9u 12u$(xsmall)">-->
-                            <#--<input type="text" name="ava" th:field="*{ava}" id="ava" placeholder="Ссылка на аватарку паблика" />-->
-                            <#--<div th:if="${#fields.hasErrors('ava')}" th:errors="*{ava}">Avatar link Error</div>-->
-                        <#--</div>-->
-                        <div class="6u 12u$(xsmall)">
+                        <div class="3u 12u$(xsmall)">
                             <input type="text" name="cost" th:field="*{cost}" id="cost" placeholder="Цена" maxlength="10">
-                            <#--<div th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}">Cost Error</div>-->
                         </div>
-                        <#--<div class="6u 12u$(xsmall)">-->
-                            <#--<select name="category" th:field="*{category}" id="category">-->
-                                <#--<option value>- Охват пабликa -</option>-->
-                                <#--<option value="20">>20.000</option>-->
-                                <#--<option value="50">>50.000</option>-->
-                                <#--<option value="100">>100.000</option>-->
-                            <#--</select>-->
-                            <#--<div th:if="${#fields.hasErrors('category')}" th:errors="*{category}">Category Error</div>-->
-                        <#--</div>-->
+                        <div class="3u 12u$(xsmall)">
+                            <select name="instagram_type" th:field="*{instagram_type}" id="category">
+                                <option value>Выберите тематику</option>
+                                <option value="1">Видео</option>
+                                <option value="2">Спорт </option>
+                                <option value="3">Дизайн</option>
+                                <option value="4">Животные</option>
+                                <option value="5">Путешествия</option>
+                                <option value="6">Личная страница</option>
+                                <option value="7">Кино</option>
+                                <option value="8">Фотографии</option>
+                                <option value="9">Женские сообщества</option>
+                                <option value="10">Мужские сообщества</option>
+                                <option value="11">Творчество</option>
+                                <option value="12">Мода</option>
+                                <option value="13">Наука</option>
+                                <option value="14">Гороскоп</option>
+                                <option value="15">Прочее</option>
+                            </select>
+                        </div>
                         <div class="6u$ 12u$(xsmall)">
                             <input type="text" name="subscribes" th:field="*{subscribes}" id="sub" placeholder="Количество подписчиков" maxlength="10">
-                        <#--<div th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}">Cost Error</div>-->
                         </div>
-                        <#--<div class="12u$ 12u$(xsmall)">-->
-                            <#--<input type="text" name="stat" th:field="*{stat}" id="dop-link" placeholder="Ссылка на статистику паблика">-->
-                            <#--<div th:if="${#fields.hasErrors('stat')}" th:errors="*{stat}">Statistic link Error</div>-->
-                        <#--</div>-->
                     </div>
                     <ul class="actions">
                         <li><input type="submit" value="Отправить заявку"/></li>

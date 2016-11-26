@@ -34,7 +34,7 @@ public class InstagramController {
     public String addPublic(@Valid InstForm pf, BindingResult bindingResult){
 
         if (bindingResult.hasErrors()) {
-            return "inst/index";
+            return "redirect:/instagram";
         }
 
         if (!pf.getPub().contains(".com")){
@@ -66,7 +66,7 @@ public class InstagramController {
             instLink = "http://" + pf.getPub();
         }else instLink = pf.getPub();
         inst.setLink(instLink);
-        inst.setInstagram_type(1);
+        inst.setInstagram_type(pf.getInstagram_type());
 //        inst.setActive(true);
 
         instagramService.addInst(inst);
