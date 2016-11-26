@@ -197,13 +197,13 @@
                                       <option value="1">1</option>
                                       <option value="2">2</option>
                                       <option value="3">3</option>
-                                  </select> <br/>
+                                  </select> недели <br/>
                                   <a href="#" class="onTopMonth" data-id="${public20.id}">Поднять на</a>
                                   <select id="countMonths">
                                       <option value="1">1</option>
                                       <option value="2">2</option>
                                       <option value="3">3</option>
-                                  </select>
+                                  </select> месяц
                               <td><input type="text" id="nameSpisok${public20.id}" value="${public20.name}" maxlength="60"></td>
                               <td><input type="text" id="stat_linkSpisok${public20.id}" value="${public20.stat_link}" maxlength="70"></td>
                               <td><input type="text" id="subscribesSpisok${public20.id}" value="${public20.subscribes}" maxlength="20"></td>
@@ -222,8 +222,8 @@
                               <td><input type="text" id="admin_linkSpisok${public20.id}" value="${public20.admin_link}" maxlength="100"></td>
                               <td>
                                   <div class="buttons">
-                                      <a href="#"  class="accept acceptEditing" data-id="${public20.id}">Сохранить</a>
-                                      <a href="#"  class="delete deletePublic" data-id="${public20.id}">Удалить</a>
+                                      <a href="#"  class="btn btn-success accept acceptEditing" data-id="${public20.id}">Сохранить</a>
+                                      <a href="#"  class="btn btn-danger delete deletePublic" data-id="${public20.id}">Удалить</a>
                                   </div>
                               </td>
                           </tr>
@@ -268,13 +268,13 @@
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
-                                </select> <br/>
+                                </select> недели <br/>
                                 <a href="#" class="onTopMonth" data-id="${public50.id}">Поднять на</a>
                                 <select id="countMonths">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
-                                </select>
+                                </select> месяц
                             <td><input type="text" id="nameSpisok${public50.id}" value="${public50.name}" maxlength="60"></td>
                             <td><input type="text" id="stat_linkSpisok${public50.id}" value="${public50.stat_link}" maxlength="70"></td>
                             <td><input type="text" id="subscribesSpisok${public50.id}" value="${public50.subscribes}" maxlength="20"></td>
@@ -293,8 +293,8 @@
                             <td><input type="text" id="admin_linkSpisok${public50.id}" value="${public50.admin_link}" maxlength="100"></td>
                             <td>
                                 <div class="buttons">
-                                    <a href="#"  class="accept acceptEditing" data-id="${public50.id}">Сохранить</a>
-                                    <a href="#"  class="delete deletePublic" data-id="${public50.id}">Удалить</a>
+                                    <a href="#"  class="btn btn-success accept acceptEditing" data-id="${public50.id}">Сохранить</a>
+                                    <a href="#"  class="btn btn-danger delete deletePublic" data-id="${public50.id}">Удалить</a>
                                 </div>
                             </td>
                         </tr>
@@ -338,13 +338,13 @@
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
-                                </select> <br/>
+                                </select> недели <br/>
                                 <a href="#" class="onTopMonth" data-id="${public50.id}">Поднять на</a>
                                 <select id="countMonths">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
-                                </select>
+                                </select> месяц
                             <td><input type="text" id="nameSpisok${public50.id}" value="${public50.name}" maxlength="60"></td>
                             <td><input type="text" id="stat_linkSpisok${public50.id}" value="${public50.stat_link}" maxlength="70"></td>
                             <td><input type="text" id="subscribesSpisok${public50.id}" value="${public50.subscribes}" maxlength="20"></td>
@@ -363,9 +363,9 @@
                             <td><input type="text" id="admin_linkSpisok${public50.id}" value="${public50.admin_link}" maxlength="100"></td>
                             <td>
                                 <div class="buttons">
-                                    <a href="#"  class="accept acceptEditing" data-id="${public50.id}">Сохранить</a>
+                                    <a href="#"  class="btn btn-success accept acceptEditing" data-id="${public50.id}">Сохранить</a>
                                     <br/>
-                                    <a href="#"  class="delete deletePublic" data-id="${public50.id}">Удалить</a>
+                                    <a href="#"  class="btn btn-danger delete deletePublic" data-id="${public50.id}">Удалить</a>
                                 </div>
                             </td>
                         </tr>

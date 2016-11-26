@@ -38,31 +38,13 @@ public class AdminController {
     @GetMapping("/admin")
     public String render(Model model){
         List<Spisok> app = spisokService.getNonActiveSpisok();
-        for (Spisok s : app){
-            if(s.getAvatar_link().equals("") || s.getAvatar_link() == null){
-                s.setAvatar_link("http://joomline.ru/images/jlvkgroup-ico2.png");
-            }
-        }
         model.addAttribute("publicApplications",app);
-        List<Spisok> activeSpisok = spisokService.getActiveSpisok();
-        for (Spisok s : activeSpisok){
-            if(s.getAvatar_link().equals("") || s.getAvatar_link() == null){
-                s.setAvatar_link("http://joomline.ru/images/jlvkgroup-ico2.png");
-            }
-        }
-        model.addAttribute("spisok",activeSpisok);
 
-        model.addAttribute("publicApplications",app);
         List<Adverts> advApp = advertsService.getNonActiveAdverts();
         model.addAttribute("advertsApplications",advApp);
 
-        List<Adverts> activeAdverts = advertsService.getActiveAdverts();
-        model.addAttribute("adverts",activeAdverts);
-
         model.addAttribute("instApplications",instagramService.getNonActiveInst());
-        model.addAttribute("instList",instagramService.getActiveInst());
 
-        model.addAttribute("questions",questionService.getActiveQuestions());
 
         return "admin/index";
     }

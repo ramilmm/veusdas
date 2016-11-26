@@ -278,8 +278,8 @@
                         </td>
                         <td>
                             <div class="buttons">
-                              <a  class="accept acceptSpisok" data-id="${app.id}">Принять</a> <br/>
-                              <a  class="delete deleteSpisok" data-id="${app.id}">Отклонить</a>
+                              <a  class="btn btn-success accept acceptSpisok" data-id="${app.id}">Принять</a> <br/>
+                              <a  class="btn btn-danger delete deleteSpisok" data-id="${app.id}">Отклонить</a>
                             </div>
                         </td>
                     </tr>
@@ -332,8 +332,8 @@
                         </td>
                         <td>
                             <div class="buttons">
-                              <a class="accept acceptInst" data-id="${inst.id}">Принять</a> <br/>
-                              <a class="delete deleteInst" data-id="${inst.id}">Отклонить</a>
+                              <a class="btn btn-success accept acceptInst" data-id="${inst.id}">Принять</a> <br/>
+                              <a class="btn btn-danger delete deleteInst" data-id="${inst.id}">Отклонить</a>
                           </div>
                         </td>
                     </tr>
@@ -381,8 +381,8 @@
                         </td>
                         <td>
                             <div class="buttons">
-                              <a class="accept acceptAppAdv" data-id="${ad.id}">Принять</a> <br/>
-                              <a class="delete deleteAppAdv" data-id="${ad.id}">Отклонить</a>
+                              <a class="btn btn-success accept acceptAppAdv" data-id="${ad.id}">Принять</a> <br/>
+                              <a class="btn btn-danger delete deleteAppAdv" data-id="${ad.id}">Отклонить</a>
                           </div>
                         </td>
                     </tr>

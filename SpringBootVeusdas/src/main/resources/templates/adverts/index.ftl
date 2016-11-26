@@ -6,8 +6,9 @@
     <title>Доска объявлений VEUSDAS</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/objavleniya/main.css" />
+    <#--<link rel="stylesheet" href="css/objavleniya/main.css" />-->
     <link rel="stylesheet" href="css/objavleniya/animate.css" />
+    <link rel="stylesheet" href="css/listOfPublic/main.css">
     <script src="js/jquery.min.js"></script>
 
 </head>
@@ -41,6 +42,7 @@
 </section>
 
 
+
 <!-- Info Area
         ===================================== -->
 
@@ -52,47 +54,119 @@
                 <div class="4u 12u$(xsmall)">
                     <select name="category" th:field="*{category}" id="category">
                         <option value>- Тип объявления -</option>
-                        <option value="1">Продажа</option>
-                        <option value="2">Аренда</option>
-                        <option value="3">ВПШЕР</option>
-                        <option value="4">Дизайнер</option>
-                        <option value="5">Менеджер по рекламе</option>
-                        <option value="6">Заливщик</option>
-                        <option value="7">Прочее</option>
+                        <option id="category_item" value="1">Продажа</option>
+                        <option id="category_item" value="2">Аренда</option>
+                        <option id="category_item" value="3">ВПШЕР</option>
+                        <option id="category_item" value="4">Дизайнер</option>
+                        <option id="category_item" value="5">Менеджер по рекламе</option>
+                        <option id="category_item" value="6">Заливщик</option>
+                        <option id="category_item" value="7">Прочее</option>
                     </select>
                 </div>
                 <div class="2u$ 12u$(xsmall)">
-                    <input type="submit" class="order button small" value="Подобрать"/>
+                    <input id="submit_type" type="submit" class="order button small" value="Подобрать"/>
                 </div>
             </div>
         </form>
 
+        <script>
+            $(document).ready(function(){
+
+                $("#submit_type").on("click", function (event) {
+                    event.preventDefault();
+                    var selected_type  = $('#category').val();
+                    var className = '.adv' + selected_type;
+
+                    console.log(selected_type);
+                    console.log(className);
+
+                        $('.advert').hide();
+                        $(className).show();
+                });
+
+            });
+        </script>
+
     </div>
 </div>
-
 
 <!-- Three -->
 <section id="six" class="wrapper style1">
     <div class="container">
         <div class="row">
-        <#list adverts as ad>
-            <div class="4u 6u(small) 12u$(xsmall) wow fadeInLeft">
-                <div class="image rounded">
-                    <a href="${ad.public_link}" target="_blank">
-                        <img src="${ad.avatar_link}" alt="${ad.advert_name}" width="160px"/>
-                    </a>
-                </div>
-                <div class="content">
-                    <header>
-                        <h4>${ad.advert_name}</h4>
-                        <p>${ad.advert_type}</p>
-                        <span class="cost">${ad.cost} рублей</span>
-                    </header>
-                    <a href="${ad.profile_link}" class="button special small">Написать</a>
-                    <p>${ad.comment}</p>
+            <div class="12u$ 12u$(small) 12u$(xsmall)">
+                <div id="community">
+                    <div class="group">
+                        <table class="site_list site_list_big">
+                            <tr>
+                                <th>Название</th>
+                                <th width="150"></th>
+                                <th>Описание</th>
+                                <th width="180">Цена (руб.)</th>
+                                <th width="180">Контакт</th>
+                            </tr>
+
+                        <#if adverts ??>
+                            <#list adverts as adv>
+                                <tr id="/sites/3/" class="click advert advert${adv.id}" style="cursor: pointer">
+                                    <td>
+                                        <div class="image">
+                                            <a href="${adv.profile_link}" target="_blank"><img id="avatar" src="${adv.avatar_link}" width="30" height="30" alt="${adv.advert_name}" /></a>
+                                        </div>
+                                        <a href="${adv.profile_link}">${adv.advert_name}</a>
+                                    </td>
+                                    <td class="advert_type">${adv.advert_type}</td>
+                                    <td class="comment">${adv.comment}</td>
+                                    <td style="text-transform: lowercase">
+                                    ${adv.cost}
+                                    </td>
+                                    <td class="btn"><a href="${adv.profile_link}" class="order button small" target="_blank">Написать</a></td>
+                                </tr>
+                                <script>
+                                    $(document).ready(function() {
+                                        switch ("${adv.advert_type}") {
+                                            case "Продажа":
+                                                $('.advert${adv.id}').addClass('adv'+1);
+                                                break;
+                                            case "Аренда":
+                                                $('.advert${adv.id}').addClass('adv'+2);
+                                                break;
+                                            case "ВПШЕР":
+                                                $('.advert${adv.id}').addClass('adv'+3);
+                                                break;
+                                            case "Дизайнер":
+                                                $('.advert${adv.id}').addClass('adv'+4);
+                                                break;
+                                            case "Менеджер по рекламе":
+                                                $('.advert${adv.id}').addClass('adv'+5);
+                                                break;
+                                            case "Заливщик":
+                                                $('.advert${adv.id}').addClass('adv'+6);
+                                                break;
+                                            case "Прочее":
+                                                $('.advert${adv.id}').addClass('adv'+7);
+                                                break;
+                                        }
+                                    });
+                                </script>
+                            </#list>
+                        </#if>
+
+                        </table>
+                        <style>
+                            .comment {
+                                max-width: 300px;
+                                word-wrap: break-word;
+                                line-height: 20px;
+                            }
+                            .advert_type {
+                                min-width: 189px;
+                            }
+                        </style>
+                    </div>
+
                 </div>
             </div>
-        </#list>
         </div>
     </div>
 </section>
@@ -120,8 +194,6 @@
                     <div class="row uniform 50%">
                         <div class="6u 12u$(xsmall)"><input type="text" name="link" th:field="*{link}" id="link" placeholder="Ссылка на ваш профиль ВКонтакте" /></div>
                         <div class="6u$ 12u$(xsmall)"><input type="text" name="name" th:field="*{name}" id="name" placeholder="Название объявления" /></div>
-                        <div class="9u 12u$(xsmall)"><input type="text" name="ava" th:field="*{ava}" id="ava" placeholder="Ссылка на аватарку объявления (Аватарка группы, личной страницы и т.д.)" /></div>
-                        <div class="3u$ 12u$(xsmall)"><input type="text" name="cost" th:field="*{cost}" id="cost" placeholder="Цена" maxlength="10"></div>
                         <div class="5u 12u$(xsmall)">
                             <select name="category" th:field="*{category}" id="category">
                                 <option value>- Тип объявления -</option>
@@ -158,6 +230,8 @@
                             });
                         </script>
                         <div class="7u$ 12u$(xsmall)"><input type="text" name="dopLink" th:field="*{dopLink}" id="dop-link" placeholder="Ссылка на паблик или статистику (Необязательно)"></div>
+                        <div class="9u 12u$(xsmall)"><input type="text" name="ava" th:field="*{ava}" id="ava" placeholder="Ссылка на аватарку объявления (Аватарка группы, личной страницы и т.д.)" /></div>
+                        <div class="3u$ 12u$(xsmall)"><input type="text" name="cost" th:field="*{cost}" id="cost" placeholder="Цена" maxlength="10"></div>
                         <div class="12u$"><textarea name="message" th:field="*{message}" id="message" placeholder="Комментарии. Описание услуги. Максимум 200 символов " maxlength="200" rows="4"></textarea></div>
                     </div>
                     <ul class="actions">

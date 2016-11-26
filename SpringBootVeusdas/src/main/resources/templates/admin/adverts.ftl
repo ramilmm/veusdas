@@ -201,15 +201,41 @@
                         </select>
                         <script>
                             $(document).ready(function () {
-                                $('.typeAdvert${ad.id}').val('${ad.advert_type}');
+                                var type = '${ad.advert_type}';
+                                if (type){
+                                    $('.type${ad.id}').val(7);
+                                }
+                                switch ("${ad.advert_type}"){
+                                    case "Продажа":
+                                        $('.type${ad.id}').val(1);
+                                        break;
+                                    case "Аренда":
+                                        $('.type${ad.id}').val(2);
+                                        break;
+                                    case "ВПШЕР":
+                                        $('.type${ad.id}').val(3);
+                                        break;
+                                    case "Дизайнер":
+                                        $('.type${ad.id}').val(4);
+                                        break;
+                                    case "Менеджер по рекламе":
+                                        $('.type${ad.id}').val(5);
+                                        break;
+                                    case "Заливщик":
+                                        $('.type${ad.id}').val(6);
+                                        break;
+                                    case "Прочее":
+                                        $('.type${ad.id}').val(7);
+                                        break;
+                                }
                             });
                         </script>
                     </td>
                     <td><input type="text" id="commentAdvert${ad.id}" value="${ad.comment}"  maxlength="200"></td>
                     <td>
                         <div class="buttons">
-                            <a href="#"  class="accept acceptEditingAdv" data-id="${ad.id}">Сохранить</a> <br/>
-                            <a href="#"  class="delete deleteAdv" data-id="${ad.id}">Удалить</a>
+                            <a href="#"  class="btn btn-success accept acceptEditingAdv" data-id="${ad.id}">Сохранить</a> <br/>
+                            <a href="#"  class="btn btn-danger delete deleteAdv" data-id="${ad.id}">Удалить</a>
                         </div>
                     </td>
                 </tr>

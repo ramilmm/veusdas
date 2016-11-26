@@ -193,8 +193,8 @@
                     <td><input type="text" id="admin_linkInst${inst.id}" value="${inst.admin_link}" maxlength="100"></td>
                     <td>
                         <div class="buttons">
-                            <a href="#"  class="accept acceptEditingInst" data-id="${inst.id}">Сохранить</a> <br/>
-                            <a href="#"  class="delete deleteInst" data-id="${inst.id}">Удалить</a>
+                            <a href="#"  class="btn btn-success accept acceptEditingInst" data-id="${inst.id}">Сохранить</a> <br/>
+                            <a href="#"  class="btn btn-danger delete deleteInst" data-id="${inst.id}">Удалить</a>
                         </div>
                     </td>
                 </tr>
