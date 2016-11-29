@@ -52,9 +52,9 @@
             </div>
 		</div>
         
-        <a href="#page-onTop" class="go-to-onTop">
-            <i class="fa fa-long-arrow-up"></i>
-        </a>
+        <#--<a href="#page-onTop" class="go-to-onTop">-->
+            <#--<i class="fa fa-long-arrow-up"></i>-->
+        <#--</a>-->
         
        
         <!-- Intro Area

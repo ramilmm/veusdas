@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 
-<html lang="ru">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Instagram VEUSDAS</title>
     <meta charset="utf-8" />

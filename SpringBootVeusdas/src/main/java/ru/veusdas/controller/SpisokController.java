@@ -7,17 +7,15 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import ru.veusdas.HTMLParser;
+import ru.veusdas.Utils.HTMLParser;
 import ru.veusdas.Model.Spisok;
 import ru.veusdas.Service.ServiceImp.SpisokServiceImpl;
+import ru.veusdas.Utils.UpdateThread;
 import ru.veusdas.form.PublicForm;
-import sun.security.provider.ConfigFile;
 
 import javax.validation.Valid;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
 
 @Controller
@@ -28,12 +26,19 @@ public class SpisokController {
     SpisokServiceImpl publicService;
 
     Long count = 1L;
-//    Long position = 3L;
+    final Long WEEK = 604800000L;
 
     @GetMapping("/20")
     public String renderPublic20(Model model){
         ArrayList<Spisok> spisok = (ArrayList<Spisok>) publicService.getSpisok20();
         spisok = (ArrayList<Spisok>) publicService.getList(spisok);
+        for (Spisok pub: spisok) {
+            if (new Date().after(pub.getUpdate_date())) {
+                UpdateThread update = new UpdateThread(publicService,spisok);
+                update.run();
+                break;
+            }
+        }
         model.addAttribute("publicList",spisok);
         return "ListOfPublic/index";
     }
@@ -42,6 +47,13 @@ public class SpisokController {
     public String renderPublic50(Model model){
         ArrayList<Spisok> spisok = (ArrayList<Spisok>) publicService.getSpisok50();
         spisok = (ArrayList<Spisok>) publicService.getList(spisok);
+        for (Spisok pub: spisok) {
+            if (new Date().after(pub.getUpdate_date())) {
+                UpdateThread update = new UpdateThread(publicService,spisok);
+                update.run();
+                break;
+            }
+        }
         model.addAttribute("publicList",spisok);
         return "ListOfPublic/index";
     }
@@ -50,6 +62,13 @@ public class SpisokController {
     public String renderPublic100(Model model){
         ArrayList<Spisok> spisok = (ArrayList<Spisok>) publicService.getSpisok100();
         spisok = (ArrayList<Spisok>) publicService.getList(spisok);
+        for (Spisok pub: spisok) {
+            if (new Date().after(pub.getUpdate_date())) {
+                UpdateThread update = new UpdateThread(publicService,spisok);
+                update.run();
+                break;
+            }
+        }
         model.addAttribute("publicList", spisok);
         return "ListOfPublic/index";
     }
@@ -92,6 +111,7 @@ public class SpisokController {
         pub.setOnTop(false);
         pub.setStat_link(info.get(3));
         pub.setSubscribes(info.get(2));
+        pub.setUpdate_date(new Date(new Date().getTime() + 2*WEEK));
 
         publicService.addSpisok(pub);
         count++;

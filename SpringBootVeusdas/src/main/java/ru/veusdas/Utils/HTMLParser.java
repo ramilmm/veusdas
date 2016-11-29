@@ -1,4 +1,4 @@
-package ru.veusdas;
+package ru.veusdas.Utils;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class HTMLParser {
 //    public static void main(String[] args) throws IOException {
 //        writeFile("https://vk.com/kalembaa");
-//        getPublicData();
+//        updateSubscribes();
 //    }
 
     static public void writeFile(String url) throws IOException {
@@ -157,6 +157,36 @@ public class HTMLParser {
         outputList.add(publicStatParsed);
 
         return outputList;
+    }
+
+    static public String updateSubscribes(){
+        String subscribes = "";
+        String publicSubscribes = "pm_counter";
+
+        try (BufferedReader reader = new BufferedReader(
+                new InputStreamReader(
+                        new FileInputStream("input.html"), StandardCharsets.UTF_8))){
+            String line;
+            String buf;
+            while ((line = reader.readLine()) != null) {
+                if (line.contains(publicSubscribes)) {
+                    buf = line.substring(line.indexOf(publicSubscribes));
+                    buf = buf.substring(buf.indexOf(">") + 1);
+                    buf = buf.substring(0, buf.indexOf("</em>"));
+                    buf = buf.replace("<span class=\"num_delim\"> </span>","");
+                    if (buf.contains(",")) {
+                        buf = buf.replace(",","");
+                    }
+                    System.out.println(buf);
+                    subscribes = buf;
+                    break;
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("error");
+        }
+
+        return subscribes;
     }
 
 }

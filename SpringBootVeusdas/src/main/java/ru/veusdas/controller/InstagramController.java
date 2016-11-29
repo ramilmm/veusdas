@@ -7,12 +7,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import ru.veusdas.HTMLParser;
+import ru.veusdas.Utils.HTMLParser;
 import ru.veusdas.Model.Instagram;
-import ru.veusdas.Model.Spisok;
 import ru.veusdas.Service.ServiceImp.InstagramServiceImpl;
 import ru.veusdas.form.InstForm;
-import ru.veusdas.form.PublicForm;
 
 import javax.validation.Valid;
 import java.io.IOException;

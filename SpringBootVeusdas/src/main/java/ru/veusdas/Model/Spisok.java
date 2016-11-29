@@ -47,12 +47,15 @@ public class Spisok {
     @Column(name = "public_category")
     private int public_category;
 
+    @Column(name = "update_date")
+    private Date update_date;
+
     @Column(name = "active")
     private boolean active;
 
     public Spisok() {}
 
-    public Spisok(String name, String link, String subscribes, String avatar_link, Boolean onTop, Date topStart, Date topEnd, String stat_link, String admin_link, Long cost, int public_category, boolean active) {
+    public Spisok(String name, String link, String subscribes, String avatar_link,Date update_date, Boolean onTop, Date topStart, Date topEnd, String stat_link, String admin_link, Long cost, int public_category, boolean active) {
         this.name = name;
         this.link = link;
         this.subscribes = subscribes;
@@ -65,6 +68,7 @@ public class Spisok {
         this.cost = cost;
         this.public_category = public_category;
         this.active = active;
+        this.update_date = update_date;
     }
 
     public String getSubscribes() {
@@ -155,6 +159,14 @@ public class Spisok {
         this.onTop = onTop;
     }
 
+    public Date getUpdate_date() {
+        return update_date;
+    }
+
+    public void setUpdate_date(Date update_date) {
+        this.update_date = update_date;
+    }
+
     public Date getTopStart() {
         return topStart;
     }
@@ -186,6 +198,7 @@ public class Spisok {
                 ", admin_link='" + admin_link + '\'' +
                 ", cost=" + cost +
                 ", public_category=" + public_category +
+                ", update_date=" + update_date +
                 ", active=" + active +
                 '}';
     }

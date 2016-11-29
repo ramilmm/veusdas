@@ -13,7 +13,7 @@
 
         <div class="login-dark">
             <div th:if="${param.error}">
-                Invalid username and password.
+                Invalid username and hash_password.
             </div>
             <form th:action="@{/login}" method="post">
                 <h2 class="sr-only">Login Form</h2>
