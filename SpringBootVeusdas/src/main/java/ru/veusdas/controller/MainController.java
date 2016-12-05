@@ -16,7 +16,7 @@ public class MainController {
         return "garant/index";
     }
 
-    @GetMapping("/login")
-    public String renderLoginPage() { return "login"; }
+//    @GetMapping("/login")
+//    public String renderLoginPage() { return "login"; }
 
 }

@@ -19,6 +19,7 @@
 	</parent>
 
 	<properties>
+		<stormpath.version>1.2.1</stormpath.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
@@ -26,9 +27,19 @@
 	</properties>
 
 	<dependencies>
+		<!--<dependency>-->
+			<!--<groupId>com.stormpath.spring</groupId>-->
+			<!--<artifactId>stormpath-default-spring-boot-starter</artifactId>-->
+			<!--<version>1.2.1</version>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -69,26 +80,20 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jetty</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
 		<!--&lt;!&ndash; https://mvnrepository.com/artifact/org.jsoup/jsoup &ndash;&gt;-->
 		<dependency>
 			<groupId>org.jsoup</groupId>
 			<artifactId>jsoup</artifactId>
 			<version>1.8.3</version>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/org.ccil.cowan.tagsoup/tagsoup -->
-		<!--<dependency>-->
-		<!--<groupId>org.ccil.cowan.tagsoup</groupId>-->
-		<!--<artifactId>tagsoup</artifactId>-->
-		<!--<version>1.2</version>-->
-		<!--</dependency>-->
-
 
 	</dependencies>
 

@@ -1,6 +1,3 @@
-<#assign sec=JspTaglibs["http://www.springframework.org/security/tags"]>
-<#assign spring=JspTaglibs["http://www.springframework.org/tags"]>
-<#assign form=JspTaglibs["http://www.springframework.org/form/tags"]>
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
@@ -15,27 +12,29 @@
 <body>
 
 <div class="login-dark">
-    <div th:if="${param.error}">
-        Invalid username and hash_password.
-    </div>
-    <form th:action="@{/registration}" method="post">
-        <h2 class="sr-only">Login Form</h2>
-        <div class="illustration">
-            <i class="icon ion-ios-locked-outline"></i>
-        </div>
-        <div class="form-group">
-            <input type="text" name="username" placeholder="Username" class="form-control" />
-        </div>
-        <div class="form-group">
-            <input type="password" name="password" placeholder="Password" class="form-control"/>
-        </div>
-        <div class="form-group">
-            <input type="password" name="confirm_password" placeholder="Confirm password" class="form-control"/>
-        </div>
-        <div class="form-group">
-            <button class="btn btn-primary btn-block" type="submit">Register</button>
-        </div>
-        <a href="#" class="forgot">Если забыл пароль, напиши Кате</a>
+<#--<div th:if="${param.error}">-->
+<#--Invalid username and hash_password.-->
+<#--</div>-->
+    <form method="POST" action="/registration" class="form-signin">
+        <h2 class="form-signin-heading">Create your account</h2>
+            <div class="form-group">
+                <input type="text" name="username" class="form-control" placeholder="Username"
+                            autofocus="true"/>
+                <errors path="username"></errors>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="Password"/>
+                <errors path="password"></errors>
+            </div>
+
+            <div class="form-group">
+                <input type="password" name="passwordConfirm" class="form-control"
+                            placeholder="Confirm your password"/>
+                <errors path="passwordConfirm"></errors>
+            </div>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
     </form>
 </div>
 

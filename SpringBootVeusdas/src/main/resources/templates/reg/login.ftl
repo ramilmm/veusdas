@@ -12,25 +12,23 @@
     <body>
 
         <div class="login-dark">
-            <div th:if="${param.error}">
-                Invalid username and hash_password.
-            </div>
-            <form th:action="@{/login}" method="post">
-                <h2 class="sr-only">Login Form</h2>
-                <div class="illustration">
-                <i class="icon ion-ios-locked-outline"></i>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="username" placeholder="Username" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <input type="password" name="password" placeholder="Password" class="form-control"/>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary btn-block" type="submit">Log In</button>
-                </div>
-                <a href="#" class="forgot">Если забыл пароль, напиши Кате</a>
-            </form>
+            <#--<div th:if="${param.error}">-->
+                <#--Invalid username and hash_password.-->
+            <#--</div>-->
+                <form method="POST" action="/login" class="form-signin">
+                    <h2 class="form-heading">Log in</h2>
+
+                    <div class="form-group">
+                        <input name="username" type="text" class="form-control" placeholder="Username"
+                               autofocus="true"/>
+                        <input name="password" type="password" class="form-control" placeholder="Password"/>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+                        <h4 class="text-center"><a href="/registration">Create an account</a></h4>
+                    </div>
+
+                </form>
         </div>
 
 

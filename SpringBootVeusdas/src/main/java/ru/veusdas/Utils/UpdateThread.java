@@ -26,14 +26,16 @@ public class UpdateThread implements Runnable {
 
     public void run() {
         for (Spisok pub : spisok) {
-            try {
-                HTMLParser.writeFile(pub.getLink());
-                pub.setSubscribes(HTMLParser.updateSubscribes());
-                pub.setUpdate_date(new Date(new Date().getTime() + 2*WEEK));
-            } catch (IOException e) {
-                e.printStackTrace();
+            if (new Date().after(pub.getUpdate_date())) {
+                try {
+                    HTMLParser.writeFile(pub.getLink());
+                    pub.setSubscribes(HTMLParser.updateSubscribes());
+                    pub.setUpdate_date(new Date(new Date().getTime() + 2 * WEEK));
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                spisokService.update(pub);
             }
-            spisokService.update(pub);
         }
     }
 

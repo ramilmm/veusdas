@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,6 +32,9 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
+
+    <h1 th:inline="text">Hello, [[${account.fullName}]]!</h1>
+    <a th:href="@{/logout}" class="btn btn-danger">Logout</a>
 
   <header class="main-header">
     <!-- Logo -->
