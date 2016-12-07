@@ -38,6 +38,9 @@ public class Adverts {
     @Column(name = "active")
     private boolean active;
 
+    @Column(name = "users")
+    private String user;
+
     public Adverts() {}
 
     public Adverts(String profile_link, String advert_name, String avatar_link, Long cost, String advert_type, String public_link, String comment, boolean active){
@@ -144,6 +147,14 @@ public class Adverts {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
     @Override

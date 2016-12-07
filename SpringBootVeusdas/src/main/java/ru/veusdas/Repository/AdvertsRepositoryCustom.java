@@ -13,6 +13,8 @@ public interface AdvertsRepositoryCustom extends JpaRepository<Adverts,Long>{
 
     ArrayList<Adverts> findByActive(boolean active);
 
+    ArrayList<Adverts> findByActiveAndUser(boolean active, String user);
+
     Adverts findById(long id);
 
 }

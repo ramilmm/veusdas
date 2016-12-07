@@ -33,7 +33,10 @@
                             placeholder="Confirm your password"/>
                 <errors path="passwordConfirm"></errors>
             </div>
-        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+        <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
+        <#if error??>
+            <span id="error">${error}</span>
+        </#if>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
     </form>
 </div>

@@ -172,7 +172,6 @@
                 <tr>
                   <th>Логин</th>
                   <th>Профиль вк</th>
-                  <th>Email</th>
                   <th>Реквизиты</th>
                   <th>Счёт</th>
                   <th>Оплатить</th>
@@ -180,34 +179,30 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>
-                        login
-                    </td>
-                    <td>
-                        vk.com/id7687112
-                    </td>
-                    <td>
-                        email@example.com
-                    </td>
-                    <td>
-                        R241115252865
-                    </td>
-                    <td>
-                       500рублей
-                        <script>
-                            $(document).ready(function () {
-                                $('.typeAdvert${ad.id}').val('${ad.advert_type}');
-                            });
-                        </script>
-                    </td>
-                    <td>
-                        <a href="#">Оплачено</a>
-                    </td>
-                    <td>
-                        <a href="#">Забанить</a>
-                    </td>
-                </tr>
+                <#if users??>
+                <#list users as user>
+                    <tr>
+                        <td>
+                            ${user.username}
+                        </td>
+                        <td>
+                            ${user.vk}
+                        </td>
+                        <td>
+                            ${user.requisites}
+                        </td>
+                        <td>
+                           ${user.score}
+                        </td>
+                        <td>
+                            <a class="payed" data-username="${user.username}" href="#">Оплачено</a>
+                        </td>
+                        <td>
+                            <a class="ban" data-username="${user.username}" href="#">Забанить</a>
+                        </td>
+                    </tr>
+                </#list>
+                </#if>
                 </tbody>
               </table>
             </div>
@@ -246,5 +241,47 @@
 <!-- Bootstrap 3.3.6 -->
 <script src="../css/admin/bootstrap/js/bootstrap.min.js"></script>
 <script src="../js/admin/app.min.js"></script>
+<script>
+    $(document).ready(function () {
+                $(document).on('click', '.payed', function () {
+                    event.preventDefault();
+                    var $this = $(this);
+                    var user = $this.data('username');
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '/admin/pay',
+                        data: {
+                            username:user
+                        },
+                        success: function (data, status) {  // успешное завершение работы
+                            $('.alert').css('display', 'block');
+                        },
+                        error: function () {    // На сервере произошла ошибка
+                            alert('Приносим извинения.<br/>На сервере произошла ошибка');
+                        }
+                    });
+                });
+        $(document).on('click', '.ban', function () {
+            event.preventDefault();
+            var $this = $(this);
+            var user = $this.data('username');
+
+            $.ajax({
+                type: 'POST',
+                url: '/admin/ban',
+                data: {
+                    username:user
+                },
+                success: function (data, status) {  // успешное завершение работы
+                    $('.alert').css('display', 'block');
+                },
+                error: function () {    // На сервере произошла ошибка
+                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
+                }
+            });
+        });
+            });
+</script>
 </body>
 </html>

@@ -53,6 +53,9 @@ public class Spisok {
     @Column(name = "active")
     private boolean active;
 
+    @Column(name = "users")
+    private String user;
+
     public Spisok() {}
 
     public Spisok(String name, String link, String subscribes, String avatar_link,Date update_date, Boolean onTop, Date topStart, Date topEnd, String stat_link, String admin_link, Long cost, int public_category, boolean active) {
@@ -181,6 +184,14 @@ public class Spisok {
 
     public void setTopEnd(Date topEnd) {
         this.topEnd = topEnd;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
     @Override

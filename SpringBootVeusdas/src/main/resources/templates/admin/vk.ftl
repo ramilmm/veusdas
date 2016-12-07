@@ -197,13 +197,14 @@
                                       <option value="1">1</option>
                                       <option value="2">2</option>
                                       <option value="3">3</option>
-                                  </select> недели <br/>
+                                  </select> недели
                                   <a href="#" class="onTopMonth" data-id="${public20.id}">Поднять на</a>
                                   <select id="countMonths">
                                       <option value="1">1</option>
                                       <option value="2">2</option>
                                       <option value="3">3</option>
                                   </select> месяц
+                              </td>
                               <td><input type="text" id="nameSpisok${public20.id}" value="${public20.name}" maxlength="60"></td>
                               <td><input type="text" id="stat_linkSpisok${public20.id}" value="${public20.stat_link}" maxlength="70"></td>
                               <td><input type="text" id="subscribesSpisok${public20.id}" value="${public20.subscribes}" maxlength="20"></td>
@@ -275,6 +276,7 @@
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                 </select> месяц
+                            </td>
                             <td><input type="text" id="nameSpisok${public50.id}" value="${public50.name}" maxlength="60"></td>
                             <td><input type="text" id="stat_linkSpisok${public50.id}" value="${public50.stat_link}" maxlength="70"></td>
                             <td><input type="text" id="subscribesSpisok${public50.id}" value="${public50.subscribes}" maxlength="20"></td>
@@ -345,6 +347,7 @@
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                 </select> месяц
+                            </td>
                             <td><input type="text" id="nameSpisok${public50.id}" value="${public50.name}" maxlength="60"></td>
                             <td><input type="text" id="stat_linkSpisok${public50.id}" value="${public50.stat_link}" maxlength="70"></td>
                             <td><input type="text" id="subscribesSpisok${public50.id}" value="${public50.subscribes}" maxlength="20"></td>

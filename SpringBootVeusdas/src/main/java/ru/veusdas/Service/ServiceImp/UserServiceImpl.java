@@ -7,6 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import ru.veusdas.Service.UserService;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 @Service
@@ -26,5 +27,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByUsername(String username) {
         return userRepository.findByUsername(username);
+    }
+
+    @Override
+    public ArrayList<User> findAll() {
+        return (ArrayList<User>) userRepository.findAll();
+    }
+
+    public void update(User user){
+        userRepository.save(user);
+    }
+
+    public void delete(User user) {
+        userRepository.delete(user);
     }
 }

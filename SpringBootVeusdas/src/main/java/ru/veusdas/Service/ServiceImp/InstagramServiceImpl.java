@@ -6,6 +6,7 @@ import ru.veusdas.Model.Instagram;
 import ru.veusdas.Repository.InstagramRepositoryCustom;
 import ru.veusdas.Service.InstagramService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,6 +19,10 @@ public class InstagramServiceImpl implements InstagramService{
     @Override
     public List<Instagram> getActiveInst() {
         return instagramRepository.findByActive(true);
+    }
+
+    public ArrayList<Instagram> getActiveFromUser(String username) {
+        return instagramRepository.findByActiveAndUser(true,username);
     }
 
     @Override

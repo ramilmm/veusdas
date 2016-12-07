@@ -14,6 +14,15 @@ public class User {
     @Column(name = "ROLE")
     private String role;
 
+    @Column(name = "vk")
+    private String vk;
+
+    @Column(name = "requisites")
+    private String requisites;
+
+    @Column(name = "score")
+    private Integer score;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
@@ -46,5 +55,29 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getVk() {
+        return vk;
+    }
+
+    public void setVk(String vk) {
+        this.vk = vk;
+    }
+
+    public String getRequisites() {
+        return requisites;
+    }
+
+    public void setRequisites(String requisites) {
+        this.requisites = requisites;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
     }
 }

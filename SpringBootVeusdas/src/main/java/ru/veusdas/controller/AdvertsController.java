@@ -1,6 +1,8 @@
 package ru.veusdas.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -29,7 +31,7 @@ public class AdvertsController {
     }
 
     @PostMapping("/ads/add")
-    public String add(@Valid AdvertForm af, BindingResult bindingResult){
+    public String add(@Valid AdvertForm af, Authentication authentication, BindingResult bindingResult){
         if (bindingResult.hasErrors()) {
             return "adverts/index";
         }
@@ -40,7 +42,12 @@ public class AdvertsController {
         }
 
         Adverts ad = new Adverts();
-        
+
+        UserDetails currentUser = null;
+        if (authentication != null && (currentUser = (UserDetails) authentication.getPrincipal()) != null) {
+            ad.setUser(currentUser.getUsername());
+        }
+
         ad.setId(count);
         ad.setAdvert_name(af.getName());
         ad.setAdvert_type(af.getCategory());

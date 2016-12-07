@@ -33,9 +33,6 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-    <h1 th:inline="text">Hello, [[${account.fullName}]]!</h1>
-    <a th:href="@{/logout}" class="btn btn-danger">Logout</a>
-
   <header class="main-header">
     <!-- Logo -->
     <a href="/admin" class="logo">
@@ -171,7 +168,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>150</h3>
+              <h3>${adCount}</h3>
 
               <p>Объявлений</p>
             </div>
@@ -186,7 +183,7 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>250</h3>
+              <h3>${pubCount}</h3>
 
               <p>Пабликов</p>
             </div>
@@ -201,7 +198,7 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
+              <h3>${clientCount}</h3>
 
               <p>Пользователя</p>
             </div>
@@ -216,7 +213,7 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>65</h3>
+              <h3>${instCount}</h3>
 
               <p>Страниц instagram</p>
             </div>

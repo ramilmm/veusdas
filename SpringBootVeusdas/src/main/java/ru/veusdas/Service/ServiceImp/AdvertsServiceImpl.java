@@ -82,5 +82,42 @@ public class AdvertsServiceImpl implements AdvertsService {
         return advertsRepositoryCustom.findById(id);
     }
 
+    public ArrayList<Adverts> getActiveFromUser(String username){
+        ArrayList<Adverts> ads = advertsRepositoryCustom.findByActiveAndUser(true,username);
+        for (Adverts ad : ads) {
+            switch (ad.getAdvert_type()) {
+                case "1": {
+                    ad.setAdvert_type("Продажа");
+                    break;
+                }
+                case "2": {
+                    ad.setAdvert_type("Аренда");
+                    break;
+                }
+                case "3": {
+                    ad.setAdvert_type("ВП");
+                    break;
+                }
+                case "4": {
+                    ad.setAdvert_type("Дизайн");
+                    break;
+                }
+                case "5": {
+                    ad.setAdvert_type("Менеджер по рекламе");
+                    break;
+                }
+                case "6": {
+                    ad.setAdvert_type("Заливщик");
+                    break;
+                }
+                case "7": {
+                    ad.setAdvert_type("Прочее");
+                    break;
+                }
+            }
+        }
+        return ads;
+    }
+
 
 }

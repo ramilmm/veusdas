@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 	<head>
 		<title>VEUSDAS</title>
 		<meta charset="utf-8" />
@@ -9,7 +9,9 @@
 
 	</head>
 	<body class="landing">
-
+		<#if user??>
+	        login: ${user.getUsername()}
+		</#if>
 		<!-- Header -->
 			<header id="header" class="alt">
 				<nav id="nav">

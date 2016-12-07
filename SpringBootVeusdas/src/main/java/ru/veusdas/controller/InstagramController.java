@@ -1,6 +1,9 @@
 package ru.veusdas.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -22,6 +25,7 @@ public class InstagramController {
     @Autowired
     InstagramServiceImpl instagramService;
 
+
     @GetMapping("/instagram")
     public String render(Model model){
         model.addAttribute("instList",instagramService.getActiveInst());
@@ -29,7 +33,7 @@ public class InstagramController {
     }
 
     @RequestMapping(value = "/instagram/add",method = RequestMethod.POST)
-    public String addPublic(@Valid InstForm pf, BindingResult bindingResult){
+    public String addPublic(@Valid InstForm pf, Authentication authentication, BindingResult bindingResult){
 
         if (bindingResult.hasErrors()) {
             return "redirect:/instagram";
@@ -44,6 +48,11 @@ public class InstagramController {
         }
 
         Instagram inst = new Instagram();
+
+        UserDetails currentUser = null;
+        if (authentication != null && (currentUser = (UserDetails) authentication.getPrincipal()) != null) {
+            inst.setUser(currentUser.getUsername());
+        }
 
         ArrayList<String> info = new ArrayList<>();
         try {

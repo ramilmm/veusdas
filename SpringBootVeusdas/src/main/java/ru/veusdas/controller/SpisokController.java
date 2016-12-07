@@ -1,12 +1,15 @@
 package ru.veusdas.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import ru.veusdas.Service.ServiceImp.UserServiceImpl;
 import ru.veusdas.Utils.HTMLParser;
 import ru.veusdas.Model.Spisok;
 import ru.veusdas.Service.ServiceImp.SpisokServiceImpl;
@@ -24,6 +27,9 @@ public class SpisokController {
 
     @Autowired
     SpisokServiceImpl publicService;
+
+    @Autowired
+    UserServiceImpl userService;
 
     Long count = 1L;
     final Long WEEK = 604800000L;
@@ -74,7 +80,7 @@ public class SpisokController {
     }
 
     @RequestMapping(value = "/add",method = RequestMethod.POST)
-    public String addPublic(@Valid PublicForm pf, BindingResult bindingResult){
+    public String addPublic(@Valid PublicForm pf, Authentication authentication, BindingResult bindingResult){
 
         if (bindingResult.hasErrors()) {
             return "redirect:/publiclist/20";
@@ -84,7 +90,13 @@ public class SpisokController {
             return "redirect:/publiclist/20";
         }
 
+
         Spisok pub = new Spisok();
+
+        UserDetails currentUser = null;
+        if (authentication != null && (currentUser = (UserDetails) authentication.getPrincipal()) != null) {
+            pub.setUser(currentUser.getUsername());
+        }
 
         ArrayList<String> info = new ArrayList<>();
         try {

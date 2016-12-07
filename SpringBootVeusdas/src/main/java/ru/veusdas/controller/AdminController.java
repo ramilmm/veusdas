@@ -1,19 +1,16 @@
 package ru.veusdas.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.veusdas.MailSender.Sender;
-import ru.veusdas.Model.Adverts;
-import ru.veusdas.Model.Instagram;
-import ru.veusdas.Model.Questions;
-import ru.veusdas.Model.Spisok;
-import ru.veusdas.Service.ServiceImp.AdvertsServiceImpl;
-import ru.veusdas.Service.ServiceImp.InstagramServiceImpl;
-import ru.veusdas.Service.ServiceImp.QuestionServiceImpl;
-import ru.veusdas.Service.ServiceImp.SpisokServiceImpl;
+import ru.veusdas.Model.*;
+import ru.veusdas.Service.ServiceImp.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
@@ -33,11 +30,31 @@ public class AdminController {
     @Autowired
     InstagramServiceImpl instagramService;
 
+    @Autowired
+    UserServiceImpl userService;
+
     final Long WEEK = 604800000L;
     final Long MONTH = 2628000000L;
 
+
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/admin")
-    public String render(Model model){
+    public String render(Authentication authentication, Model model){
+
+//        UserDetails currentUser = null;
+//        if (authentication != null && (currentUser = (UserDetails) authentication.getPrincipal()) != null) {
+//            if (currentUser.getAuthorities().isEmpty() || currentUser.getAuthorities().toString().contains("USER")){
+//                return "redirect:/";
+//            }
+//        }else {
+//            return "redirect:/";
+//        }
+
+        model.addAttribute("adCount",advertsService.getActiveAdverts().size());
+        model.addAttribute("pubCount",spisokService.getActiveSpisok().size());
+        model.addAttribute("instCount",instagramService.getActiveInst().size());
+        model.addAttribute("clientCount",userService.findAll().size());
+
         List<Spisok> app = spisokService.getNonActiveSpisok();
         model.addAttribute("publicApplications",app);
 
@@ -50,6 +67,7 @@ public class AdminController {
         return "admin/index";
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/admin/vk")
     public String renderVk(Model model){
         model.addAttribute("spisok20",spisokService.getSpisok20());
@@ -59,6 +77,7 @@ public class AdminController {
         return "admin/vk";
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/admin/adverts")
     public String renderAdverts(Model model){
         model.addAttribute("adverts",advertsService.getActiveAdverts());
@@ -66,11 +85,39 @@ public class AdminController {
         return "admin/adverts";
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/admin/instagram")
     public String renderInstagram(Model model) {
         model.addAttribute("instList",instagramService.getActiveInst());
 
         return "admin/instagram";
+    }
+
+    @PreAuthorize("hasAuthority('ADMIN')")
+    @GetMapping("/admin/clients")
+    public String renderClients(Model model){
+        model.addAttribute("users",userService.findAll());
+
+        return "admin/clients";
+    }
+
+    @PostMapping("/admin/pay")
+    public String setPayed(String username){
+        User user = userService.findByUsername(username);
+
+        user.setScore(0);
+        userService.update(user);
+
+        return "admin/ajaxSpisok";
+    }
+
+    @PostMapping("/admin/ban")
+    public String deleteUser(String username){
+        User user = userService.findByUsername(username);
+
+        userService.delete(user);
+
+        return "admin/ajaxSpisok";
     }
 
 
@@ -110,7 +157,6 @@ public class AdminController {
 
         return "admin/ajaxSpisok";
     }
-
     @PostMapping("/admin/topWeek")
     public String publicTopWeek(String id, String weeks){
         String buf = id.replaceAll("\\D", "");
@@ -310,6 +356,8 @@ public class AdminController {
 
         return "admin/ajaxAdvertList";
     }
+
+
 
 
 }

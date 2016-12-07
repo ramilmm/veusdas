@@ -22,12 +22,18 @@
                         <input name="username" type="text" class="form-control" placeholder="Username"
                                autofocus="true"/>
                         <input name="password" type="password" class="form-control" placeholder="Password"/>
-                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
+                        <div>
+                            <label for="remember-me">Remember me</label>
+                            <input type="checkbox" name="remember-me" id="remember-me">
+                        </div>
 
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
                         <h4 class="text-center"><a href="/registration">Create an account</a></h4>
                     </div>
-
+                <#if error??>
+                    <span id="error">${error}</span>
+                </#if>
                 </form>
         </div>
 

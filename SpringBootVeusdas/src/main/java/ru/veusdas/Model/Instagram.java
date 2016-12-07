@@ -38,6 +38,9 @@ public class Instagram {
     @Column(name = "active")
     private boolean active;
 
+    @Column(name = "users")
+    private String user;
+
     public Instagram() {}
 
     public Instagram(String name, String link, String subscribes, String avatar_link, Integer instagram_type, String admin_link, Long cost, boolean active) {
@@ -121,6 +124,14 @@ public class Instagram {
 
     public void setInstagram_type(Integer instagram_type) {
         this.instagram_type = instagram_type;
+    }
+
+    public String getUser() {
+        return user;
+    }
+
+    public void setUser(String user) {
+        this.user = user;
     }
 
     @Override

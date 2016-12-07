@@ -37,9 +37,16 @@ public class UserController {
             return "reg/register";
         }
 
+        if (userService.findByUsername(username) != null) {
+            model.addAttribute("error","Пользователь с таким логином уже существует");
+            return "reg/register";
+
+        }
+
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
+        user.setScore(0);
 
         userService.save(user);
 

@@ -17,6 +17,10 @@ public class SpisokServiceImpl implements SpisokService {
     public List<Spisok> getActiveSpisok(){
         return spisokRepositoryCustom.findByActive(true);
     }
+
+    public ArrayList<Spisok> getActiveFromUser(String username) {
+        return spisokRepositoryCustom.findByActiveAndUser(true,username);
+    }
     @Override
     public List<Spisok> getNonActiveSpisok(){
         return spisokRepositoryCustom.findByActive(false);
