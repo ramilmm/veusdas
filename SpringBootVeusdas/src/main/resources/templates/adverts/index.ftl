@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <#--<link rel="stylesheet" href="css/objavleniya/main.css" />-->
     <link rel="stylesheet" href="css/objavleniya/animate.css" />
-    <link rel="stylesheet" href="css/listOfPublic/main.css">
+    <link rel="stylesheet" href="css/ListOfPublic/main.css">
     <script src="js/jquery.min.js"></script>
 
 </head>

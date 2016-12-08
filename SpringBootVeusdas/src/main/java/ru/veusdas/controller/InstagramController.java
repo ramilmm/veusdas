@@ -79,10 +79,10 @@ public class InstagramController {
 
         instagramService.addInst(inst);
 
-        Sender sender = new Sender("bookstoreitis@gmail.com","parolparol");
+        Sender sender = new Sender("veusdas-supp@mail.ru","123321a");
         sender.send("Новая заявка в список instagram","Пришла новая заявка в список instagram: " +
                 inst.getLink() + "\n" +
-                "Ссыдка на админку : http://www.veusdas.com/admin","bookstoreitis@gmail.com","leusvladis@mail.ru");
+                "Ссыдка на админку : http://www.veusdas.com/admin","veusdas-supp@mail.ru","leusvladis@mail.ru");
 
         return "redirect:/instagram";
     }

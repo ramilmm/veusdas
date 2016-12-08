@@ -28,7 +28,7 @@ public class WebController {
         }
 
 
-        Sender sender = new Sender("veusdas@bk.ru","parolparolparol");
+        Sender sender = new Sender("veusdas-supp@mail.ru","123321a");
         sender.send("Новый вопрос",
                 "Доброе время суток!" + "\n" +
                         "Name:" + "\n" +
@@ -37,7 +37,7 @@ public class WebController {
                         email + "\n" +
                         "Вопрос: " + "\n" +
                         message + "\n" +
-                        "С уважением ,Администрация сайта Veusdas.ru","veusdas@bk.ru","ramilmmk@gmail.com");
+                        "С уважением ,Администрация сайта Veusdas.ru","veusdas-supp@mail.ru","ramilmmk@gmail.com");
 
         return "redirect:/web";
     }
@@ -50,12 +50,12 @@ public class WebController {
         }
 
 
-        Sender sender = new Sender("veusdas@bk.ru","parolparolparol");
+        Sender sender = new Sender("veusdas-supp@mail.ru","123321a");
         sender.send("Новый вопрос",
                 "Доброе время суток!" + "\n" +
                         "email : " + "\n" +
                         email + "\n" +
-                        "С уважением ,Администрация сайта Veusdas.ru","veusdas@bk.ru","ramilmmk@gmail.com");
+                        "С уважением ,Администрация сайта Veusdas.ru","veusdas-supp@mail.ru","ramilmmk@gmail.com");
 
         return "redirect:/web";
     }
