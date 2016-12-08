@@ -134,18 +134,18 @@
     </div>
 </section>
 
-<!-- Four -->
-<section id="four" class="wrapper style3 special">
-    <div class="container">
-        <header class="major">
-            <h2>Совершите любую сделку безопасно</h2>
-            <p>Воспользуйтесь услугами нашего гаранта</p>
-        </header>
-        <ul class="actions">
-            <li><a href="https://vk.com/id258993255" class="button special big">Написать гаранту</a></li>
-        </ul>
-    </div>
-</section>
+<#--<!-- Four &ndash;&gt;-->
+<#--<section id="four" class="wrapper style3 special">-->
+    <#--<div class="container">-->
+        <#--<header class="major">-->
+            <#--<h2>Совершите любую сделку безопасно</h2>-->
+            <#--<p>Воспользуйтесь услугами нашего гаранта</p>-->
+        <#--</header>-->
+        <#--<ul class="actions">-->
+            <#--<li><a href="https://vk.com/id258993255" class="button special big">Написать гаранту</a></li>-->
+        <#--</ul>-->
+    <#--</div>-->
+<#--</section>-->
 
 
 <section id="form">

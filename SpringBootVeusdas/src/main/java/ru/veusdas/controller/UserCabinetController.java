@@ -30,12 +30,15 @@ public class UserCabinetController {
 
 
 
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
     @GetMapping("/cabinet")
     public String render(Authentication authentication, Model model){
 
         UserDetails currentUser = (UserDetails) authentication.getPrincipal();
 
+        model.addAttribute("userAccount",userService.findByUsername(currentUser.getUsername()).getAccount());
+        model.addAttribute("userReq",userService.findByUsername(currentUser.getUsername()).getRequisites());
+        model.addAttribute("userVk",userService.findByUsername(currentUser.getUsername()).getVk());
         model.addAttribute("user",currentUser);
 
         model.addAttribute("adCount",advertsService.getActiveFromUser(currentUser.getUsername()).size());
@@ -45,32 +48,53 @@ public class UserCabinetController {
         return "cabinet/index";
     }
 
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
     @GetMapping("/cabinet/vk")
     public String renderVk(Authentication authentication,Model model){
 
         UserDetails currentUser = (UserDetails) authentication.getPrincipal();
+        model.addAttribute("userAccount",userService.findByUsername(currentUser.getUsername()).getAccount());
+        model.addAttribute("user",currentUser);
         model.addAttribute("spisok20",spisokService.getActiveFromUser(currentUser.getUsername()));
 
         return "cabinet/vk";
     }
 
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
+    @GetMapping("/cabinet/ref")
+    public String renderReferals(Authentication authentication,Model model){
+
+        UserDetails currentUser = (UserDetails) authentication.getPrincipal();
+        User user = userService.findByUsername(currentUser.getUsername());
+        model.addAttribute("user",currentUser);
+        model.addAttribute("userAccount",user.getAccount());
+        model.addAttribute("userVk",user.getVk());
+        model.addAttribute("userId",user.getId());
+        model.addAttribute("referals",userService.findByReferal_by(userService.findByUsername(currentUser.getUsername()).getId()));
+
+        return "cabinet/clients";
+    }
+
+    @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
     @GetMapping("/cabinet/adverts")
     public String renderAdverts(Authentication authentication,Model model){
 
         UserDetails currentUser = (UserDetails) authentication.getPrincipal();
-
+        model.addAttribute("userAccount",userService.findByUsername(currentUser.getUsername()).getAccount());
+        model.addAttribute("user",currentUser);
         model.addAttribute("adverts",advertsService.getActiveFromUser(currentUser.getUsername()));
 
         return "cabinet/adverts";
     }
 
-    @PreAuthorize("hasAuthority('USER')")
+    @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
     @GetMapping("/cabinet/instagram")
     public String renderInstagram(Authentication authentication, Model model) {
 
         UserDetails currentUser = (UserDetails) authentication.getPrincipal();
+        model.addAttribute("userAccount",userService.findByUsername(currentUser.getUsername()).getAccount());
+
+        model.addAttribute("user",currentUser);
         model.addAttribute("instList",instagramService.getActiveFromUser(currentUser.getUsername()));
 
         return "cabinet/instagram";

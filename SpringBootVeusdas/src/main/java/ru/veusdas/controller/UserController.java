@@ -1,7 +1,9 @@
 package ru.veusdas.controller;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import ru.veusdas.Model.User;
 import ru.veusdas.Service.SecurityService;
+import ru.veusdas.Service.ServiceImp.UserServiceImpl;
 import ru.veusdas.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserServiceImpl userServiceImpl;
 
     @Autowired
     private SecurityService securityService;
@@ -27,6 +32,7 @@ public class UserController {
     public String registration(String username,
                                String password,
                                String passwordConfirm,
+                               Long referal_id,
                                Model model) {
 
         if (username.isEmpty() || password.isEmpty() || passwordConfirm.isEmpty()) {
@@ -46,13 +52,24 @@ public class UserController {
         User user = new User();
         user.setUsername(username);
         user.setPassword(password);
-        user.setScore(0);
+        user.setAccount(0);
+        if (referal_id != null) {
+            user.setReferal(referal_id);
+        }
 
         userService.save(user);
 
         securityService.autologin(user.getUsername(), user.getPassword());
 
         return "redirect:/";
+    }
+
+    @GetMapping(value = "/ref")
+    public String regByRef(Long id, Model model){
+
+        model.addAttribute("referal",id);
+
+        return "reg/register";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)

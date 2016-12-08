@@ -9,7 +9,7 @@ import ru.veusdas.Repository.SpisokRepositoryCustom;
 import java.util.*;
 
 @Service
-public class SpisokServiceImpl implements SpisokService {
+public class    SpisokServiceImpl implements SpisokService {
 
     @Autowired
     SpisokRepositoryCustom spisokRepositoryCustom;

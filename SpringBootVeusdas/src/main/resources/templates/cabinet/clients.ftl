@@ -134,15 +134,14 @@
             </ul>
         </section>
         <!-- /.sidebar -->
-    </aside
+    </aside>
 
-
-    <!-- Content Wrapper. Contains page content -->
+  <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Список instagram
+        Список пользователей
       </h1>
     </section>
 
@@ -150,44 +149,46 @@
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
-            
+
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Ваша реферальная ссылка</h3>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                    <span style="background-color: #FAFFBD;
+                                    padding: 20px;
+                                    font-size: 20px;
+                                    margin-left: 13%;">http://www.veusdas.com/ref?id=${userId}</span>
+                </div>
+                <!-- /.box-body -->
+            </div>
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Instagram</h3>
+              <h3 class="box-title">Пользователи</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>Название</th>
-                  <th>Подписчики</th>
-                  <th>Цена</th>
-                  <th>Администратор</th>
-                  <th>Действие</th>
+                  <th>Логин</th>
+                  <th>Профиль вк</th>
                 </tr>
                 </thead>
                 <tbody>
-                <#if instList??>
-
-                <#--<#include "public.ftl">-->
-
-                    <#list instList as inst>
-
-                 <tr class="row${inst.id}">
-                    <td><input type="text" id="nameInst${inst.id}" value="${inst.name}" maxlength="60"></td>
-                    <td><input type="text" id="subscribesInst${inst.id}" value="${inst.subscribes}" maxlength="20"></td>
-                    <td><input type="text" id="costInst${inst.id}" value="${inst.cost}" maxlength="10"></td>
-                    <td><input type="text" id="admin_linkInst${inst.id}" value="${inst.admin_link}" maxlength="100"></td>
-                    <td>
-                        <div class="buttons">
-                            <a href="#"  class="btn btn-success accept acceptEditingInst" data-id="${inst.id}">Сохранить</a> <br/>
-                            <a href="#"  class="btn btn-danger delete deleteInst" data-id="${inst.id}">Удалить</a>
-                        </div>
-                    </td>
-                </tr>
-                 </#list>
+                <#if referals??>
+                <#list referals as user>
+                    <tr>
+                        <td>
+                            ${user.getUsername()}
+                        </td>
+                        <td>
+                            ${userVk}
+                        </td>
+                    </tr>
+                </#list>
                 </#if>
                 </tbody>
               </table>
@@ -227,63 +228,5 @@
 <!-- Bootstrap 3.3.6 -->
 <script src="../css/admin/bootstrap/js/bootstrap.min.js"></script>
 <script src="../js/admin/app.min.js"></script>
-<script>
-    $(document).ready(function () {
-
-        $(document).on('click', '.acceptEditingInst', function () {
-            event.preventDefault();
-            var $this = $(this);
-            var publicID = $this.data('id');
-            var h_name = '#nameInst'+publicID;
-            var h_sub = '#subscribesInst'+publicID;
-            var h_cost = '#costInst'+publicID;
-            var h_admin = '#admin_linkInst'+publicID;
-            var name = $(h_name).val();
-            var subscribes = $(h_sub).val();
-            var cost = $(h_cost).val();
-            var admin = $(h_admin).val();
-            var row = '.row' + publicID;
-            $.ajax({
-                type: 'POST',
-                url: '/admin/editInst',
-                data: {
-                    id:publicID,
-                    name:name,
-                    subscribes:subscribes,
-                    cost:cost,
-                    admin:admin
-                },
-                success: function (data, status) {  // успешное завершение работы
-                },
-                error: function () {    // На сервере произошла ошибка
-//                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
-                }
-            });
-        });
-
-        $(document).on('click', '.deleteInst', function () {
-            event.preventDefault();
-            var $this = $(this);
-            var publicID = $this.data('id');
-            var row = '.row' + publicID;
-            $.ajax({
-                type: 'POST',
-                url: '/admin/deleteInst',
-                data: {
-                    id:publicID
-                },
-                success: function (data, status) {  // успешное завершение работы
-                    $this.hide();
-                    $(row).css('display','none');
-                },
-                error: function () {    // На сервере произошла ошибка
-                    // console.log(data);
-//                    alert('Приносим извинения.<br/>На сервере произошла ошибка');
-                }
-            });
-        });
-
-    });
-</script>
 </body>
 </html>

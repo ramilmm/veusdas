@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import ru.veusdas.MailSender.Sender;
 import ru.veusdas.Model.Adverts;
 import ru.veusdas.Service.ServiceImp.AdvertsServiceImpl;
 import ru.veusdas.form.AdvertForm;
@@ -62,6 +63,11 @@ public class AdvertsController {
         ad.setComment(af.getMessage());
 
         advertsService.addAdvert(ad);
+
+        Sender sender = new Sender("bookstoreitis@gmail.com","parolparol");
+        sender.send("Новая заявка в объявления","Пришла новая заявка в объявления с названием: " +
+                ad.getAdvert_name() + "\n" +
+                "Ссыдка на админку : http://www.veusdas.com/admin","bookstoreitis@gmail.com","leusvladis@mail.ru");
         count++;
 
         return "redirect:/ads";

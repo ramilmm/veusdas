@@ -209,7 +209,7 @@
     </div>
 </section>
 
-<!-- Four -->
+<#--<!-- Four &ndash;&gt;-->
 <section id="four" class="wrapper style3 special">
     <div class="container">
         <header class="major">

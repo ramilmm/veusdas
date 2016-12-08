@@ -192,7 +192,7 @@
                             ${user.requisites}
                         </td>
                         <td>
-                           ${user.score}
+                           ${user.account}
                         </td>
                         <td>
                             <a class="payed" data-username="${user.username}" href="#">Оплачено</a>

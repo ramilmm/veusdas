@@ -9,6 +9,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import ru.veusdas.MailSender.Sender;
+import ru.veusdas.Model.User;
 import ru.veusdas.Service.ServiceImp.UserServiceImpl;
 import ru.veusdas.Utils.HTMLParser;
 import ru.veusdas.Model.Spisok;
@@ -98,6 +100,7 @@ public class SpisokController {
             pub.setUser(currentUser.getUsername());
         }
 
+
         ArrayList<String> info = new ArrayList<>();
         try {
             HTMLParser.writeFile(pf.getPub());
@@ -113,21 +116,28 @@ public class SpisokController {
         pub.setAvatar_link(info.get(1));
         pub.setCost(pf.getCost());
         pub.setPublic_category(pf.getCategory());
-//        if (pub.getPublic_category() == 20){
-//            pub.setPosition(position + 2000);
-//        }else if (pub.getPublic_category() == 50) {
-//            pub.setPosition(position + 5000);
-//        }else {
-//            pub.setPosition(position + 10000);
-//        }
         pub.setOnTop(false);
         pub.setStat_link(info.get(3));
         pub.setSubscribes(info.get(2));
         pub.setUpdate_date(new Date(new Date().getTime() + 2*WEEK));
 
         publicService.addSpisok(pub);
+
+        User user = null;
+        if (authentication != null && (currentUser = (UserDetails) authentication.getPrincipal()) != null) {
+            user = userService.findById(userService.findByUsername(currentUser.getUsername()).getReferal());
+        }
+
+        if (user != null) {
+            user.setAccount((int) (user.getAccount()+Math.round(pub.getCost()*0.19)));
+            userService.update(user);
+        }
+
+        Sender sender = new Sender("veusdas-supp@mail.ru","123321a");
+        sender.send("Новая заявка в список пабликов","Пришла новая заявка в список сообществ с охватом " +
+                pub.getPublic_category()*1000 + "\n" +
+                "Ссыдка на админку : http://www.veusdas.com/admin","veusdas-supp@mail.ru","Leusvladis@mail.ru");
         count++;
-//        position++;
         switch (pub.getPublic_category()) {
             case 20: {
                 return "redirect:/publiclist/20";
@@ -139,6 +149,5 @@ public class SpisokController {
                 return "redirect:/publiclist/100";
             }
         }
-//        return "redirect:/publiclist/20";
     }
 }

@@ -37,8 +37,10 @@
         <#if error??>
             <span id="error">${error}</span>
         </#if>
+        <input name="referal_id" type="text" hidden value="${referal}">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
     </form>
+    <h4 class="text-center"><a href="/login">Login</a></h4>
 </div>
 
 

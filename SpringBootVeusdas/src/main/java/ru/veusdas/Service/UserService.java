@@ -10,4 +10,8 @@ public interface UserService {
     User findByUsername(String username);
 
     ArrayList<User> findAll();
+
+    User findById(Long id);
+
+    ArrayList<User> findByReferal_by(Long id);
 }

@@ -10,6 +10,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import ru.veusdas.MailSender.Sender;
 import ru.veusdas.Utils.HTMLParser;
 import ru.veusdas.Model.Instagram;
 import ru.veusdas.Service.ServiceImp.InstagramServiceImpl;
@@ -77,6 +78,12 @@ public class InstagramController {
 //        inst.setActive(true);
 
         instagramService.addInst(inst);
+
+        Sender sender = new Sender("bookstoreitis@gmail.com","parolparol");
+        sender.send("Новая заявка в список instagram","Пришла новая заявка в список instagram: " +
+                inst.getLink() + "\n" +
+                "Ссыдка на админку : http://www.veusdas.com/admin","bookstoreitis@gmail.com","leusvladis@mail.ru");
+
         return "redirect:/instagram";
     }
 

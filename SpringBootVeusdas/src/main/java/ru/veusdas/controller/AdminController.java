@@ -3,18 +3,13 @@ package ru.veusdas.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import ru.veusdas.MailSender.Sender;
 import ru.veusdas.Model.*;
 import ru.veusdas.Service.ServiceImp.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -29,7 +24,6 @@ public class AdminController {
     SpisokServiceImpl spisokService;
     @Autowired
     InstagramServiceImpl instagramService;
-
     @Autowired
     UserServiceImpl userService;
 
@@ -41,14 +35,6 @@ public class AdminController {
     @GetMapping("/admin")
     public String render(Authentication authentication, Model model){
 
-//        UserDetails currentUser = null;
-//        if (authentication != null && (currentUser = (UserDetails) authentication.getPrincipal()) != null) {
-//            if (currentUser.getAuthorities().isEmpty() || currentUser.getAuthorities().toString().contains("USER")){
-//                return "redirect:/";
-//            }
-//        }else {
-//            return "redirect:/";
-//        }
 
         model.addAttribute("adCount",advertsService.getActiveAdverts().size());
         model.addAttribute("pubCount",spisokService.getActiveSpisok().size());
@@ -105,7 +91,7 @@ public class AdminController {
     public String setPayed(String username){
         User user = userService.findByUsername(username);
 
-        user.setScore(0);
+        user.setAccount(0);
         userService.update(user);
 
         return "admin/ajaxSpisok";

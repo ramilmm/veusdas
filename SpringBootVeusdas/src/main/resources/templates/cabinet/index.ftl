@@ -33,114 +33,108 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-  <header class="main-header">
-    <!-- Logo -->
-    <a href="/cabinet" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>adm</b></span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Veusdas</b></span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-      </a>
-
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="images/admin/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="/cabinet" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>cab</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>Veusdas</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
             </a>
-            <ul class="dropdown-menu">
-              <!-- User image -->
-              <li class="user-header">
-                <img src="images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
 
-                <p>
-                  Alexander Pierce
-                  <small>Member since Nov. 2012</small>
-                </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-12 text-center">
-                    Счёт: 500р
-                  </div>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="images/admin/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <span class="hidden-xs">${user.getUsername()}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <img src="images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
+
+                                <p>
+                                ${user.getUsername()}
+                                </p>
+                            </li>
+                            <!-- Menu Body -->
+                            <li class="user-body">
+                                <div class="row">
+                                    <div class="col-xs-12 text-center">
+                                        Счёт: ${userAccount}
+                                    </div>
+                                </div>
+                                <!-- /.row -->
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+            <!-- Sidebar user panel -->
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <div class="pull-left info">
+                    <p>${user.getUsername()}</p>
+                    <a ><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
-                <div class="pull-right">
-                  <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
-                </div>
-              </li>
+            </div>
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+                <li class="header">Меню</li>
+                <li class="active treeview">
+                    <a href="/cabinet">
+                        <i class="fa fa-dashboard"></i> <span>Главная</span>
+                    </a>
+                </li>
+                <!--
+                        <li class="treeview">
+                          <a href="pages/charts/chartjs.html">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>Статистика</span>
+                          </a>
+                        </li>
+                -->
+                <li class="treeview">
+                    <a href="/cabinet/vk">
+                        <i class="fa fa-vk"></i> <span>VK</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="/cabinet/instagram">
+                        <i class="fa fa-instagram"></i> <span>Instagram</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="/cabinet/adverts">
+                        <i class="fa fa-table"></i> <span>Объявления</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="/cabinet/ref">
+                        <i class="fa fa-user"></i> <span>Рефералы</span>
+                    </a>
+                </li>
+
             </ul>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar">
-      <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
-        </div>
-        <div class="pull-left info">
-          <p>Alexander Pierce</p>
-          <a ><i class="fa fa-circle text-success"></i> Online</a>
-        </div>
-      </div>
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu">
-        <li class="header">Меню</li>
-        <li class="active treeview">
-          <a href="/cabinet">
-            <i class="fa fa-dashboard"></i> <span>Главная</span>
-          </a>
-        </li>
-<!--
-        <li class="treeview">
-          <a href="pages/charts/chartjs.html">
-            <i class="fa fa-pie-chart"></i>
-            <span>Статистика</span>
-          </a>
-        </li>
--->
-        <li class="treeview">
-          <a href="/cabinet/vk">
-            <i class="fa fa-vk"></i> <span>VK</span>
-          </a>
-        </li>
-         <li class="treeview">
-          <a href="/cabinet/instagram">
-            <i class="fa fa-instagram"></i> <span>Instagram</span>
-          </a>
-        </li>
-         <li class="treeview">
-          <a href="/cabinet/adverts">
-            <i class="fa fa-table"></i> <span>Объявления</span>
-          </a>
-        </li>
-        
-        </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
-
+        </section>
+        <!-- /.sidebar -->
+    </aside
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -159,7 +153,7 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-4 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
@@ -174,7 +168,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-4 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
@@ -189,7 +183,7 @@
           </div>
         </div>
         <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
+        <div class="col-lg-4 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
@@ -245,8 +239,8 @@
                                     <div class="form-group">
                                         <label for="requisites" class="col-sm-2 control-label">Номер кошелька(WEBMONEY,QIWI,СБЕРБАНК)</label>
                                         <div class="col-sm-10">
-                                            <#if user.requisites??>
-                                                <input type="text" class="form-control" id="requisites" value="${user.getRequisites()}">
+                                            <#if userReq??>
+                                                <input type="text" class="form-control" id="requisites" value="${userReq}">
                                             <#else>
                                                 <input type="text" class="form-control" id="requisites" placeholder="реквизиты">
                                             </#if>
@@ -255,8 +249,8 @@
                                     <div class="form-group">
                                         <label for="vk" class="col-sm-2 control-label">Профиль вконтакте</label>
                                         <div class="col-sm-10">
-                                            <#if user.vk??>
-                                                <input type="text" class="form-control" id="vk" value="${user.getVk()}">
+                                            <#if userVk??>
+                                                <input type="text" class="form-control" id="vk" value="${userVk}">
                                                 <#else>
                                                 <input type="text" class="form-control" id="vk" placeholder="vk.com/id717165712">
                                             </#if>

@@ -37,7 +37,7 @@
         <!-- Logo -->
         <a href="/cabinet" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>adm</b></span>
+            <span class="logo-mini"><b>cab</b></span>
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg"><b>Veusdas</b></span>
         </a>
@@ -53,36 +53,26 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="images/admin/user2-160x160.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Alexander Pierce</span>
+                            <img src="../images/admin/user2-160x160.jpg" class="user-image" alt="User Image">
+                            <span class="hidden-xs">${user.getUsername()}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="../images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                 <p>
-                                    Alexander Pierce
-                                    <small>Member since Nov. 2012</small>
+                                ${user.getUsername()}
                                 </p>
                             </li>
                             <!-- Menu Body -->
                             <li class="user-body">
                                 <div class="row">
                                     <div class="col-xs-12 text-center">
-                                        Счёт: 500р
+                                        Счёт: ${userAccount}
                                     </div>
                                 </div>
                                 <!-- /.row -->
-                            </li>
-                            <!-- Menu Footer-->
-                            <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
-                                </div>
                             </li>
                         </ul>
                     </li>
@@ -97,10 +87,10 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="../images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Alexander Pierce</p>
+                    <p>${user.username}</p>
                     <a ><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
@@ -135,11 +125,16 @@
                         <i class="fa fa-table"></i> <span>Объявления</span>
                     </a>
                 </li>
+                <li class="treeview">
+                    <a href="/cabinet/ref">
+                        <i class="fa fa-user"></i> <span>Рефералы</span>
+                    </a>
+                </li>
 
             </ul>
         </section>
         <!-- /.sidebar -->
-    </aside>
+    </aside
 
 
     <!-- Content Wrapper. Contains page content -->

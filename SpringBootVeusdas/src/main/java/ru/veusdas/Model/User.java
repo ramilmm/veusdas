@@ -20,8 +20,11 @@ public class User {
     @Column(name = "requisites")
     private String requisites;
 
-    @Column(name = "score")
-    private Integer score;
+    @Column(name = "account")
+    private Integer account;
+
+    @Column(name = "referal")
+    private Long referal;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -73,11 +76,19 @@ public class User {
         this.requisites = requisites;
     }
 
-    public Integer getScore() {
-        return score;
+    public Integer getAccount() {
+        return account;
     }
 
-    public void setScore(Integer score) {
-        this.score = score;
+    public void setAccount(Integer account) {
+        this.account = account;
+    }
+
+    public Long getReferal() {
+        return referal;
+    }
+
+    public void setReferal(Long referal_by) {
+        this.referal = referal_by;
     }
 }
