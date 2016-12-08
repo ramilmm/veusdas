@@ -3079,7 +3079,7 @@ section#three.special, article.special {
 		left: 0;
 		position: absolute;
 		top: 0;
-		width: 10%;
+		width: 20%;
 		display: none;
 	}
 
@@ -3590,11 +3590,6 @@ section#two {
     text-align:center;
     color: #fff;
     font-size: 28px;
-}
-#success,#reply,#clients{
-    text-align:left;
-    margin: 0em 0 1em 10px;
-    font-weight: 700;
 }
 p.stats-text{
     font-size:15px;
