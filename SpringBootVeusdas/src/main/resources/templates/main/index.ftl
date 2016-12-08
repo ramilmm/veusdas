@@ -289,6 +289,7 @@
 
 
         <#--<script src="js/main/owl.carousel.min.js"></script>-->
+    		<script src="js/jquery.min.js"></script>
 			<script src="js/skel.min.js"></script>
 			<script src="js/main/util.js"></script>
 			<script src="js/main/main.js"></script>
