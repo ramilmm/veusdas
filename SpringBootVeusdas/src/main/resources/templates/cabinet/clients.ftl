@@ -174,7 +174,6 @@
                 <thead>
                 <tr>
                   <th>Логин</th>
-                  <th>Профиль вк</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -183,9 +182,6 @@
                     <tr>
                         <td>
                             ${user.getUsername()}
-                        </td>
-                        <td>
-                            ${userVk}
                         </td>
                     </tr>
                 </#list>

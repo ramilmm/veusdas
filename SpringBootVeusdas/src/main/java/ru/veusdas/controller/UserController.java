@@ -59,7 +59,7 @@ public class UserController {
 
         userService.save(user);
 
-        securityService.autologin(user.getUsername(), user.getPassword());
+//        securityService.autologin(user.getUsername(), user.getPassword());
 
         return "redirect:/";
     }

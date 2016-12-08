@@ -13,6 +13,7 @@ import ru.veusdas.Model.Spisok;
 import ru.veusdas.Model.User;
 import ru.veusdas.Service.ServiceImp.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -70,7 +71,8 @@ public class UserCabinetController {
         model.addAttribute("userAccount",user.getAccount());
         model.addAttribute("userVk",user.getVk());
         model.addAttribute("userId",user.getId());
-        model.addAttribute("referals",userService.findByReferal_by(userService.findByUsername(currentUser.getUsername()).getId()));
+        ArrayList<User> refs = userService.findByReferal_by(userService.findByUsername(currentUser.getUsername()).getId());
+        model.addAttribute("referals",refs);
 
         return "cabinet/clients";
     }
