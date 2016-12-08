@@ -18,19 +18,19 @@
     <form method="POST" action="/registration" class="form-signin">
         <h2 class="form-signin-heading">Create your account</h2>
             <div class="form-group">
-                <input type="text" name="username" class="form-control" placeholder="Username"
+                <input type="text" name="username" class="form-control" placeholder="Email"
                             autofocus="true"/>
                 <errors path="username"></errors>
             </div>
 
             <div class="form-group">
-                <input type="password" name="password" class="form-control" placeholder="Password"/>
+                <input type="password" name="password" class="form-control" placeholder="Пароль"/>
                 <errors path="password"></errors>
             </div>
 
             <div class="form-group">
                 <input type="password" name="passwordConfirm" class="form-control"
-                            placeholder="Confirm your password"/>
+                            placeholder="Пароль ещё раз"/>
                 <errors path="passwordConfirm"></errors>
             </div>
         <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
@@ -40,9 +40,9 @@
         <#if referal??>
             <input name="referal_id" type="text" hidden value="${referal}">
         </#if>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Зарегистрироваться</button>
     </form>
-    <h4 class="text-center"><a href="/login">Login</a></h4>
+    <h4 class="text-center"><a href="/login">Войти</a></h4>
 </div>
 
 

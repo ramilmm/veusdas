@@ -55,8 +55,34 @@
         <#--<a href="#page-onTop" class="go-to-onTop">-->
             <#--<i class="fa fa-long-arrow-up"></i>-->
         <#--</a>-->
-        
-       
+
+        <div class="navbar-collapse collapse navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li class="megamenu-fw"><a href="/" class="color-light">Главная </a>
+                <li class="megamenu-fw"><a href="/publiclist/20" class="color-light">Сообщества </a>
+            <#if user??>
+                <li><a href="/cabinet" class="userLink">Личный кабинет</a></li>
+            <#else>
+                <li><a href="/login" class="userLink">Войти</a></li>
+            </#if>
+                <style>
+                    #header nav ul li a.userLink {
+                        border: 2px solid;
+                        padding-left: 15px;
+                        border-radius: 24px;
+                        padding-right: 15px;
+                        background-color: rgba(0,0,0,.0005);
+                        color: #fff;
+                    }
+                    #header nav ul li a.userLink:hover {
+                        background-color: #fff;
+                        color: #000;
+                    }
+
+                </style>
+            </ul>
+
+        </div>
         <!-- Intro Area
         ===================================== -->
         <div id="myCarousel" class="carousel slide" data-ride="carousel">

@@ -24,6 +24,26 @@
             <li><a href="/web">Создание сайтов</a></li>
             <li><a href="/services">Наши услуги</a></li>
             <li><a href="/instagram">Instagram</a></li>
+        <#if user??>
+            <li><a href="/cabinet" class="userLink">Личный кабинет</a></li>
+        <#else>
+            <li><a href="/login" class="userLink">Войти</a></li>
+        </#if>
+            <style>
+                #header nav ul li a.userLink {
+                    border: 2px solid;
+                    padding-left: 15px;
+                    border-radius: 24px;
+                    padding-right: 15px;
+                    background-color: rgba(0,0,0,.0005);
+                    color: #fff;
+                }
+                #header nav ul li a.userLink:hover {
+                    background-color: #fff;
+                    color: #000;
+                }
+
+            </style>
         </ul>
     </nav>
 </header>
@@ -35,7 +55,7 @@
     <h2>Список сообществ <strong>VEUSDAS</strong></h2>
     <p>Мы поможем продать вашу рекламу.</p>
     <ul class="actions" id="menu">
-        <li><button class="button special big" data-id="#form">Подать заявку</button></li>
+        <li><a href="#form" class="button special big" data-id="#form">Подать заявку</a></li>
         <li><a href="#six" class="button big">Посмотреть список</a></li>
     </ul>
 </section>
@@ -208,24 +228,16 @@
 <script src="../js/ListOfPublic/jquery.remodal.js"></script>
 
 <script>
-    $(document).ready(function(){
-
-        $("#menu").on("click","button", function (event) {
-            event.preventDefault();
-            var id  = $(this).attr('data-id'),
-                    onTop = $(id).offset().onTop;
-            $('body,html').animate({scrollTop: onTop}, 800);
+        $(document).ready(function() {
+            $('a[href*=#]').bind("click", function(e){
+                var anchor = $(this);
+                $('html, body').stop().animate({
+                    scrollTop: $(anchor.attr('href')).offset().onTop
+                }, 1000);
+                e.preventDefault();
+            });
+            return false;
         });
-
-        $("#menu").on("click","a", function (event) {
-            event.preventDefault();
-            var id  = $(this).attr('href'),
-                    onTop = $(id).offset().onTop;
-            $('body,html').animate({scrollTop: onTop}, 800);
-        });
-
-
-    });
 </script>
 <script>new WOW().init();</script>
 </body>

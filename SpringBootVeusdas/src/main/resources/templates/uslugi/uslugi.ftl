@@ -67,6 +67,26 @@
                         <li class="megamenu-fw"><a href="/ads" class="color-light">Объявления </a>
                         <li class="megamenu-fw"><a href="/instagram" class="color-light">Instagram </a>
                         <li class="megamenu-fw"><a href="/web" class="color-pasific">Создание Сайтов </a>
+                    <#if user??>
+                        <li><a href="/cabinet" class="userLink">Личный кабинет</a></li>
+                    <#else>
+                        <li><a href="/login" class="userLink">Войти</a></li>
+                    </#if>
+                        <style>
+                            #header nav ul li a.userLink {
+                                border: 2px solid;
+                                padding-left: 15px;
+                                border-radius: 24px;
+                                padding-right: 15px;
+                                background-color: rgba(0,0,0,.0005);
+                                color: #fff;
+                            }
+                            #header nav ul li a.userLink:hover {
+                                background-color: #fff;
+                                color: #000;
+                            }
+
+                        </style>
                     </ul>
                 
                 </div>
@@ -250,7 +270,138 @@
                 </div>                
             </div>
         </div>
-        
+
+        <!-- Portfolio Area -->
+        <div id="portfolioGrid">
+            <div class="container-fluid bg-gray pt30">
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <!-- filters start -->
+                        <ul class="filters text-center  mt25 mb50">
+                            <li><a class="active" data-filter="*">Все работы</a></li>
+                            <li><a data-filter=".html">Посты</a></li>
+                            <li><a data-filter=".wordpress">Рекламные посты</a></li>
+                            <li><a data-filter=".woocommerce">Аватарки</a></li>
+                            <li><a data-filter=".joomla">Шапки</a></li>
+                            <li><a data-filter=".magento">Стикеры</a></li>
+                            <li><a data-filter=".shopify">Прайсы</a></li>
+                        </ul>
+                        <!-- filters end -->
+
+                        <div class="portfolio center-block">
+                            <!--Ad-->
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 wordpress html" data-category="">
+                                <a href="images/web/portfolio/ad/Aq3_PbCr28E.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/ad/Aq3_PbCr28E.jpg" alt="portfolio wordpress" class="img-responsive">
+                            </div>
+
+
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 html">
+                                <a href="images/web/portfolio/ad/XAdIgl8JluI.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/ad/XAdIgl8JluI.jpg" alt="portfolio woocommerce" class="img-responsive">
+                            </div>
+
+                            <!--Avatar-->
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12  woocommerce">
+                                <a href="images/web/portfolio/avatar/-73F8dbzLMw.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/avatar/-73F8dbzLMw.jpg" alt="portfolio woocommerce" class="img-responsive">
+                            </div>
+
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 woocommerce">
+                                <a href="images/web/portfolio/avatar/-T0_7l5l3Zc.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/avatar/-T0_7l5l3Zc.jpg" alt="portfolio woocommerce" class="img-responsive">
+                            </div>
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 woocommerce">
+                                <a href="images/web/portfolio/avatar/bnbx6gd9aNw.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/avatar/bnbx6gd9aNw.jpg" alt="portfolio woocommerce" class="img-responsive">
+                            </div>
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 woocommerce">
+                                <a href="images/web/portfolio/avatar/DqrTvn0b2OI.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/avatar/DqrTvn0b2OI.jpg" alt="portfolio woocommerce" class="img-responsive">
+                            </div>
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 woocommerce">
+                                <a href="images/web/portfolio/avatar/fU_1mRoV2Bo.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/avatar/fU_1mRoV2Bo.jpg" alt="portfolio woocommerce" class="img-responsive">
+                            </div>
+
+                            <!--Header -->
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 joomla">
+                                <a href="images/web/portfolio/header/kIvFLg7XDmw.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/header/kIvFLg7XDmw.jpg" alt="portfolio joomla" class="img-responsive">
+                            </div>
+
+                            <!--Post-->
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 html">
+                                <a href="images/web/portfolio/post/4XXOH_kKMRg.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/post/4XXOH_kKMRg.jpg" alt="portfolio html" class="img-responsive">
+                            </div>
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 html">
+                                <a href="images/web/portfolio/post/UBWAArS19Q8.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/post/UBWAArS19Q8.jpg" alt="portfolio html" class="img-responsive">
+                            </div>
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 html">
+                                <a href="images/web/portfolio/post/wXVsR_-SRR4.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/post/wXVsR_-SRR4.jpg" alt="portfolio html" class="img-responsive">
+                            </div>
+
+                            <!--Price-->
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 shopify">
+                                <a href="images/web/portfolio/price/E0HmJ4ztAZ8.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/price/E0HmJ4ztAZ8.jpg" alt="portfolio shopify" class="img-responsive">
+                            </div>
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 shopify">
+                                <a href="images/web/portfolio/price/ogm1WJul1v8.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/price/ogm1WJul1v8.jpg" alt="portfolio shopify" class="img-responsive">
+                            </div>
+
+                            <!--Sticker-->
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 magento">
+                                <a href="images/web/portfolio/stickers/2DpaDLi6LNE.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/stickers/2DpaDLi6LNE.jpg" alt="portfolio magento" class="img-responsive">
+                            </div>
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 magento">
+                                <a href="images/web/portfolio/stickers/3jFkrrp3R58.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/stickers/3jFkrrp3R58.jpg" alt="portfolio magento" class="img-responsive">
+                            </div>
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 magento">
+                                <a href="images/web/portfolio/stickers/7MMFtTl7ZJY.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/stickers/7MMFtTl7ZJY.jpg" alt="portfolio magento" class="img-responsive">
+                            </div>
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 magento">
+                                <a href="images/web/portfolio/stickers/kC3qM4EtNTU.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/stickers/kC3qM4EtNTU.jpg" alt="portfolio magento" class="img-responsive">
+                            </div>
+                            <div class="portfolio-item col-lg-3 col-md-4 col-sm-6 col-xs-12 magento">
+                                <a href="images/web/portfolio/stickers/zGhLwEDUxWw.jpg" class="magnific-popup">
+                                </a>
+                                <img src="images/web/portfolio/stickers/zGhLwEDUxWw.jpg" alt="portfolio magento" class="img-responsive">
+                            </div>
+
+                        </div><!-- portfolio end -->
+
+                    </div><!-- col-md-12 end -->
+                </div><!-- row end -->
+            </div><!-- container end -->
+        </div><!-- section portfolio end -->
         
          <!-- Info Area
         ===================================== -->

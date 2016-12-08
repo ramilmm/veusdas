@@ -19,17 +19,17 @@
                     <h2 class="form-heading">Log in</h2>
 
                     <div class="form-group">
-                        <input name="username" type="text" class="form-control" placeholder="Username"
+                        <input name="username" type="text" class="form-control" placeholder="Email"
                                autofocus="true"/>
-                        <input name="password" type="password" class="form-control" placeholder="Password"/>
+                        <input name="password" type="password" class="form-control" placeholder="Пароль"/>
                         <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
                         <div>
-                            <label for="remember-me">Remember me</label>
+                            <label for="remember-me">Запомнить меня</label>
                             <input type="checkbox" name="remember-me" id="remember-me">
                         </div>
 
-                        <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
-                        <h4 class="text-center"><a href="/registration">Create an account</a></h4>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+                        <h4 class="text-center"><a href="/registration">Регистрация</a></h4>
                     </div>
                 <#if error??>
                     <span id="error">${error}</span>

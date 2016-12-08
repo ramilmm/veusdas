@@ -26,6 +26,26 @@
             <li><a href="/web">Создание сайтов</a></li>
             <li><a href="/services">Наши услуги</a></li>
             <li><a href="/instagram">Instagram</a></li>
+        <#if user??>
+            <li><a href="/cabinet" class="userLink">Личный кабинет</a></li>
+        <#else>
+            <li><a href="/login" class="userLink">Войти</a></li>
+        </#if>
+            <style>
+                #header nav ul li a.userLink {
+                    border: 2px solid;
+                    padding-left: 15px;
+                    border-radius: 24px;
+                    padding-right: 15px;
+                    background-color: rgba(0,0,0,.0005);
+                    color: #fff;
+                }
+                #header nav ul li a.userLink:hover {
+                    background-color: #fff;
+                    color: #000;
+                }
+
+            </style>
         </ul>
     </nav>
 </header>
