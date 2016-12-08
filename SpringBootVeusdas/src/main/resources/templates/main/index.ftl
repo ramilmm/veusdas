@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="css/main/owl.carousel.css">
 
 	</head>
-	<body class="landing" style="font-family: "Raleway", Arial, Helvetica, sans-serif">
+	<body class="landing" style="font-family: 'Raleway', Arial, Helvetica, sans-serif">
 		<!-- Header -->
 			<header id="header" class="alt">
 				<nav id="nav">
