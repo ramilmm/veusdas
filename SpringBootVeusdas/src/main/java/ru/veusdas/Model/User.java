@@ -5,13 +5,15 @@ import javax.persistence.*;
 @Entity
 @Table(name = "users")
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "username")
+    @Column(name = "username",nullable = false)
     private String username;
-    @Column(name = "password")
+    @Column(name = "password",nullable = false)
     private String password;
-    @Column(name = "ROLE")
+    @Column(name = "ROLE",nullable = false)
     private String role;
 
     @Column(name = "vk")
@@ -26,8 +28,18 @@ public class User {
     @Column(name = "referal")
     private Long referal;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    public User() {}
+
+    public User(String username, String password, String role, String vk, String requisites, Integer account, Long referal) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.vk = vk;
+        this.requisites = requisites;
+        this.account = account;
+        this.referal = referal;
+    }
+
     public Long getId() {
         return id;
     }
@@ -88,7 +100,21 @@ public class User {
         return referal;
     }
 
-    public void setReferal(Long referal_by) {
-        this.referal = referal_by;
+    public void setReferal(Long referal) {
+        this.referal = referal;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
+                ", vk='" + vk + '\'' +
+                ", requisites='" + requisites + '\'' +
+                ", account=" + account +
+                ", referal=" + referal +
+                '}';
     }
 }

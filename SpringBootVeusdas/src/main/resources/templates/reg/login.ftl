@@ -29,12 +29,13 @@
                         </div>
 
                         <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
-                        <h4 class="text-center"><a href="/registration">Регистрация</a></h4>
+                        <h4 class="text-center"><a id="reg" href="/registration">Регистрация</a></h4>
                     </div>
                 <#if error??>
                     <span id="error">${error}</span>
                 </#if>
                 </form>
+
         </div>
 
 

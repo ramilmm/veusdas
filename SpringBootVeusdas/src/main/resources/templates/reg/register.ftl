@@ -15,10 +15,10 @@
 <#--<div th:if="${param.error}">-->
 <#--Invalid username and hash_password.-->
 <#--</div>-->
-    <form method="POST" action="/registration" class="form-signin">
+    <form method="POST" name="login" action="/registration" onsubmit="return validate()" class="form-signin">
         <h2 class="form-signin-heading">Create your account</h2>
             <div class="form-group">
-                <input type="text" name="username" class="form-control" placeholder="Email"
+                <input type="text" id="username" name="username" class="form-control" placeholder="Email"
                             autofocus="true"/>
                 <errors path="username"></errors>
             </div>
@@ -33,6 +33,7 @@
                             placeholder="Пароль ещё раз"/>
                 <errors path="passwordConfirm"></errors>
             </div>
+        <p id="errors"></p>
         <#--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>-->
         <#if error??>
             <span id="error">${error}</span>
@@ -40,13 +41,24 @@
         <#if referal??>
             <input name="referal_id" type="text" hidden value="${referal}">
         </#if>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Зарегистрироваться</button>
+        <button class="btn btn-lg btn-primary btn-block" id="reg" type="submit">Зарегистрироваться</button>
     </form>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type ="text/javascript">
+        function validate() {
+                var username = document.login.username.value;
+                console.log(username);
+                if (username == null || username == "" || username.indexOf("@") == -1 || username.indexOf(".") == -1) {
+                    document.getElementById("errors").innerHTML = "Введите корректный email.";
+                    return false;
+                }
+        }
+    </script>
     <h4 class="text-center"><a href="/login">Войти</a></h4>
 </div>
 
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
 <script src="js/login/bootstrap.min.js"></script>
 </body>
 </html>

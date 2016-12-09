@@ -3,6 +3,7 @@ package ru.veusdas.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import ru.veusdas.Model.*;
 import ru.veusdas.Service.ServiceImp.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -82,7 +84,8 @@ public class AdminController {
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/admin/clients")
     public String renderClients(Model model){
-        model.addAttribute("users",userService.findAll());
+        ArrayList<User> clients = userService.findAll();
+        model.addAttribute("users",clients);
 
         return "admin/clients";
     }

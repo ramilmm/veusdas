@@ -1,99 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Услуги Veusdas</title>        
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta charset="utf-8">
-        <meta name="author" content="Harry Boo">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<html lang="ru">
+<head>
+    <title>Услуги Veusdas</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta charset="utf-8">
+    <meta name="author" content="Harry Boo">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="images/web/favicon.png">
+    <link rel="apple-touch-icon" href="images/web/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/web/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/web/apple-touch-icon-114x114.png">
+
+    <!-- Load Core CSS
+    =====================================-->
+    <link rel="stylesheet" href="css/web/core/bootstrap.min.css">
+    <link rel="stylesheet" href="css/web/core/animate.min.css">
+
+    <!-- Load Main CSS
+    =====================================-->
+    <link rel="stylesheet" href="css/web/main/main.css">
+    <link rel="stylesheet" href="css/web/main/setting.css">
+    <link rel="stylesheet" href="css/web/main/hover.css">
+
+    <!-- Load Magnific Popup CSS
+    =====================================-->
+    <link rel="stylesheet" href="css/web/magnific/magic.min.css">
+    <link rel="stylesheet" href="css/web/magnific/magnific-popup.css">
+    <link rel="stylesheet" href="css/web/magnific/magnific-popup-zoom-gallery.css">
+
+    <!-- Load OWL Carousel CSS
+    =====================================-->
+    <link rel="stylesheet" href="css/web/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="css/web/owl-carousel/owl.theme.css">
+    <link rel="stylesheet" href="css/web/owl-carousel/owl.transitions.css">
 
 
-        <!-- Load Core CSS
-        =====================================-->
-        <link rel="stylesheet" href="css/web/core/bootstrap.min.css">
-        <link rel="stylesheet" href="css/web/core/animate.min.css">
-
-        <!-- Load Main CSS
-        =====================================-->
-        <link rel="stylesheet" href="css/web/main/main.css">
-        <link rel="stylesheet" href="css/web/main/setting.css">
-        <link rel="stylesheet" href="css/web/main/hover.css">
-
-        <!-- Load Magnific Popup CSS
-        =====================================-->
-        <link rel="stylesheet" href="css/web/magnific/magic.min.css">
-        <link rel="stylesheet" href="css/web/magnific/magnific-popup.css">
-        <link rel="stylesheet" href="css/web/magnific/magnific-popup-zoom-gallery.css">
-
-        <!-- Load OWL Carousel CSS
-        =====================================-->
-        <link rel="stylesheet" href="css/web/owl-carousel/owl.carousel.css">
-        <link rel="stylesheet" href="css/web/owl-carousel/owl.theme.css">
-        <link rel="stylesheet" href="css/web/owl-carousel/owl.transitions.css">
+    <link rel="stylesheet" href="css/web/color/pasific.css">
 
 
-        <link rel="stylesheet" href="css/web/color/pasific.css">
-
-
-        <link rel="stylesheet" href="css/web/icon/font-awesome.css">
-        <link rel="stylesheet" href="css/web/icon/et-line-font.css">
+    <link rel="stylesheet" href="css/web/icon/font-awesome.css">
+    <link rel="stylesheet" href="css/web/icon/et-line-font.css">
 
 
 
-    </head>
-    <body  id="page-onTop" data-spy="scroll" data-target=".navbar" data-offset="100">
-        
-        
-        <!-- Navigation Area
-        ===================================== -->
-        <nav class="navbar navbar-pasific navbar-mp megamenu navbar-fixed-onTop">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand page-scroll" href="#page-onTop">
-                        Veusdas
-                    </a>
-                </div>
-        
-                <div class="navbar-collapse collapse navbar-main-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="megamenu-fw"><a href="/" class="color-light">Главная </a>
-                        <li class="megamenu-fw"><a href="/garant" class="color-light">Гарант </a>
-                        <li class="megamenu-fw"><a href="/publiclist/20" class="color-light">Сообщества </a>
-                        <li class="megamenu-fw"><a href="/ads" class="color-light">Объявления </a>
-                        <li class="megamenu-fw"><a href="/instagram" class="color-light">Instagram </a>
-                        <li class="megamenu-fw"><a href="/web" class="color-pasific">Создание Сайтов </a>
-                    <#if user??>
-                        <li><a href="/cabinet" class="userLink">Личный кабинет</a></li>
-                    <#else>
-                        <li><a href="/login" class="userLink">Войти</a></li>
-                    </#if>
-                        <style>
-                            #header nav ul li a.userLink {
-                                border: 2px solid;
-                                padding-left: 15px;
-                                border-radius: 24px;
-                                padding-right: 15px;
-                                background-color: rgba(0,0,0,.0005);
-                                color: #fff;
-                            }
-                            #header nav ul li a.userLink:hover {
-                                background-color: #fff;
-                                color: #000;
-                            }
+</head>
+<body  id="page-top" data-spy="scroll" data-target=".navbar" data-offset="100">
 
-                        </style>
-                    </ul>
-                
-                </div>
-            </div>
-        </nav>
-        
-        
+
+<!-- Navigation Area
+===================================== -->
+<nav class="navbar navbar-pasific navbar-mp megamenu navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">
+                Veusdas
+            </a>
+        </div>
+
+        <div class="navbar-collapse collapse navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <li class="megamenu-fw"><a href="/" class="color-light">Главная </a>
+                <li class="megamenu-fw"><a href="/garant" class="color-light">Гарант </a>
+                <li class="megamenu-fw"><a href="/publiclist/20" class="color-light">Сообщества </a>
+                <li class="megamenu-fw"><a href="/ads" class="color-light">Объявления </a>
+                <li class="megamenu-fw"><a href="/web" class="color-pasific">Создание Сайтов </a>
+        <#if user??>
+            <li class="megamenu-fw"><a href="/cabinet" class="userLink">Личный кабинет</a></li>
+        <#else>
+            <li class="megamenu-fw"><a href="/login" class="userLink">Войти</a></li>
+        </#if>
+            </ul>
+            <style>
+                #header nav ul li a.userLink {
+                    border: 2px solid;
+                    padding-left: 15px;
+                    border-radius: 24px;
+                    padding-right: 15px;
+                    background-color: rgba(0,0,0,.0005);
+                    color: #fff;
+                }
+                #header nav ul li a.userLink:hover {
+                    background-color: #fff;
+                    color: #000;
+                }
+
+            </style>
+        </div>
+    </div>
+</nav>
+
         <!-- Intro Area
         ===================================== -->
         <header class="intro bg-dark2" style="background:url(images/web/bg/img-bg-5.jpg) 50% 0 no-repeat;">

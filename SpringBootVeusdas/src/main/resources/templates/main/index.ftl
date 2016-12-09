@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
 <html xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
-	<head>
-		<title>VEUSDAS</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="css/main/main.css" />
-		<link rel="stylesheet" href="css/main/owl.carousel.css">
+<head>
+    <title>VEUSDAS</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/main/main.css" />
+    <link rel="stylesheet" href="css/main/owl.carousel.css">
 
-	</head>
-	<body class="landing" style="font-family: 'Raleway', Arial, Helvetica, sans-serif">
+</head>
+<body class="landing">
 		<!-- Header -->
 			<header id="header" class="alt">
 				<nav id="nav">

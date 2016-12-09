@@ -186,10 +186,14 @@
                             ${user.username}
                         </td>
                         <td>
-                            ${user.vk}
+                            <#if user.vk??>
+                                ${user.vk}
+                            </#if>
                         </td>
                         <td>
-                            ${user.requisites}
+                            <#if user.requisites??>
+                                ${user.requisites}
+                            </#if>
                         </td>
                         <td>
                            ${user.account}
