@@ -33,9 +33,14 @@ public class AdminController {
     final Long MONTH = 2628000000L;
 
 
-    @PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ADMIN','USER')")
     @GetMapping("/admin")
     public String render(Authentication authentication, Model model){
+
+        UserDetails currentUser = (UserDetails) authentication.getPrincipal();
+        if (userService.findByUsername(currentUser.getUsername()).getRole().equals("USER")) {
+            return "redirect:/cabinet";
+        }
 
 
         model.addAttribute("adCount",advertsService.getActiveAdverts().size());

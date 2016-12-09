@@ -20,7 +20,7 @@
                         <li><a href="/web">Создание сайтов</a></li>
                         <li><a href="/services">Услуги</a></li>
                         <#if user??>
-                            <li><a href="/cabinet" class="userLink">Личный кабинет</a></li>
+                            <li><a href="/admin" class="userLink">Личный кабинет</a></li>
                         <#else>
                             <li><a href="/login" class="userLink">Войти</a></li>
                         </#if>
