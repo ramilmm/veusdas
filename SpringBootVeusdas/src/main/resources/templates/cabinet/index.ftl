@@ -53,13 +53,40 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="images/admin/user2-160x160.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">${user.getUsername()}</span>
+                            <span id="avatar" class="user-photo"></span>
+                            <span id="name" class="hidden-xs">${user.getUsername()}</span>
                         </a>
+                        <style>
+                            #avatar, #avatar2 {
+                                display: inline-block;
+                                padding: 4px;
+                                font-size: 20px;
+                                width: 31px;
+                                height: 26px;
+                                line-height: 15px;
+                                border-radius: 25px;
+                                text-align: center;
+                                margin-right: 8px;
+                                color: white;
+                            }
+                            #avatar3 {
+                                display: inline-block;
+                                padding: 4px;
+                                font-size: 32px;
+                                width: 47px;
+                                height: 43px;
+                                line-height: 35px;
+                                border-radius: 25px;
+                                text-align: center;
+                                margin-right: 8px;
+                                color: white;
+                                background-color: rgb(17, 225, 43);
+                            }
+                        </style>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <span id="avatar2"></span>
 
                                 <p>
                                 ${user.getUsername()}
@@ -87,11 +114,11 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <span id="avatar3"></span>
                 </div>
                 <div class="pull-left info">
                     <p>${user.getUsername()}</p>
-                    <a ><i class="fa fa-circle text-success"></i> Online</a>
+                    <a><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
             <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -134,7 +161,54 @@
             </ul>
         </section>
         <!-- /.sidebar -->
-    </aside
+    </aside>
+
+    <script>
+        var stringToColor = function stringToColor(str) {
+            var hash = 0;
+            var color = '#';
+            var i;
+            var value;
+            var strLength;
+
+            if(!str) {
+                return color + '333333';
+            }
+
+            strLength = str.length;
+
+            for (i = 0; i < strLength; i++) {
+                hash = str.charCodeAt(i) + ((hash << 5) - hash);
+            }
+
+            for (i = 0; i < 3; i++) {
+                value = (hash >> (i * 8)) & 0xFF;
+                color += ('00' + value.toString(16)).substr(-2);
+            }
+
+            return color;
+        };
+
+        var name = '${user.username}';
+        var letter = name.substr(0, 1).toUpperCase();
+        var backgroundColor = stringToColor(name);
+        var elementAvatar = document.getElementById('avatar');
+        var elementAvatar2 = document.getElementById('avatar2');
+        var elementAvatar3 = document.getElementById('avatar3');
+        var elementName = document.getElementById('name');
+
+
+
+        elementName.innerHTML = name;
+        elementAvatar.innerHTML = letter;
+        elementAvatar.style.backgroundColor = backgroundColor;
+
+        elementAvatar2.innerHTML = letter;
+        elementAvatar2.style.backgroundColor = backgroundColor;
+
+        elementAvatar3.innerHTML = letter;
+        elementAvatar3.style.backgroundColor = backgroundColor;
+    </script>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -256,12 +330,21 @@
                                             </#if>
                                         </div>
                                     </div>
+
+                                    <div class="form-group">
+                                        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+                                        <div class="col-sm-10">
+                                            <input type="password" class="form-control" id="inputPassword3">
+                                        </div>
+                                    </div>
+
                                     <a href="#" class="btn btn-info btn-lg" id="save" data-username="${user.getUsername()}">Сохранить изменения</a>
                                 </div>
                                 <style>
                                     #inputEmail3,
                                     #requisites,
-                                    #vk {
+                                    #vk,
+                                    #inputPassword3{
                                         width: 226px;
                                     }
                                 </style>
@@ -312,6 +395,7 @@
             var username = $('#inputEmail3').val();
             var req = $('#requisites').val();
             var vk = $('#vk').val();
+            var pswd = $('#inputPassword3').val();
             $.ajax({
                 type: 'POST',
                 url: '/cabinet/saveProfile',
@@ -319,7 +403,8 @@
                     username:user,
                     newUsername: username,
                     req:req,
-                    vk:vk
+                    vk:vk,
+                    pswd:pswd
                 },
                 success: function (data, status) {  // успешное завершение работы
                     $('.alert').css('display','block');

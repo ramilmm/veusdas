@@ -16,7 +16,7 @@
 <#--Invalid username and hash_password.-->
 <#--</div>-->
     <form method="POST" name="login" action="/registration" onsubmit="return validate()" class="form-signin">
-        <h2 class="form-signin-heading">Create your account</h2>
+        <h2 class="form-signin-heading">Создай свой аккаунт</h2>
             <div class="form-group">
                 <input type="text" id="username" name="username" class="form-control" placeholder="Email"
                             autofocus="true"/>

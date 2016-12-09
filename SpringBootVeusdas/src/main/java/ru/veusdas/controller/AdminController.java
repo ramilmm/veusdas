@@ -42,6 +42,8 @@ public class AdminController {
             return "redirect:/cabinet";
         }
 
+        model.addAttribute("user",userService.findByUsername(currentUser.getUsername()));
+
 
         model.addAttribute("adCount",advertsService.getActiveAdverts().size());
         model.addAttribute("pubCount",spisokService.getActiveSpisok().size());
@@ -62,7 +64,9 @@ public class AdminController {
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/admin/vk")
-    public String renderVk(Model model){
+    public String renderVk(Authentication authentication, Model model){
+        UserDetails currentUser = (UserDetails) authentication.getPrincipal();
+        model.addAttribute("user",userService.findByUsername(currentUser.getUsername()));
         model.addAttribute("spisok20",spisokService.getSpisok20());
         model.addAttribute("spisok50",spisokService.getSpisok50());
         model.addAttribute("spisok100",spisokService.getSpisok100());
@@ -72,7 +76,9 @@ public class AdminController {
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/admin/adverts")
-    public String renderAdverts(Model model){
+    public String renderAdverts(Authentication authentication, Model model){
+        UserDetails currentUser = (UserDetails) authentication.getPrincipal();
+        model.addAttribute("user",userService.findByUsername(currentUser.getUsername()));
         model.addAttribute("adverts",advertsService.getActiveAdverts());
 
         return "admin/adverts";
@@ -80,7 +86,9 @@ public class AdminController {
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/admin/instagram")
-    public String renderInstagram(Model model) {
+    public String renderInstagram(Authentication authentication, Model model) {
+        UserDetails currentUser = (UserDetails) authentication.getPrincipal();
+        model.addAttribute("user",userService.findByUsername(currentUser.getUsername()));
         model.addAttribute("instList",instagramService.getActiveInst());
 
         return "admin/instagram";
@@ -88,7 +96,9 @@ public class AdminController {
 
     @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping("/admin/clients")
-    public String renderClients(Model model){
+    public String renderClients(Authentication authentication, Model model){
+        UserDetails currentUser = (UserDetails) authentication.getPrincipal();
+        model.addAttribute("user",userService.findByUsername(currentUser.getUsername()));
         ArrayList<User> clients = userService.findAll();
         model.addAttribute("users",clients);
 

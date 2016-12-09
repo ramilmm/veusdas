@@ -16,7 +16,7 @@
                 <#--Invalid username and hash_password.-->
             <#--</div>-->
                 <form method="POST" action="/login" class="form-signin">
-                    <h2 class="form-heading">Log in</h2>
+                    <h2 class="form-heading">Вход</h2>
 
                     <div class="form-group">
                         <input name="username" type="text" class="form-control" placeholder="Email"

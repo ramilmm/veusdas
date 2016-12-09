@@ -11,7 +11,7 @@
 <body class="landing">
 		<!-- Header -->
 			<header id="header" class="alt">
-				<nav id="nav">
+				<nav id="nav" style="font-size: 14px">
 					<ul>
                         <li><a href="/instagram">Instagram</a></li>
 						<li><a href="/garant">Гарант</a></li>

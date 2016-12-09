@@ -15,7 +15,7 @@
 <!-- Header -->
 <header id="header" class="alt">
     <h1><strong><a href="/">VEUSDAS</a></strong></h1>
-    <nav id="nav">
+    <nav id="nav" style="font-size: 14px">
         <ul>
             <li><a href="/">Главная</a></li>
             <li><a href="/ads">Объявления</a></li>

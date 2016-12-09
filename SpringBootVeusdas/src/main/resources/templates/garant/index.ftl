@@ -19,7 +19,7 @@
 <!-- Header -->
 <header id="header">
     <h1><a href="/">VEUSDAS</a></h1>
-    <nav id="nav">
+    <nav id="nav" style="font-size: 14px">
         <ul>
             <li><a href="/ads">Объявления</a></li>
             <li><a href="/garant">Гарант</a></li>

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,8 @@ public class UserCabinetController {
 
     @Autowired
     UserServiceImpl userService;
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
 
 
@@ -103,13 +106,21 @@ public class UserCabinetController {
     }
 
     @PostMapping("/cabinet/saveProfile")
-    public String editProfile(String username, String newUsername, String req, String vk){
+    public String editProfile(String username, String newUsername, String req, String vk, String pswd){
 
         User user = userService.findByUsername(username);
-
-        user.setUsername(newUsername);
-        user.setRequisites(req);
-        user.setVk(vk);
+        if (newUsername.equals("") || newUsername != null) {
+            user.setUsername(newUsername);
+        }
+        if (req.equals("") || req != null) {
+            user.setRequisites(req);
+        }
+        if (vk.equals("") || vk != null) {
+            user.setVk(vk);
+        }
+        if (pswd.equals("") || pswd != null) {
+            user.setPassword(bCryptPasswordEncoder.encode(pswd));
+        }
         userService.update(user);
 
         return "/admin/ajaxSpisok";

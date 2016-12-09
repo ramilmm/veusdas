@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Data Tables</title>
+    <title>Список instagram</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -33,65 +33,90 @@
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-  <header class="main-header">
-    <!-- Logo -->
-     <a href="/admin" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>adm</b></span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Veusdas</b></span>
-    </a>
-    <!-- Header Navbar: style can be found in header.less -->
-    <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
+    <header class="main-header">
+        <!-- Logo -->
+        <a href="/admin" class="logo">
+            <!-- mini logo for sidebar mini 50x50 pixels -->
+            <span class="logo-mini"><b>adm</b></span>
+            <!-- logo for regular state and mobile devices -->
+            <span class="logo-lg"><b>Veusdas</b></span>
+        </a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                <span class="sr-only">Toggle navigation</span>
+            </a>
 
-        <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-                <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="../images/admin/user2-160x160.jpg" class="user-image" alt="User Image">
-                        <span class="hidden-xs">Alexander Pierce</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <!-- User image -->
-                        <li class="user-header">
-                            <img src="../images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <!-- User Account: style can be found in dropdown.less -->
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span id="avatar" class="user-photo"></span>
+                            <span id="name" class="hidden-xs">${user.username}</span>
+                        </a>
+                        <style>
+                            #avatar, #avatar2 {
+                                display: inline-block;
+                                padding: 4px;
+                                font-size: 20px;
+                                width: 31px;
+                                height: 26px;
+                                line-height: 15px;
+                                border-radius: 25px;
+                                text-align: center;
+                                margin-right: 8px;
+                                color: white;
+                            }
+                            #avatar3 {
+                                display: inline-block;
+                                padding: 4px;
+                                font-size: 32px;
+                                width: 47px;
+                                height: 43px;
+                                line-height: 35px;
+                                border-radius: 25px;
+                                text-align: center;
+                                margin-right: 8px;
+                                color: white;
+                                background-color: rgb(17, 225, 43);
+                            }
+                        </style>
 
-                            <p>
-                                Alexander Pierce - Web Developer
-                                <small>Member since Nov. 2012</small>
-                            </p>
-                        </li>
-                        <!-- Menu Body -->
-                        <li class="user-body">
-                            <div class="row">
-                                <div class="col-xs-12 text-center">
-                                    <a href="#">Счёт: 500р</a>
-                                </div>
-                            </div>
-                            <!-- /.row -->
-                        </li>
-                        <!-- Menu Footer-->
-                        <li class="user-footer">
-                            <div class="pull-left">
-                                <a href="/admin" class="btn btn-default btn-flat">Profile</a>
-                            </div>
-                            <div class="pull-right">
-                                <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
-                            </div>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
-  </header>
+                        <ul class="dropdown-menu">
+                            <!-- User image -->
+                            <li class="user-header">
+                                <span id="avatar2"></span>
+
+                                <p>
+                                ${user.username}
+                                </p>
+                            </li>
+                        <#--<!-- Menu Body &ndash;&gt;-->
+                        <#--<li class="user-body">-->
+                        <#--<div class="row">-->
+                        <#--<div class="col-xs-12 text-center">-->
+                        <#--Счё-->
+                        <#--</div>-->
+                        <#--</div>-->
+                        <#--<!-- /.row &ndash;&gt;-->
+                        <#--</li>-->
+                            <!-- Menu Footer-->
+                        <#--<li class="user-footer">-->
+                        <#--<div class="pull-left">-->
+                        <#--<a href="#" class="btn btn-default btn-flat">Profile</a>-->
+                        <#--</div>-->
+                        <#--<div class="pull-right">-->
+                        <#--<a href="/logout" class="btn btn-default btn-flat">Sign out</a>-->
+                        <#--</div>-->
+                        <#--</li>-->
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <!-- Left side column. contains the logo and sidebar -->
     <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
@@ -99,55 +124,100 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="../images/admin/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <span id="avatar3"></span>
                 </div>
                 <div class="pull-left info">
-                    <p>Alexander Pierce</p>
+                    <p>${user.username}</p>
                     <a ><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-        <ul class="sidebar-menu">
-            <li class="header">Меню</li>
-            <li class="active treeview">
-                <a href="/admin">
-                    <i class="fa fa-dashboard"></i> <span>Главная</span>
-                </a>
-            </li>
-            <!--
-                    <li class="treeview">
-                      <a href="../charts/chartjs.html">
-                        <i class="fa fa-pie-chart"></i>
-                        <span>Статистика</span>
-                      </a>
-                    </li>
-            -->
-            <li class="treeview">
-                <a href="/admin/vk">
-                    <i class="fa fa-vk"></i> <span>VK</span>
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="/admin/instagram">
-                    <i class="fa fa-instagram"></i> <span>Instagram</span>
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="/admin/adverts">
-                    <i class="fa fa-table"></i> <span>Объявления</span>
-                </a>
-            </li>
-            <li class="treeview">
-                <a href="/admin/clients">
-                    <i class="fa fa-user"></i> <span>Пользователи</span>
-                </a>
-            </li>
+            <!-- sidebar menu: : style can be found in sidebar.less -->
+            <ul class="sidebar-menu">
+                <li class="header">Меню</li>
+                <li class="active treeview">
+                    <a href="/admin">
+                        <i class="fa fa-dashboard"></i> <span>Главная</span>
+                    </a>
+                </li>
+                <!--
+                        <li class="treeview">
+                          <a href="pages/charts/chartjs.html">
+                            <i class="fa fa-pie-chart"></i>
+                            <span>Статистика</span>
+                          </a>
+                        </li>
+                -->
+                <li class="treeview">
+                    <a href="/admin/vk">
+                        <i class="fa fa-vk"></i> <span>VK</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="/admin/instagram">
+                        <i class="fa fa-instagram"></i> <span>Instagram</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="/admin/adverts">
+                        <i class="fa fa-table"></i> <span>Объявления</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="/admin/clients">
+                        <i class="fa fa-user"></i> <span>Пользователи</span>
+                    </a>
+                </li>
 
-        </ul>
-    </section>
-    <!-- /.sidebar -->
-  </aside>
+            </ul>
+        </section>
+        <!-- /.sidebar -->
+    </aside>
+    <script>
+        var stringToColor = function stringToColor(str) {
+            var hash = 0;
+            var color = '#';
+            var i;
+            var value;
+            var strLength;
 
+            if(!str) {
+                return color + '333333';
+            }
+
+            strLength = str.length;
+
+            for (i = 0; i < strLength; i++) {
+                hash = str.charCodeAt(i) + ((hash << 5) - hash);
+            }
+
+            for (i = 0; i < 3; i++) {
+                value = (hash >> (i * 8)) & 0xFF;
+                color += ('00' + value.toString(16)).substr(-2);
+            }
+
+            return color;
+        };
+
+        var name = '${user.username}';
+        var letter = name.substr(0, 1).toUpperCase();
+        var backgroundColor = stringToColor(name);
+        var elementAvatar = document.getElementById('avatar');
+        var elementAvatar2 = document.getElementById('avatar2');
+        var elementAvatar3 = document.getElementById('avatar3');
+        var elementName = document.getElementById('name');
+
+
+
+        elementName.innerHTML = name;
+        elementAvatar.innerHTML = letter;
+        elementAvatar.style.backgroundColor = backgroundColor;
+
+        elementAvatar2.innerHTML = letter;
+        elementAvatar2.style.backgroundColor = backgroundColor;
+
+        elementAvatar3.innerHTML = letter;
+        elementAvatar3.style.backgroundColor = backgroundColor;
+    </script>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
