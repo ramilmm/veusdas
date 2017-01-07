@@ -55,7 +55,7 @@
     <h2>Список сообществ <strong>VEUSDAS</strong></h2>
     <p>Мы поможем продать вашу рекламу.</p>
     <ul class="actions" id="menu">
-        <li><a href="#form" class="button special big" data-id="#form">Подать заявку</a></li>
+        <li><a href="#form" class="button special big">Подать заявку</a></li>
         <li><a href="#six" class="button big">Посмотреть список</a></li>
     </ul>
 </section>
@@ -223,22 +223,22 @@
 <script src="../js/ListOfPublic/util.js"></script>
 <script src="../js/ListOfPublic/main.js"></script>
 <script src="../js/ListOfPublic/wow.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="../js/ListOfPublic/common.js"></script>
 <script src="../js/ListOfPublic/jquery.remodal.js"></script>
-
-<script>
-        $(document).ready(function() {
-            $('a[href*=#]').bind("click", function(e){
-                var anchor = $(this);
-                $('html, body').stop().animate({
-                    scrollTop: $(anchor.attr('href')).offset().onTop
-                }, 1000);
-                e.preventDefault();
-            });
-            return false;
-        });
-</script>
 <script>new WOW().init();</script>
+<script>
+    $(document).ready(function(){
+        $('a[href*=#]').bind("click", function(e){
+            var anchor = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $(anchor.attr('href')).offset().top
+            }, 1000);
+            e.preventDefault();
+        });
+        return false;
+    });
+
+</script>
+
 </body>
 </html>

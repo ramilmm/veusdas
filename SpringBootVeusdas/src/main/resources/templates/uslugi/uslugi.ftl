@@ -114,8 +114,8 @@
                                     <span id="typed" style="white-space:pre;"></span>
                             </div>
                             <p class="intro-text color-light alpha6 animated" data-animation="fadeInUp" data-animation-delay="200">Лучший выбор для вашего паблика.</p>
-                            <a href="#welcome" class="button button-pasific button-md hover-ripple-out mr10 animated" data-animation="fadeInUp" data-animation-delay="300">Подробнее</a>
-                            <a href="https://vk.com/id385022409" target="_blank" class="button button-success button-md hover-ripple-out animated" data-animation="fadeInUp" data-animation-delay="500">Напишите нам</a>
+                            <a href="#welcome" class="button button-pasific button-md hover-ripple-out mr10 animated" data-animation="fadeInUp" data-animation-delay="300" style="z-index:999">Подробнее</a>
+                            <a href="https://vk.com/id385022409" target="_blank" class="button button-success button-md hover-ripple-out animated" data-animation="fadeInUp" style="z-index:999" data-animation-delay="500">Напишите нам</a>
                         </div>
                     </div>
                 </div>
@@ -999,18 +999,17 @@
         <script src="js/web/main/main.js"></script>
 
         <script>
-            $(document).ready(function() {
-                $(document).ready(function () {
-                    $('a[href*=#]').bind("click", function (e) {
-                        var anchor = $(this);
-                        $('html, body').stop().animate({
-                            scrollTop: $(anchor.attr('href')).offset().onTop
-                        }, 5000);
-                        e.preventDefault();
-                    });
-                    return false;
+            $(document).ready(function(){
+                $('a[href*=#]').bind("click", function(e){
+                    var anchor = $(this);
+                    $('html, body').stop().animate({
+                        scrollTop: $(anchor.attr('href')).offset().top
+                    }, 1000);
+                    e.preventDefault();
                 });
+                return false;
             });
+
         </script>
         
     </body>

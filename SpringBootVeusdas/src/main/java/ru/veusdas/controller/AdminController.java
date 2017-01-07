@@ -21,8 +21,6 @@ public class AdminController {
     @Autowired
     AdvertsServiceImpl advertsService;
     @Autowired
-    QuestionServiceImpl questionService;
-    @Autowired
     SpisokServiceImpl spisokService;
     @Autowired
     InstagramServiceImpl instagramService;

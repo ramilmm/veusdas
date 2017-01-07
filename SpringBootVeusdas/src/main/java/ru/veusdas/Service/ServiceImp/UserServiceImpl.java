@@ -13,8 +13,6 @@ import java.util.HashSet;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private Integer ADMIN_REG = 2;
-
     @Autowired
     private UserRepository userRepository;
     @Autowired
@@ -23,11 +21,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        if (ADMIN_REG > 0) {
-            user.setRole("ADMIN");
-            ADMIN_REG -= 1;
-        }else
-            user.setRole("USER");
+        user.setRole("USER");
         userRepository.save(user);
     }
 

@@ -402,26 +402,26 @@
 
                         <#--<#include "public.ftl">-->
 
-                            <#list spisok100 as public100>
-                        <tr class="row${public50.id}">
+                            <#list spisok100 as pub>
+                        <tr class="row${pub.id}">
                             <td>
-                                <a href="#" class="onTopWeek" data-id="${public50.id}">Поднять на</a>
+                                <a href="#" class="onTopWeek" data-id="${pub.id}">Поднять на</a>
                                 <select id="countWeeks">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                 </select> недели <br/>
-                                <a href="#" class="onTopMonth" data-id="${public50.id}">Поднять на</a>
+                                <a href="#" class="onTopMonth" data-id="${pub.id}">Поднять на</a>
                                 <select id="countMonths">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                 </select> месяц
                             </td>
-                            <td><input type="text" id="nameSpisok${public50.id}" value="${public50.name}" maxlength="60"></td>
-                            <td><input type="text" id="stat_linkSpisok${public50.id}" value="${public50.stat_link}" maxlength="70"></td>
-                            <td><input type="text" id="subscribesSpisok${public50.id}" value="${public50.subscribes}" maxlength="20"></td>
-                            <td><select id="okhvatSpisok${public50.id}" class="okhvat${public50.id}" >
+                            <td><input type="text" id="nameSpisok${pub.id}" value="${pub.name}" maxlength="60"></td>
+                            <td><input type="text" id="stat_linkSpisok${pub.id}" value="${pub.stat_link}" maxlength="70"></td>
+                            <td><input type="text" id="subscribesSpisok${pub.id}" value="${pub.subscribes}" maxlength="20"></td>
+                            <td><select id="okhvatSpisok${pub.id}" class="okhvat${pub.id}" >
                                 <option value>- Охват пабликa -</option>
                                 <option value="20">>20.000</option>
                                 <option value="50">>50.000</option>
@@ -429,16 +429,16 @@
                             </select></td>
                             <script>
                                 $(document).ready(function () {
-                                    $('.okhvat${public50.id}').val('${public50.public_category}');
+                                    $('.okhvat${pub.id}').val('${pub.public_category}');
                                 });
                             </script>
-                            <td><input type="text" id="costSpisok${public50.id}" value="${public50.cost}" maxlength="10"></td>
-                            <td><input type="text" id="admin_linkSpisok${public50.id}" value="${public50.admin_link}" maxlength="100"></td>
+                            <td><input type="text" id="costSpisok${pub.id}" value="${pub.cost}" maxlength="10"></td>
+                            <td><input type="text" id="admin_linkSpisok${pub.id}" value="${pub.admin_link}" maxlength="100"></td>
                             <td>
                                 <div class="buttons">
-                                    <a href="#"  class="btn btn-success accept acceptEditing" data-id="${public50.id}">Сохранить</a>
+                                    <a href="#"  class="btn btn-success accept acceptEditing" data-id="${pub.id}">Сохранить</a>
                                     <br/>
-                                    <a href="#"  class="btn btn-danger delete deletePublic" data-id="${public50.id}">Удалить</a>
+                                    <a href="#"  class="btn btn-danger delete deletePublic" data-id="${pub.id}">Удалить</a>
                                 </div>
                             </td>
                         </tr>

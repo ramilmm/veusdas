@@ -35,7 +35,7 @@
                 #header nav ul li a.userLink {
                     border: 2px solid;
                     padding-left: 15px;
-                    border-radius: 24px;
+                    border-radius: 18px;
                     padding-right: 15px;
                     background-color: rgba(0,0,0,.0005);
                     color: #fff;
@@ -116,8 +116,7 @@
             <div class="6u$ 12u$(xsmall) requisites">
                 <header>
                     <h2>Реквизиты</h2>
-                    <p><i>Webmoney:</i> <strong>R413024752870</strong> <br/>
-                        <i>Qiwi:</i> <strong>380506205563</strong> <br/>
+                    <p><i>Webmoney:</i> <strong>R539951970544 </strong> <br/>
                         <i>Sberbank:</i> <strong>4276 4000 4442 2559</strong>
                     </p>
                 </header>
@@ -133,7 +132,7 @@
             <p>Воспользуйтесь услугами нашего гаранта</p>
         </header>
         <ul class="actions">
-            <li><a href="https://vk.com/id258993255" class="button special big">Написать гаранту</a></li>
+            <li><a href="https://vk.com/id400280408" class="button special big">Написать гаранту</a></li>
         </ul>
     </div>
 </section>
@@ -161,17 +160,16 @@
 <script src="js/garant/init.js"></script>
 <script>
     $(document).ready(function(){
-
-
-        $("#banner").on("click","a", function (event) {
-            event.preventDefault();
-            var id  = $(this).attr('href'),
-                    onTop = $(id).offset().onTop;
-            $('body,html').animate({scrollTop: onTop}, 800);
+        $('a[href*=#]').bind("click", function(e){
+            var anchor = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $(anchor.attr('href')).offset().top
+            }, 1000);
+            e.preventDefault();
         });
-
-
+        return false;
     });
+
 </script>
 </body>
 </html>

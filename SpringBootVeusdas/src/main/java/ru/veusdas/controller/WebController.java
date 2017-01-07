@@ -1,14 +1,9 @@
 package ru.veusdas.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.veusdas.MailSender.Sender;
-import ru.veusdas.Model.Questions;
-import ru.veusdas.form.QuestionForm;
-
-import javax.validation.Valid;
 
 @Controller
 public class WebController {

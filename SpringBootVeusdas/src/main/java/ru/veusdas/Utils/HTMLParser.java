@@ -6,21 +6,27 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.*;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * Created by ramilmmk on 28.10.16.
  */
 public class HTMLParser {
-//    public static void main(String[] args) throws IOException {
-//        writeFile("https://vk.com/kalembaa");
-//        updateSubscribes();
-//    }
+    private static String BODY_HTML = "";
+    private static String BODY_TEXT = "";
+
+    public static void main(String[] args) throws IOException {
+        writeFile("vk.com/kalembaa");
+        getPublicData();
+    }
 
     static public void writeFile(String url) throws IOException {
         File output = new File("input.html");
-        FileWriter fw = new FileWriter(output,false);
+//        FileWriter fw = new FileWriter(output,false);
+        PrintWriter out = new PrintWriter(output.getAbsoluteFile());
         Document pub = null;
         String url_modified = "";
         if (!url.contains("http")) {
@@ -28,11 +34,16 @@ public class HTMLParser {
         }else url_modified = url.toLowerCase();
         try {
             pub = Jsoup.connect(url_modified).get();
+            BODY_HTML = pub.body().html();
+            BODY_TEXT = pub.body().text();
         } catch (IOException e) {
             System.out.println("cannot connect to site");
         }
-
-        fw.write(pub.outerHtml());
+        try {
+            out.print(pub.outerHtml());
+        } finally {
+            out.close();
+        }
     }
 
     static public ArrayList<String> getInstData() throws IOException {
@@ -45,7 +56,7 @@ public class HTMLParser {
         int count = 0;
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(
-                        new FileInputStream("input.html"), StandardCharsets.UTF_8))){
+                        new FileInputStream("input.html"), Charset.forName("UTF-8")))){
             String line;
             String buf;
             while ((line = reader.readLine()) != null) {
@@ -94,7 +105,7 @@ public class HTMLParser {
         int countId = 0;
         try (BufferedReader reader = new BufferedReader(
                 new InputStreamReader(
-                        new FileInputStream("input.html"), StandardCharsets.UTF_8))){
+                        new FileInputStream("input.html"), Charset.forName("UTF-8")))){
             String line;
             String buf;
             while ((line = reader.readLine()) != null) {
@@ -109,19 +120,19 @@ public class HTMLParser {
                     buf = line.substring(line.indexOf(publicId));
                     buf = buf.substring(buf.indexOf(publicId) + 11);
                     buf = buf.substring(0,buf.indexOf("_"));
-                    System.out.println("https://vk.com/stats?act=reach&gid=" + buf);
+//                    System.out.println("https://vk.com/stats?act=reach&gid=" + buf);
                     publicStatParsed = "https://vk.com/stats?act=reach&gid=" + buf;
                 }else if (line.contains(publicName)) {
                     buf = line.substring(line.indexOf(publicName));
                     buf = buf.substring(buf.indexOf(">") + 1);
                     buf = buf.substring(0,buf.indexOf("</h2>"));
-                    System.out.println(buf);
+//                    System.out.println(buf);
                     publicNameParsed = buf;
                 }else if (line.contains(publicPhoto)) {
                     buf = line.substring(line.indexOf("src=\""));
                     buf = buf.substring(buf.indexOf("\"") + 1);
                     buf = buf.substring(0,buf.indexOf("\""));
-                    System.out.println(buf);
+//                    System.out.println(buf);
                     publicPhotoParsed = buf;
                 }else if (line.contains(publicSubscribes)) {
                     if (count != 0){
@@ -138,14 +149,42 @@ public class HTMLParser {
                     if (buf.contains(",")) {
                         buf = buf.replace(",","");
                     }
-                    System.out.println(buf);
+//                    System.out.println(buf);
                     publicSubscribesParserd = buf;
                 }
                 buf = "";
             }
+            reader.close();
         } catch (IOException e) {
             System.out.println("error");
         }
+
+        if (publicPhotoParsed.equals("") ) {
+            try (BufferedReader bufReader = new BufferedReader(
+                    new InputStreamReader(
+                            new FileInputStream("input.html"), Charset.forName("UTF-8")))) {
+                String l,b,template = "pp_img";
+                while ((l = bufReader.readLine()) != null) {
+                    if (l.contains(template)) {
+                        b = l.substring(l.indexOf("\"") + 1);
+                        b = b.substring(0,b.indexOf("\""));
+                        publicPhotoParsed = b;
+                    }
+                }
+                bufReader.close();
+            }
+            catch (IOException e) {
+                System.out.println("catched exception: " + e.getMessage());
+            }
+        }
+        if (publicSubscribesParserd.equals("")) {
+            String buf = BODY_TEXT.substring(BODY_TEXT.indexOf("Участники") + 10,BODY_TEXT.indexOf("Контакты"));
+            publicSubscribesParserd = buf;
+        }
+
+//        System.out.println(publicNameParsed);
+//        System.out.println(publicPhotoParsed);
+//        System.out.println(publicSubscribesParserd);
 //        File output = new File("input.html");
 //        if (output.exists()) {
 //            output.delete();

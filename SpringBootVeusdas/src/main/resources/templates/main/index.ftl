@@ -54,7 +54,7 @@
 				Гарант-сервис <br/>
 				Разработка сайтов</p>
 				<ul class="actions">
-					<li><a href="#two" class="button special big">Подробнее</a></li>
+					<li><a href="#two" class="button special big menu_link">Подробнее</a></li>
 				</ul>
 			</section>
 			
@@ -295,16 +295,17 @@
 			<script src="js/main/main.js"></script>
             <script src="js/main/jquery.countTo.js"></script>
             <script type="text/javascript">
-                $(document).ready(function() {
+                $(document).ready(function(){
                     $('a[href*=#]').bind("click", function(e){
                         var anchor = $(this);
                         $('html, body').stop().animate({
-                            scrollTop: $(anchor.attr('href')).offset().onTop
+                            scrollTop: $(anchor.attr('href')).offset().top
                         }, 1000);
                         e.preventDefault();
                     });
                     return false;
                 });
+
             </script>
             <script type="text/javascript">
                 $('#success').countTo({

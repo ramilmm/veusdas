@@ -53,7 +53,7 @@
     <h2>Список instagram <strong>VEUSDAS</strong></h2>
     <p>Мы поможем продать вашу рекламу.</p>
     <ul class="actions" id="menu">
-        <li><button class="button special big" data-id="#form">Подать заявку</button></li>
+        <li><a href="#form" class="button special big">Подать заявку</a></li>
         <li><a href="#six" class="button big">Посмотреть список</a></li>
     </ul>
 </section>
@@ -237,7 +237,7 @@
             <p>Воспользуйтесь услугами нашего гаранта</p>
         </header>
         <ul class="actions">
-            <li><a href="https://vk.com/id258993255" class="button special big">Написать гаранту</a></li>
+            <li><a href="https://vk.com/id400280408" class="button special big">Написать гаранту</a></li>
         </ul>
     </div>
 </section>
@@ -313,29 +313,21 @@
 <script src="js/ListOfPublic/util.js"></script>
 <script src="js/ListOfPublic/main.js"></script>
 <script src="js/ListOfPublic/wow.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="js/ListOfPublic/common.js"></script>
-
+<script>new WOW().init();</script>
 <script>
     $(document).ready(function(){
-
-        $("#menu").on("click","button", function (event) {
-            event.preventDefault();
-            var id  = $(this).attr('data-id'),
-                    onTop = $(id).offset().onTop;
-            $('body,html').animate({scrollTop: onTop}, 800);
+        $('a[href*=#]').bind("click", function(e){
+            var anchor = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $(anchor.attr('href')).offset().top
+            }, 1000);
+            e.preventDefault();
         });
-
-        $("#menu").on("click","a", function (event) {
-            event.preventDefault();
-            var id  = $(this).attr('href'),
-                    onTop = $(id).offset().onTop;
-            $('body,html').animate({scrollTop: onTop}, 800);
-        });
-
-
+        return false;
     });
+
 </script>
-<script>new WOW().init();</script>
+
 </body>
 </html>
