@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>demo</name>
-	<description>veusdas project by katya kovaleva</description>
+	<description>veusdas project</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
